@@ -1,0 +1,60 @@
+baseURL = "http://nathancrenshaw.com/"
+languageCode = "en-us"
+theme = "raditian-free-hugo-theme"
+
+# Plugins
+[params.plugins]
+
+  # CSS Plugins
+  [[params.plugins.css]]
+  URL = "css/main.css"
+  [[params.plugins.css]]
+  URL = "css/rad-icons.css"
+  [[params.plugins.css]]
+  URL = "css/custom.css"
+
+  # JS Plugins
+  [[params.plugins.js]]
+  URL = "js/rad-animations.js"
+  [[params.plugins.js]]
+  URL = "js/sticky-header.js"
+  [[params.plugins.js]]
+  URL = "js/library/fontfaceobserver.js"
+
+
+# navigation
+[menu]
+
+  [[menu.header]]
+  name = "About"
+  URL = "#about"
+  weight = 2
+
+  [[menu.header]]
+  name = "Portfolio"
+  URL = "#portfolio"
+  weight = 3
+
+  [[menu.footer]]
+  name = "About"
+  URL = "#about"
+  weight = 2
+
+  [[menu.footer]]
+  name = "Portfolio"
+  URL = "#portfolio"
+  weight = 3
+
+
+[params]
+
+  sections = ["hero", "client-and-work"]
+
+  googleTagManagerID = "GTM-000000" # Google Analytics works with Google Tag Manager
+
+  [params.logo]
+    text1 = "Nathan"
+    text2 = "Crenshaw"
+
+  [params.footer]
+      copyright = "© Nathan Crenshaw. All rights reserved."

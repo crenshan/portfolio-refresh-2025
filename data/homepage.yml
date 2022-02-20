@@ -1,0 +1,145 @@
+# homepage
+head:
+  title: "Nathan Crenshaw {designer && developer}"
+
+# hero
+hero:
+  enable: true
+  title: "Nathan Crenshaw"
+  subtitle: "Designer and Front-End Developer"
+  description: "Lorem ipsum dolor sit amet, vel volutpat incorrupte comprehensam in, recteque reprimique an eum. Has eu assum nullam appellantur, prima etiam dolorem cum ei, est at iusto vulputate. Pri quod esse id."
+  image:
+    alt: "profile photo"
+    x: "/img/nathan.png"
+    _2x: "/img/nathan@2x.png"
+  imageMobile:
+    alt: "profile photo"
+    x: "/img/nathan.png"
+  button:
+    icon: "icon-linkedin-fill"
+    btnText: "Linkedin"
+    URL: "https://www.linkedin.com/in/nathancrenshaw/"
+  button2:
+    icon: "icon-profile-fill"
+    btnText: "Download My Resume"
+    URL: "/doc/NathanCrenshaw_resume.pdf"
+
+# Client & Work
+client_and_work:
+  title: "Clients & Work"
+  enable: true
+
+  clients:
+    - logo:
+        x: "/img/clients/amazon.png"
+        _2x: "/img/clients/amazon@2x.png"
+      url: "http://www.amazon.com"
+      alt: "Amazon"
+
+    - logo:
+        x: "/img/clients/att.png"
+        _2x: "/img/clients/att@2x.png"
+      url: "http://www.att.com"
+      alt: "AT&T"
+
+    - logo:
+        x: "/img/clients/cocacola.png"
+        _2x: "/img/clients/cocacola@2x.png"
+      url: "http://www.coca-cola.com"
+      alt: "Coca-Cola"
+
+    - logo:
+        x: "/img/clients/jpmorgan.png"
+        _2x: "/img/clients/jpmorgan@2x.png"
+      url: "http://www.jpmorgan.com"
+      alt: "JP Morgan"
+
+    - logo:
+        x: "/img/clients/ups.png"
+        _2x: "/img/clients/ups@2x.png"
+      url: "http://www.ups.com"
+      alt: "UPS"
+
+    - logo:
+        x: "/img/clients/verizon.png"
+        _2x: "/img/clients/verizon@2x.png"
+      url: "http://www.verizon.com"
+      alt: "Verizon"
+
+  works:
+    - title: "Coca-Cola Freestyle"
+      description: "Lorem ipsum dolor sit amet, vel volutpat incorrupte comprehensam in, recteque reprimique an eum. Has eu assum nullam appellantur."
+      button:
+        icon: "icon-arrow-right"
+        btnText: "Case Study"
+        URL: "#"
+      image:
+        x: "/img/work/cocacola/cocacola-freestyle_grad.png"
+        _2x: "/img/work/cocacola/cocacola-freestyle_grad@2x.png"
+      is_even: true
+
+    - title: "UPS.com"
+      description: "Lorem ipsum dolor sit amet, vel volutpat incorrupte comprehensam in, recteque reprimique an eum."
+      button:
+        icon: "icon-arrow-right"
+        btnText: "Case Study"
+        URL: "#"
+      image:
+        x: "/img/work/ups/ups.png"
+        _2x: "/img/work/ups/ups@2x.png"
+      is_even: false
+
+    - title: "ARTPAPERS"
+      description: "Lorem ipsum dolor sit amet, vel volutpat incorrupte comprehensam in, recteque reprimique an eum."
+      button:
+        icon: "icon-arrow-right"
+        btnText: "Case Study"
+        URL: "#"
+      image:
+        x: "/img/work/artpapers/artpapers.png"
+        _2x: "/img/work/artpapers/artpapers@2x.png"
+      is_even: true
+
+    - title: "Northwestern University"
+      description: "Lorem ipsum dolor sit amet, vel volutpat incorrupte comprehensam in, recteque reprimique an eum."
+      button:
+        icon: "icon-arrow-right"
+        btnText: "Case Study"
+        URL: "#"
+      image:
+        x: "/img/work/kellogg/kellogg.png"
+        _2x: "/img/work/kellogg/kellogg@2x.png"
+      is_even: false
+
+    - title: "Oliver & Rain"
+      description: "Lorem ipsum dolor sit amet, vel volutpat incorrupte comprehensam in, recteque reprimique an eum."
+      button:
+        icon: "icon-arrow-right"
+        btnText: "Case Study"
+        URL: "#"
+      image:
+        x: "/img/work/oliver-and-rain/oliver-and-rain.png"
+        _2x: "/img/work/oliver-and-rain/oliver-and-rain@2x.png"
+      is_even: true
+
+    - title: "JP Morgan SmartSpending"
+      description: "Lorem ipsum dolor sit amet, vel volutpat incorrupte comprehensam in, recteque reprimique an eum."
+      button:
+        icon: "icon-arrow-right"
+        btnText: "Case Study"
+        URL: "#"
+      image:
+        x: "/img/work/jpmorgan/jpmorgan-smartSpending.png"
+        _2x: "/img/work/jpmorgan/jpmorgan-smartSpending@2x.png"
+      is_even: false
+
+    - title: "My Friend's Nephew"
+      description: "Lorem ipsum dolor sit amet, vel volutpat incorrupte comprehensam in, recteque reprimique an eum."
+      button:
+        icon: "icon-arrow-right"
+        btnText: "Case Study"
+        URL: "#"
+      image:
+        x: "/img/work/mfn/mfn.png"
+        _2x: "/img/work/mfn/mfn@2x.png"
+      is_even: true

@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Bevan&display=swap');
+
+body {
+  background-color: #e9e9ea;
+}
+
+.header {
+  background: #6096c6;
+  color: #fff;
+  border-bottom: solid 5px #fff;
+}
+
+.header--sticky-triggered {
+  padding-top: 10px;
+  padding-bottom: 0;
+  box-shadow: 41px 0 30px 0 rgb(0 0 0 / 20%);
+  background-color: #456d90;
+}
+
+.header .navbar-light .navbar-nav .nav-link {
+  color: #fff;
+  font-size: 16px;
+  letter-spacing: 6px;
+}
+
+.header .navbar-brand {
+  display: block;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.header .navbar-brand .nLogo {
+  width: auto;
+  max-width: none;
+  max-height: none;
+  height: 72px;
+}
+
+.hero__profile-picture img {
+  margin: 0;
+}
+
+.header+.section {
+  margin: 0;
+}
+
+.rad-showcase+section {
+  padding: 0;
+}
+
+@media (min-width: 1200px) {
+  .rad-showcase {
+      min-height: 800px;
+      padding-top: 0;
+      margin-bottom: 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .rad-showcase {
+      min-height: 800px;
+      padding-top: 0;
+      margin-bottom: 0;
+  }
+
+  .rad-showcase+section {
+      margin-top: -125px;
+  }
+}
+
+.header .navbar .nav-item .nav-link::after {
+  content: '';
+  position: absolute;
+  left: 20px;
+  bottom: 10px;
+  height: 1px;
+  width: calc(100% - 40px);
+  background-color: rgba(255,255,255,.5);
+  will-change: transform;
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform,-webkit-transform;
+  -webkit-transition-duration: .4s;
+  transition-duration: .4s;
+  -webkit-transition-timing-function: cubic-bezier(.645,.045,.355,1);
+  transition-timing-function: cubic-bezier(.645,.045,.355,1);
+}
+
+.hero:after {
+  content: "";
+  display: block;
+  height: 1px;
+  background: rgba(0,0,0,.1);
+  width: 90%;
+  margin: 60px 0 40px;
+}
+
+.rad-showcase .container h1 span {
+  font-size: 36px;
+}
+
+.btn {
+  border-radius: 30px;
+}
