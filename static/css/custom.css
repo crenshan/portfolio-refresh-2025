@@ -10,6 +10,11 @@ body {
   border-bottom: solid 5px #fff;
 }
 
+.footer {
+  border-top: solid 5px #fff;
+  box-shadow: 41px 0 30px 0 rgb(0 0 0 / 20%);
+}
+
 .header--sticky-triggered {
   padding-top: 10px;
   padding-bottom: 0;

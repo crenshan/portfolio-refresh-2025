@@ -1,6 +1,6 @@
 # homepage
 head:
-  title: "Nathan Crenshaw {designer && developer}"
+  title: "Nathan Crenshaw [designer,developer]"
 
 # hero
 hero:
@@ -100,15 +100,15 @@ client_and_work:
         _2x: "/img/work/artpapers/artpapers@2x.png"
       is_even: true
 
-    - title: "Northwestern University"
+    - title: "JP Morgan SmartSpending"
       description: "Lorem ipsum dolor sit amet, vel volutpat incorrupte comprehensam in, recteque reprimique an eum."
       button:
         icon: "icon-arrow-right"
         btnText: "Case Study"
         URL: "#"
       image:
-        x: "/img/work/kellogg/kellogg.png"
-        _2x: "/img/work/kellogg/kellogg@2x.png"
+        x: "/img/work/jpmorgan/jpmorgan-smartSpending.png"
+        _2x: "/img/work/jpmorgan/jpmorgan-smartSpending@2x.png"
       is_even: false
 
     - title: "Oliver & Rain"
@@ -122,15 +122,15 @@ client_and_work:
         _2x: "/img/work/oliver-and-rain/oliver-and-rain@2x.png"
       is_even: true
 
-    - title: "JP Morgan SmartSpending"
+    - title: "Northwestern University"
       description: "Lorem ipsum dolor sit amet, vel volutpat incorrupte comprehensam in, recteque reprimique an eum."
       button:
         icon: "icon-arrow-right"
         btnText: "Case Study"
         URL: "#"
       image:
-        x: "/img/work/jpmorgan/jpmorgan-smartSpending.png"
-        _2x: "/img/work/jpmorgan/jpmorgan-smartSpending@2x.png"
+        x: "/img/work/kellogg/kellogg.png"
+        _2x: "/img/work/kellogg/kellogg@2x.png"
       is_even: false
 
     - title: "My Friend's Nephew"
