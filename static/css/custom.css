@@ -54,9 +54,6 @@ body {
   box-shadow: 41px 0 30px 0 rgb(0 0 0 / 20%);
 }
 
-
-
-
 .clients {
   margin-bottom: 50px;
   justify-content: center;
@@ -66,13 +63,20 @@ body {
   margin: 0;
 }
 
+.clients.tools {
+  margin-bottom: 0;
+  justify-content: flex-start;
+}
+
 .rad-showcase+section {
   padding: 0;
 }
 
-.btn-primary .icon-right {
+.btn-primary .fa-solid {
   display: inline-block;
-  margin-left: 8px;
+  margin-left: 10px;
+  position: relative;
+  top: 2px;
 }
 
 

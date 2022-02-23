@@ -1,12 +1,12 @@
 # homepage
 head:
-  title: "Nathan Crenshaw [designer,developer]"
+  title: "Nathan Crenshaw: Frontend Engineer / Designer"
 
 # hero
 hero:
   enable: true
   title: "Nathan Crenshaw"
-  subtitle: "Designer and Front-End Developer"
+  subtitle: "Frontend Engineer / Designer"
   description: "Lorem ipsum dolor sit amet, vel volutpat incorrupte comprehensam in, recteque reprimique an eum. Has eu assum nullam appellantur, prima etiam dolorem cum ei, est at iusto vulputate. Pri quod esse id."
   image:
     alt: "profile photo"
@@ -79,6 +79,27 @@ client_and_work:
         x: "/img/work/cocacola/cocacola-freestyle_grad.png"
         _2x: "/img/work/cocacola/cocacola-freestyle_grad@2x.png"
       is_even: true
+      tools:
+        - logo:
+            x: "/img/tools/js.png"
+            _2x: "/img/tools/js@2x.png"
+          alt: "JS"
+          url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+        - logo:
+            x: "/img/tools/react.png"
+            _2x: "/img/tools/react@2x.png"
+          alt: "React"
+          url: "https://reactjs.org/"
+        - logo:
+            x: "/img/tools/html5.png"
+            _2x: "/img/tools/html5@2x.png"
+          alt: "HTML5"
+          url: "https://developer.mozilla.org/en-US/docs/Web/HTML"
+        - logo:
+            x: "/img/tools/css3.png"
+            _2x: "/img/tools/css3@2x.png"
+          alt: "CSS3"
+          url: "https://developer.mozilla.org/en-US/docs/Web/CSS"
 
     - title: "UPS.com"
       description: "Lorem ipsum dolor sit amet, vel volutpat incorrupte comprehensam in, recteque reprimique an eum."
@@ -90,6 +111,27 @@ client_and_work:
         x: "/img/work/ups/ups.png"
         _2x: "/img/work/ups/ups@2x.png"
       is_even: false
+      tools:
+        - logo:
+            x: "/img/tools/js.png"
+            _2x: "/img/tools/js@2x.png"
+          alt: "JS"
+          url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+        - logo:
+            x: "/img/tools/angular.png"
+            _2x: "/img/tools/angular@2x.png"
+          alt: "Angular"
+          url: "https://angular.io/"
+        - logo:
+            x: "/img/tools/html5.png"
+            _2x: "/img/tools/html5@2x.png"
+          alt: "HTML5"
+          url: "https://developer.mozilla.org/en-US/docs/Web/HTML"
+        - logo:
+            x: "/img/tools/css3.png"
+            _2x: "/img/tools/css3@2x.png"
+          alt: "CSS3"
+          url: "https://developer.mozilla.org/en-US/docs/Web/CSS"
 
     - title: "ARTPAPERS"
       description: "Lorem ipsum dolor sit amet, vel volutpat incorrupte comprehensam in, recteque reprimique an eum."
@@ -101,6 +143,27 @@ client_and_work:
         x: "/img/work/artpapers/artpapers.png"
         _2x: "/img/work/artpapers/artpapers@2x.png"
       is_even: true
+      tools:
+        - logo:
+            x: "/img/tools/js.png"
+            _2x: "/img/tools/js@2x.png"
+          alt: "JS"
+          url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+        - logo:
+            x: "/img/tools/php.png"
+            _2x: "/img/tools/php@2x.png"
+          alt: "PHP"
+          url: "https://www.php.net/"
+        - logo:
+            x: "/img/tools/html5.png"
+            _2x: "/img/tools/html5@2x.png"
+          alt: "HTML5"
+          url: "https://developer.mozilla.org/en-US/docs/Web/HTML"
+        - logo:
+            x: "/img/tools/css3.png"
+            _2x: "/img/tools/css3@2x.png"
+          alt: "CSS3"
+          url: "https://developer.mozilla.org/en-US/docs/Web/CSS"
 
     - title: "JP Morgan SmartSpending"
       description: "Lorem ipsum dolor sit amet, vel volutpat incorrupte comprehensam in, recteque reprimique an eum."
@@ -112,6 +175,27 @@ client_and_work:
         x: "/img/work/jpmorgan/jpmorgan-smartSpending.png"
         _2x: "/img/work/jpmorgan/jpmorgan-smartSpending@2x.png"
       is_even: false
+      tools:
+        - logo:
+            x: "/img/tools/angular.png"
+            _2x: "/img/tools/angular@2x.png"
+          alt: "Angular"
+          url: "https://angular.io/"
+        - logo:
+            x: "/img/tools/d3.png"
+            _2x: "/img/tools/d3@2x.png"
+          alt: "D3.js"
+          url: "https://d3js.org/"
+        - logo:
+            x: "/img/tools/html5.png"
+            _2x: "/img/tools/html5@2x.png"
+          alt: "HTML5"
+          url: "https://developer.mozilla.org/en-US/docs/Web/HTML"
+        - logo:
+            x: "/img/tools/css3.png"
+            _2x: "/img/tools/css3@2x.png"
+          alt: "CSS3"
+          url: "https://developer.mozilla.org/en-US/docs/Web/CSS"
 
     - title: "Oliver & Rain"
       description: "Lorem ipsum dolor sit amet, vel volutpat incorrupte comprehensam in, recteque reprimique an eum."
@@ -123,6 +207,27 @@ client_and_work:
         x: "/img/work/oliver-and-rain/oliver-and-rain.png"
         _2x: "/img/work/oliver-and-rain/oliver-and-rain@2x.png"
       is_even: true
+      tools:
+        - logo:
+            x: "/img/tools/js.png"
+            _2x: "/img/tools/js@2x.png"
+          alt: "JS"
+          url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+        - logo:
+            x: "/img/tools/php.png"
+            _2x: "/img/tools/php@2x.png"
+          alt: "PHP"
+          url: ""
+        - logo:
+            x: "/img/tools/html5.png"
+            _2x: "/img/tools/html5@2x.png"
+          alt: "HTML5"
+          url: "https://developer.mozilla.org/en-US/docs/Web/HTML"
+        - logo:
+            x: "/img/tools/css3.png"
+            _2x: "/img/tools/css3@2x.png"
+          alt: "CSS3"
+          url: "https://developer.mozilla.org/en-US/docs/Web/CSS"
 
     - title: "Northwestern University"
       description: "Lorem ipsum dolor sit amet, vel volutpat incorrupte comprehensam in, recteque reprimique an eum."
@@ -134,6 +239,22 @@ client_and_work:
         x: "/img/work/kellogg/kellogg.png"
         _2x: "/img/work/kellogg/kellogg@2x.png"
       is_even: false
+      tools:
+        - logo:
+            x: "/img/tools/js.png"
+            _2x: "/img/tools/js@2x.png"
+          alt: "JS"
+          url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+        - logo:
+            x: "/img/tools/html5.png"
+            _2x: "/img/tools/html5@2x.png"
+          alt: "HTML5"
+          url: "https://developer.mozilla.org/en-US/docs/Web/HTML"
+        - logo:
+            x: "/img/tools/css3.png"
+            _2x: "/img/tools/css3@2x.png"
+          alt: "CSS3"
+          url: "https://developer.mozilla.org/en-US/docs/Web/CSS"
 
     - title: "My Friend's Nephew"
       description: "Lorem ipsum dolor sit amet, vel volutpat incorrupte comprehensam in, recteque reprimique an eum."
@@ -145,3 +266,24 @@ client_and_work:
         x: "/img/work/mfn/mfn.png"
         _2x: "/img/work/mfn/mfn@2x.png"
       is_even: true
+      tools:
+        - logo:
+            x: "/img/tools/js.png"
+            _2x: "/img/tools/js@2x.png"
+          alt: "JS"
+          url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+        - logo:
+            x: "/img/tools/angular.png"
+            _2x: "/img/tools/angular@2x.png"
+          alt: "Angular"
+          url: "https://angular.io/"
+        - logo:
+            x: "/img/tools/html5.png"
+            _2x: "/img/tools/html5@2x.png"
+          alt: "HTML5"
+          url: "https://developer.mozilla.org/en-US/docs/Web/HTML"
+        - logo:
+            x: "/img/tools/css3.png"
+            _2x: "/img/tools/css3@2x.png"
+          alt: "CSS3"
+          url: "https://developer.mozilla.org/en-US/docs/Web/CSS"
