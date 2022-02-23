@@ -298,6 +298,9 @@
 <script src='http://nathancrenshaw.com/js/sticky-header.js'></script>
 <script src='http://nathancrenshaw.com/js/library/smooth-scroll.polyfills.min.js'></script>
 <script src='http://nathancrenshaw.com/js/library/fontfaceobserver.js'></script>
+
+<script src="http://nathancrenshaw.com/plugins/magnafic-popup/jquery.magnific-popup.min.js"></script>
+
 <script>
   (function(w) {
     
@@ -335,6 +338,19 @@
         $('.navbar-toggler').click();
       }
     })
+</script>
+
+<script>
+    
+    $(".popup-button").magnificPopup({
+    disableOn: 700,
+    type: "iframe",
+    mainClass: "mfp-fade",
+    removalDelay: 160,
+    preloader: false,
+
+    fixedContentPos: false,
+  });
 </script>
 
   </body>

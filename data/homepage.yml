@@ -23,6 +23,8 @@ hero:
     icon: "icon-profile-fill"
     btnText: "Download My Resume"
     URL: "/doc/NathanCrenshaw_resume.pdf"
+  videoThumb: images/hero/popup-thumb.png
+  videoURL: https://www.youtube.com/watch?v=dQw4w9WgXcQ
 
 # Client & Work
 client_and_work:
@@ -72,7 +74,7 @@ client_and_work:
       button:
         icon: "icon-arrow-right"
         btnText: "Case Study"
-        URL: "#"
+        URL: "/portfolio/coca-cola-freestyle"
       image:
         x: "/img/work/cocacola/cocacola-freestyle_grad.png"
         _2x: "/img/work/cocacola/cocacola-freestyle_grad@2x.png"
