@@ -169,6 +169,11 @@ body {
     justify-content: space-between;
     margin-bottom: 0;
   }
+
+  .row-inner {
+    margin-bottom: 20px;
+  }
+
 }
 
 
@@ -239,4 +244,17 @@ body {
 
 img.full-width {
   min-width: 100%;
+}
+
+h3.full-width {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.row-inner img {
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  display: block;
+  margin: auto;
 }
