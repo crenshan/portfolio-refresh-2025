@@ -106,7 +106,7 @@ client_and_work:
       button:
         icon: "icon-arrow-right"
         btnText: "Case Study"
-        URL: "#"
+        URL: "/portfolio/ups"
       image:
         x: "/img/work/ups/ups.png"
         _2x: "/img/work/ups/ups@2x.png"
@@ -138,7 +138,7 @@ client_and_work:
       button:
         icon: "icon-arrow-right"
         btnText: "Case Study"
-        URL: "#"
+        URL: "/portfolio/artpapers"
       image:
         x: "/img/work/artpapers/artpapers.png"
         _2x: "/img/work/artpapers/artpapers@2x.png"
@@ -170,7 +170,7 @@ client_and_work:
       button:
         icon: "icon-arrow-right"
         btnText: "Case Study"
-        URL: "#"
+        URL: "/portfolio/jpmorgan"
       image:
         x: "/img/work/jpmorgan/jpmorgan-smartSpending.png"
         _2x: "/img/work/jpmorgan/jpmorgan-smartSpending@2x.png"
@@ -202,7 +202,7 @@ client_and_work:
       button:
         icon: "icon-arrow-right"
         btnText: "Case Study"
-        URL: "#"
+        URL: "/portfolio/oliver-and-rain"
       image:
         x: "/img/work/oliver-and-rain/oliver-and-rain.png"
         _2x: "/img/work/oliver-and-rain/oliver-and-rain@2x.png"
@@ -219,6 +219,11 @@ client_and_work:
           alt: "PHP"
           url: ""
         - logo:
+            x: "/img/tools/bootstrap.png"
+            _2x: "/img/tools/bootstrap@2x.png"
+          alt: "Bootstrap"
+          url: "https://getbootstrap.com/"
+        - logo:
             x: "/img/tools/html5.png"
             _2x: "/img/tools/html5@2x.png"
           alt: "HTML5"
@@ -234,7 +239,7 @@ client_and_work:
       button:
         icon: "icon-arrow-right"
         btnText: "Case Study"
-        URL: "#"
+        URL: "/portfolio/kellogg"
       image:
         x: "/img/work/kellogg/kellogg.png"
         _2x: "/img/work/kellogg/kellogg@2x.png"
@@ -261,7 +266,7 @@ client_and_work:
       button:
         icon: "icon-arrow-right"
         btnText: "Case Study"
-        URL: "#"
+        URL: "/portfolio/my-friends-nephew"
       image:
         x: "/img/work/mfn/mfn.png"
         _2x: "/img/work/mfn/mfn@2x.png"
