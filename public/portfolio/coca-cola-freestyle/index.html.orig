@@ -265,6 +265,16 @@
   
 
 <section id="portfolio"
+<<<<<<< HEAD
+  class="section">
+  <div class="container">
+
+    
+
+    
+    <section id="portfolio"
+=======
+>>>>>>> be8d056 (update templates)
   class="section">
   <div class="container">
 
@@ -508,6 +518,12 @@
     </div>
 
   </div>
+
+    
+
+    </div>
+  </div>
+</section>
 
     
 
