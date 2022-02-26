@@ -154,6 +154,12 @@ img.screenshot {
   border-bottom: 1px solid rgba(0,0,0,.1);
 }
 
+blockquote {
+  margin: 0 1rem 0;
+  border-left: 1px solid #ccc;
+  padding-left: 1rem;
+}
+
 @media (max-width: 767px) {
   .header .navbar-toggler:not(.nav-link) {
     top: 0
@@ -176,7 +182,7 @@ img.screenshot {
   }
 
   .rad-showcase .container h1 span {
-    font-size: 24px;
+    font-size: 36px;
   }
 }
 

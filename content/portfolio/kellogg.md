@@ -1,5 +1,5 @@
 ---
-title: Kellogg
+title: Northwestern University
 kellogg: true
 button:
   btnText: "Visit live site"
@@ -21,6 +21,6 @@ tools:
     alt: "CSS3"
     url: "https://developer.mozilla.org/en-US/docs/Web/CSS"
 ---
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+I created the frontend architecture and was the lead developer on the Nothwestern University's Kellogg School of Management website redesign.
 
-Ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+> Kellogg is a global business school with a vibrant community of faculty, staff, students and alumni who shape the practice of business and organizations around the world. Kellogg brings a blend of theory and practice to its rigorous academic experience, creating a dynamic research and learning environment.

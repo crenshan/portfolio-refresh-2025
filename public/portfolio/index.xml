@@ -12,7 +12,9 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://nathancrenshaw.com/portfolio/artpapers/</guid>
-      <description>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</description>
+      <description>I was responsible for the full-stack development for an art magazine, keeping the site in line with the same high level of design as the print version.
+ Atlanta-based and globally-engaged, Art Papers serves the creative community and the culturally curious by expanding the dialogue around contemporary art and culture, exploring the ways they affect and reflect human experience. We do this in print, online, and through public programming.
+ </description>
     </item>
     
     <item>
@@ -21,7 +23,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://nathancrenshaw.com/portfolio/coca-cola-freestyle/</guid>
-      <description>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</description>
+      <description>The Coca-Cola Freestyle line of dispensers offer 100+ beverage choices with an an engaging user eexperience. As part of the Freestyle team I was responsible for the frontend architecture and lead the development of the cunsumer and non-consumer facing interfaces.</description>
     </item>
     
     <item>
@@ -30,16 +32,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://nathancrenshaw.com/portfolio/jpmorgan/</guid>
-      <description>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</description>
-    </item>
-    
-    <item>
-      <title>Kellogg</title>
-      <link>http://nathancrenshaw.com/portfolio/kellogg/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://nathancrenshaw.com/portfolio/kellogg/</guid>
-      <description>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</description>
+      <description>The JP Morgan SmartSpending app was a ReactJS prototype built with D3.js for custom charting and interactive vector grahpics. The app was intended to allow agents to walk clients through potential retirement options.</description>
     </item>
     
     <item>
@@ -48,7 +41,19 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://nathancrenshaw.com/portfolio/my-friends-nephew/</guid>
-      <description>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</description>
+      <description>I built the website for boutique design agency, My Friend&amp;rsquo;s Nephew, using AngularJS.
+ My Friend’s Nephew is an Atlanta-based advertising agency that specializes in helping regional growth-oriented brands and nonprofits unlock their true potential. Because even if you’re not McDonald’s, every brand has a secret sauce. We’ll partner with you to fine-tune its ingredients and turn them into something that tastes delicious and connects with consumers on an emotional level.</description>
+    </item>
+    
+    <item>
+      <title>Northwestern University</title>
+      <link>http://nathancrenshaw.com/portfolio/kellogg/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://nathancrenshaw.com/portfolio/kellogg/</guid>
+      <description>I created the frontend architecture and was the lead developer on the Nothwestern University&amp;rsquo;s Kellogg School of Management website redesign.
+ Kellogg is a global business school with a vibrant community of faculty, staff, students and alumni who shape the practice of business and organizations around the world. Kellogg brings a blend of theory and practice to its rigorous academic experience, creating a dynamic research and learning environment.
+ </description>
     </item>
     
     <item>
@@ -57,7 +62,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://nathancrenshaw.com/portfolio/oliver-and-rain/</guid>
-      <description>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</description>
+      <description>Oliver &amp;amp; Rain is a sustainability-focused clothing brand for babies. I was responsible for the full-stack development of their very customized e-commerce experience.
+ At Oliver &amp;amp; Rain, our mission is to leave this world a better place for our children; and we believe that starts with sustainable practices that are not only baby-friendly but earth-friendly too. Which is why, we choose to partner with one of India’s most eco-friendly garment manufacturers—Sree Santhosh Garments (SSG).</description>
     </item>
     
     <item>
@@ -66,7 +72,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://nathancrenshaw.com/portfolio/ups/</guid>
-      <description>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</description>
+      <description>As Manager of Interactive Technology for SapientNitro, I lead the frontend development of the redesign of UPS.com. In addition to serving as the lead developer, I designed the frontednd architecture and oversaw the site tools update to AngularJS.</description>
     </item>
     
   </channel>
