@@ -1,0 +1,15 @@
+{
+  "extends": [
+    "stylelint-config-standard"
+  ],
+  "customSyntax": "postcss-styled-syntax",
+  "rules": {
+    "custom-property-pattern": null,
+    "selector-class-pattern": null,
+    "block-no-empty": null
+  },
+  "ignoreFiles": [
+    "./src/styles/Normalize.styled.ts",
+    "./src/styles/Revenge.styled.ts"
+  ]
+}

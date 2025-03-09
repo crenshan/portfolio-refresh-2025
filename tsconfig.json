@@ -1,7 +1,39 @@
 {
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ]
+  "extends": ["@tsconfig/vite-react/tsconfig.json"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "types": ["vite/client"],
+    "plugins": [
+      {
+        "name": "typescript-plugin-styled-components"
+      }
+    ],
+    "outDir": "./dist",
+    "experimentalDecorators": true,
+    "skipLibCheck": true,
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "noImplicitAny": false,
+
+    "allowSyntheticDefaultImports": true,
+    /* Linting */
+    "strict": true,
+    "allowJs": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": ["vite.config.ts", "src", "types", ".eslintrc.cjs"],
+  "exclude": ["node_modules", "**/*/lib", "**/*/dist"]
 }

@@ -1,0 +1,4 @@
+{
+  "*.+(js|jsx|ts|tsx)": ["bash -c tsc", "eslint"],
+  "*": ["prettier --check", "node build-tools/script/validate-campaign-metadata.cmd.js"]
+}
