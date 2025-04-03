@@ -1,14 +1,15 @@
 @import './styles/normalize.css';
 @import './styles/typography.css';
 @import './styles/colors.css';
+@import './styles/variables.css';
 @import './styles/animations.css';
 
 :root {
   --animation-duration: 0.3s;
   --animation-delay: 0s;
 
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: var(--gray_850);
+  background-color: var(--blue_50);
 }
 
 *,
@@ -26,8 +27,6 @@
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
 }

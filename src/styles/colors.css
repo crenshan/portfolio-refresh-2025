@@ -1,6 +1,6 @@
 :root {
-  --gray_50: #fff;
-  --gray_75: #fdfdfd;
+  --white: #fff;
+  --gray_50: #fdfdfd;
   --gray_100: #f8f8f8;
   --gray_200: #e6e6e6;
   --gray_300: #d5d5d5;
@@ -9,6 +9,7 @@
   --gray_600: #6d6d6d;
   --gray_700: #464646;
   --gray_800: #222;
+  --gray_850: #181818;
   --gray_900: #000;
   --red_100: #ffebe7;
   --red_200: #ffddd6;
@@ -122,6 +123,7 @@
   --cyan_1200: #00395d;
   --cyan_1300: #002a46;
   --cyan_1400: #001e33;
+  --blue_50: #f4faff;
   --blue_100: #e0f2ff;
   --blue_200: #cae8ff;
   --blue_300: #b5deff;

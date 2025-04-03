@@ -1,0 +1,64 @@
+.heroContainer {
+  color: var(--white);
+  background: var(--gray_850);
+  background-image: linear-gradient(0deg, var(--gray_900), var(--blue_1400));
+  composes: outerContainer from '../../styles/mixins.css';
+  border-block: 1px solid var(--blue_1300);
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-block: 8rem;
+  composes: innerContainer from '../../styles/mixins.css';
+}
+
+.heroContent {
+  width: 42rem;
+  text-align: center;
+}
+
+.heroHeadshot {
+  display: block;
+  border-radius: 100%;
+  width: 16rem;
+  height: 16rem;
+  margin: 0 auto 4rem;
+  overflow: hidden;
+  border: 1px solid var(--gray_900);
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.heroTitle {
+  font-size: 2.8rem;
+  font-weight: var(--font-extralight);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-inline-start: 0.2em;
+}
+
+.heroSubtitle {
+  font-size: 2rem;
+  font-weight: var(--font-extralight);
+  text-transform: lowercase;
+  letter-spacing: 0.2em;
+  margin-inline-start: 0.2em;
+  color: var(--blue_200);
+}
+
+.heroIntro {
+  font-size: 1.6rem;
+  font-weight: var(--font-extralight);
+  color: var(--gray_500);
+  text-wrap: balance;
+}

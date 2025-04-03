@@ -1,0 +1,14 @@
+.outerContainer {
+  padding-inline: var(--page-padding-mob);
+
+  @media (min-width: 800px) {
+    body {
+      padding-inline: var(--page-padding);
+    }
+  }
+}
+
+.innerContainer {
+  max-width: var(--page-width);
+  margin: 0 auto;
+}

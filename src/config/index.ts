@@ -19,7 +19,9 @@ export const REDUCE_TRANSPARENCY = window.matchMedia(
 
 // FONTS
 export const FONTS = {
-  noto: 'https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap'
+  publicSans:
+    'https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap'
+  // noto: 'https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap'
 };
 
 export const FONT_URLS = Object.values(FONTS);

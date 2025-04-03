@@ -6,7 +6,9 @@
   "rules": {
     "custom-property-pattern": null,
     "selector-class-pattern": null,
-    "block-no-empty": null
+    "block-no-empty": null,
+    "css-modules/composed-class-names": true,
+    "css-modules/css-variables": true
   },
   "ignoreFiles": [
     "./src/styles/Normalize.styled.ts",

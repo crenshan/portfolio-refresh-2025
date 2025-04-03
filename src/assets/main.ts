@@ -1,7 +1,7 @@
 import { SiteImg } from '@/models';
 
 export const nathan: SiteImg = {
-  src: { sm: '/images/nathan.png', lg: '/images/nathan@2x.png' },
+  src: '/images/nathan-crenshaw.webp',
   alt: 'Headshot of Nathan Crenshaw'
 };
 
