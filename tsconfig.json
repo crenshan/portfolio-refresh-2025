@@ -3,11 +3,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "types": ["vite/client"],
-    "plugins": [
-      {
-        "name": "typescript-plugin-styled-components"
-      }
-    ],
+    "plugins": [],
     "outDir": "./dist",
     "experimentalDecorators": true,
     "skipLibCheck": true,

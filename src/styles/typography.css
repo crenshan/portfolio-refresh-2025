@@ -1,0 +1,82 @@
+:root {
+  font-family: 'Noto Sans', Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+:where(body, p) {
+  font-size: 1.45rem;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.03em;
+}
+
+@media (max-width: 800px) {
+  :where(body, p) {
+    font-size: clamp(1.6rem, 0.521vw + 1.079rem, 2rem);
+    letter-spacing: 0.008em;
+  }
+}
+
+:where(h1, h2, h3, h4, h5, h6) {
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 0 0 0.35em;
+  letter-spacing: 0;
+}
+
+:where(h1, h2) {
+  font-size: 4rem;
+}
+
+:where(h2) {
+  font-size: 3.5rem;
+}
+
+:where(h3) {
+  font-size: 3.32rem;
+}
+
+:where(h4) {
+  font-size: 2.76rem;
+}
+
+:where(h5) {
+  font-size: 2.3rem;
+}
+
+:where(h6) {
+  font-size: 1.92rem;
+}
+
+:where(small) {
+  font-size: 1.2rem;
+}
+
+:where(sup) {
+  inset-block-start: -0.7em;
+  font-size: 0.6em;
+}
+
+:where(a) {
+  transition: all 200ms;
+  text-decoration: underline;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+}
+
+:where(a[data-hovered]) {
+  text-decoration-style: wavy;
+}

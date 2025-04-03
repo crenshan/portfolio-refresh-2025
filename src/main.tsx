@@ -1,3 +1,4 @@
+/* eslint-disable no-return-await */
 import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 
@@ -5,6 +6,7 @@ import { LoadSpinner } from '@/components';
 import { UNIQUE_CAMPAIGN_ID } from '@/config';
 
 import { AppContextProvider } from './store';
+import './index.css';
 
 const App = React.lazy(async () => await import('./app/App'));
 const root = document.getElementById(`${UNIQUE_CAMPAIGN_ID}`) as Element;
