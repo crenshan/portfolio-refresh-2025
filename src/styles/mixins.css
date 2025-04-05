@@ -2,13 +2,21 @@
   padding-inline: var(--page-padding-mob);
 
   @media (min-width: 800px) {
-    body {
-      padding-inline: var(--page-padding);
-    }
+    padding-inline: var(--page-padding);
   }
 }
 
 .innerContainer {
   max-width: var(--page-width);
   margin: 0 auto;
+}
+
+.visuallyHidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }

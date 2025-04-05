@@ -1,0 +1,60 @@
+.marqueeWrap {
+  position: relative;
+  overflow: hidden;
+  height: 70px;
+  width: 100%;
+  padding-block: 10px;
+}
+
+.marqueeTrack {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  will-change: transform;
+}
+
+.marqueeInner {
+  display: flex;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+
+  svg {
+    height: 50px;
+  }
+}
+
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.marqueePauseBtn {
+  position: absolute;
+  inset: 0 0 0 auto;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+
+  &:focus {
+    background: red;
+  }
+}
+
+.marqueePauseBtn svg {
+  width: 100%;
+  height: 100%;
+}
+
+a[aria-hidden='true'] {
+  pointer-events: none;
+}
+
+a:focus {
+  outline: 2px solid red;
+
+  svg rect {
+    fill: red;
+  }
+}

@@ -13,6 +13,12 @@ export const appReducer = (state: AppState, action: AppActionInterface) => {
           : !state.showNav
       };
 
+    case APP_ACTIONS.MARQUEE_TOGGLE:
+      return {
+        ...state,
+        animMarquee: !state.animMarquee
+      };
+
     default:
       return state;
   }

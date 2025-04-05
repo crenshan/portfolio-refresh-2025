@@ -1,18 +1,22 @@
 .heroContainer {
-  color: var(--white);
-  background: var(--gray_850);
-  background-image: linear-gradient(0deg, var(--gray_900), var(--blue_1400));
-  composes: outerContainer from '../../styles/mixins.css';
-  border-block: 1px solid var(--blue_1300);
+  background: var(--gray_900);
+  border-block: 1px solid var(--blue_1200);
 }
 
 .hero {
+  composes: outerContainer from '../../styles/mixins.css';
+  color: var(--white);
+  background: var(--gray_850);
+  background-image: linear-gradient(0deg, var(--gray_900), var(--blue_1300));
+}
+
+.heroInner {
+  composes: innerContainer from '../../styles/mixins.css';
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding-block: 8rem;
-  composes: innerContainer from '../../styles/mixins.css';
 }
 
 .heroContent {
@@ -54,6 +58,17 @@
   letter-spacing: 0.2em;
   margin-inline-start: 0.2em;
   color: var(--blue_200);
+
+  span {
+    font-size: 0.9em;
+    display: block;
+    color: var(--gray_300);
+    margin-block-start: 0.3em;
+  }
+}
+
+.heroSubtitleSeparator {
+  composes: visuallyHidden from '../../styles/mixins.css';
 }
 
 .heroIntro {

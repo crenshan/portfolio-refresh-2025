@@ -2,10 +2,12 @@ import { createContext } from 'react';
 
 export interface AppState {
   showNav: boolean;
+  animMarquee: boolean;
 }
 
 export enum APP_ACTIONS {
-  NAV_TOGGLE
+  NAV_TOGGLE,
+  MARQUEE_TOGGLE
 }
 
 export interface AppActionInterface {
@@ -21,7 +23,8 @@ interface AppContextInterface {
 export const initialAppState: AppContextInterface = {
   dispatch: () => null,
   state: {
-    showNav: false
+    showNav: false,
+    animMarquee: true
   }
 };
 

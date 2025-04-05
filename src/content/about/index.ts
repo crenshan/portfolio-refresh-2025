@@ -1,6 +1,7 @@
 export const about = {
   title: 'Nathan Crenshaw',
   subtitle: 'Frontend Engineer / Designer',
+  a11y: 'Web Accessibility Advocate',
   intro:
     'Crafting elegant digital experiences at the intersection of design and technology.',
   description:
