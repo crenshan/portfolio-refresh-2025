@@ -4,61 +4,24 @@ import { motion, useAnimationFrame } from 'framer-motion';
 
 import { REDUCE_MOTION } from '@/config';
 import { APP_ACTIONS, AppContext } from '@/store';
+import { LogoItem } from '@/models';
 
-import { IconPause } from '../svg/IconPause';
-import { IconPlay } from '../svg/IconPlay';
-import {
-  AmazonLogo,
-  CocaColaLogo,
-  JPMorganLogo,
-  BookingComLogo,
-  UpsLogo,
-  FordLogo,
-  HondaLogo,
-  ToyotaLogo,
-  NissanLogo,
-  VerizonLogo,
-  LexusLogo,
-  OllyLogo
-} from '../svg';
+import { IconPause, IconPlay } from '../svg';
 
 import styles from './Marquee.module.css';
 
-type LogoItem = {
-  href: string;
-  SVG: React.ComponentType<React.SVGProps<SVGSVGElement>>;
-  width: number;
-};
-
 interface MarqueeProps {
-  logos?: LogoItem[];
+  logos: LogoItem[];
   speed?: number;
   gap?: number;
-  backgroundColor?: string;
   direction?: 'left' | 'right';
 }
 
-const sampleLogos: LogoItem[] = [
-  { href: 'https://example.com/1', SVG: CocaColaLogo, width: 120 },
-  { href: 'https://example.com/1', SVG: AmazonLogo, width: 100 },
-  { href: 'https://example.com/1', SVG: JPMorganLogo, width: 140 },
-  { href: 'https://example.com/1', SVG: BookingComLogo, width: 140 },
-  { href: 'https://example.com/1', SVG: UpsLogo, width: 40 },
-  { href: 'https://example.com/1', SVG: FordLogo, width: 90 },
-  { href: 'https://example.com/1', SVG: HondaLogo, width: 160 },
-  { href: 'https://example.com/1', SVG: ToyotaLogo, width: 160 },
-  { href: 'https://example.com/1', SVG: LexusLogo, width: 160 },
-  { href: 'https://example.com/1', SVG: NissanLogo, width: 160 },
-  { href: 'https://example.com/1', SVG: VerizonLogo, width: 120 },
-  { href: 'https://example.com/1', SVG: OllyLogo, width: 80 }
-];
-
 export const Marquee: React.FC<MarqueeProps> = ({
-  logos = sampleLogos,
+  logos,
   speed = 20,
   gap = 80,
-  backgroundColor = 'transparent',
-  direction = 'left' // Default to right-to-left, reversed from original
+  direction = 'left'
 }) => {
   const trackRef = useRef<HTMLDivElement>(null);
   const wrapRef = useRef<HTMLDivElement>(null);
@@ -66,7 +29,7 @@ export const Marquee: React.FC<MarqueeProps> = ({
   const [totalWidth, setTotalWidth] = useState(0);
   const [x, setX] = useState(0);
   const [focusedIndex, setFocusedIndex] = useState<number | null>(null);
-  const [isHoveredOrFocused, setIsHoveredOrFocused] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
   const [logoPositions, setLogoPositions] = useState<number[]>([]);
   const [isAnimating, setIsAnimating] = useState(true);
 
@@ -134,33 +97,31 @@ export const Marquee: React.FC<MarqueeProps> = ({
       // Calculate the position that would center the logo
       const centeredPosition = -(logoPosition - wrapWidth / 2 + logoWidth / 2);
 
-      // Temporarily pause animation while focusing
+      // Pause animation when an item is focused
       setIsAnimating(false);
 
       // Apply the centered position with smooth transition
       setX(centeredPosition);
 
-      // Resume animation if marquee was active when user focused
-      if (animMarquee) {
-        const timer = setTimeout(() => {
-          setIsAnimating(true);
-        }, 300); // Resume after transition
-
-        return () => clearTimeout(timer);
-      }
-    } else if (focusedIndex === null) {
-      // Resume animation when focus is lost
+      // No timeout to resume animation - remain paused while focused
+    } else if (focusedIndex === null && !isHovered) {
+      // Only resume animation when both focus is lost AND not hovered
       setIsAnimating(animMarquee);
     }
 
     return undefined;
-  }, [focusedIndex, logoPositions, logos, animMarquee]);
+  }, [focusedIndex, logoPositions, logos, animMarquee, isHovered]);
 
   // Handle the actual animation
   useAnimationFrame((_, delta) => {
     if (REDUCE_MOTION) return;
 
-    if (isAnimating && animMarquee && !isHoveredOrFocused) {
+    // Only animate when:
+    // 1. Animation is enabled (isAnimating)
+    // 2. Marquee is set to animate (animMarquee)
+    // 3. No item is focused (focusedIndex === null)
+    // 4. Mouse is not hovering over an item (isHovered === false)
+    if (isAnimating && animMarquee && focusedIndex === null && !isHovered) {
       // Normal scrolling animation when not focused/hovered
       setX(prev => {
         // For left-to-right movement (reversed)
@@ -172,8 +133,8 @@ export const Marquee: React.FC<MarqueeProps> = ({
           }
           return next;
         }
-        // For right-to-left movement (original direction)
 
+        // For right-to-left movement
         const next = prev - (speed * delta) / 1000;
         // Reset position when we've scrolled through the entire width
         if (next <= -scrollWidth) {
@@ -185,21 +146,24 @@ export const Marquee: React.FC<MarqueeProps> = ({
   });
 
   const handleLogoFocus = (index: number) => {
-    setIsHoveredOrFocused(true);
     setFocusedIndex(index);
   };
 
   const handleLogoBlur = () => {
-    setIsHoveredOrFocused(false);
     setFocusedIndex(null);
   };
 
   const handleMouseEnter = () => {
-    setIsHoveredOrFocused(true);
+    setIsHovered(true);
+    setIsAnimating(false);
   };
 
   const handleMouseLeave = () => {
-    setIsHoveredOrFocused(false);
+    setIsHovered(false);
+    // Only resume animation if no item is focused
+    if (focusedIndex === null) {
+      setIsAnimating(animMarquee);
+    }
   };
 
   const renderLogoStrip = (keyPrefix: string, isInteractive: boolean = true) =>
@@ -213,11 +177,15 @@ export const Marquee: React.FC<MarqueeProps> = ({
           href={logo.href}
           target="_blank"
           rel="noopener noreferrer"
-          style={{ display: 'inline-block', width: logo.width }}
+          style={{
+            display: 'inline-block',
+            width: logo.width,
+            height: logo.height
+          }}
           onFocus={() => isInteractive && handleLogoFocus(index)}
           onBlur={() => isInteractive && handleLogoBlur()}
-          onMouseEnter={() => handleMouseEnter()}
-          onMouseLeave={() => handleMouseLeave()}
+          onMouseEnter={() => isInteractive && handleMouseEnter()}
+          onMouseLeave={() => isInteractive && handleMouseLeave()}
           aria-hidden={!isInteractive}
           tabIndex={isInteractive ? undefined : -1}
         >
@@ -239,7 +207,7 @@ export const Marquee: React.FC<MarqueeProps> = ({
     let rightCloneX = totalWidth;
 
     if (direction === 'right') {
-      // For right-to-left scrolling direction, we need to invert the logic
+      // right-to-left scroll
       if (x > totalWidth - wrapWidth) {
         // Main list is shifted far right showing gap at left
         // Left clone should be visible
@@ -250,7 +218,7 @@ export const Marquee: React.FC<MarqueeProps> = ({
         rightCloneX = totalWidth;
       }
     } else {
-      // Original left-to-right scrolling direction
+      // left-to-right scroll
       if (x > 0) {
         // Main list is shifted to the right showing gap at left
         // Need to position left clone to fill this gap
@@ -281,56 +249,63 @@ export const Marquee: React.FC<MarqueeProps> = ({
   return (
     <div
       className={styles.marqueeWrap}
-      style={{ backgroundColor }}
       ref={wrapRef}
     >
-      {!REDUCE_MOTION && (
-        <button
-          type="button"
-          className={styles.marqueePauseBtn}
-          onClick={() => dispatch({ type: APP_ACTIONS.MARQUEE_TOGGLE })}
-          name={animMarquee ? 'pause' : 'resume'}
-          aria-label={animMarquee ? 'Pause' : 'Play'}
-        >
-          {animMarquee ?
-            <IconPause />
-          : <IconPlay />}
-        </button>
-      )}
+      <div className={styles.marqueeWrapInner}>
+        {!REDUCE_MOTION && (
+          <button
+            type="button"
+            className={styles.marqueePauseBtn}
+            onClick={() => dispatch({ type: APP_ACTIONS.MARQUEE_TOGGLE })}
+            name={animMarquee ? 'pause' : 'resume'}
+            aria-label={
+              animMarquee ?
+                'Pause marquee animation'
+              : 'Resume marquee animation'
+            }
+          >
+            {animMarquee ?
+              <IconPause />
+            : <IconPlay />}
+          </button>
+        )}
 
-      <motion.div
-        className={styles.marqueeTrack}
-        style={{ x }}
-        ref={trackRef}
-        initial={false}
-        animate={{ x }}
-        transition={
-          focusedIndex !== null ?
-            { duration: 0.3, ease: 'easeOut' }
-          : { duration: 0 }
-        }
-      >
-        {/* Left clone - positioned to fill gap when main list is shifted right */}
-        <motion.div
-          className={styles.marqueeInner}
-          style={cloneStyles.leftClone}
-        >
-          {renderLogoStrip('left', false)}
-        </motion.div>
+        <div className={styles.marquee}>
+          <motion.div
+            className={styles.marqueeTrack}
+            style={{ x }}
+            ref={trackRef}
+            initial={false}
+            animate={{ x }}
+            transition={
+              focusedIndex !== null ?
+                { duration: 0.3, ease: 'easeOut' }
+              : { duration: 0 }
+            }
+          >
+            {/* Left clone - positioned to fill gap when main list is shifted right */}
+            <motion.div
+              className={styles.marqueeInner}
+              style={cloneStyles.leftClone}
+            >
+              {renderLogoStrip('left', false)}
+            </motion.div>
 
-        {/* Main list - the only one with interactive elements */}
-        <div className={styles.marqueeInner}>
-          {renderLogoStrip('main', true)}
+            {/* Main list - the only one with interactive elements */}
+            <div className={styles.marqueeInner}>
+              {renderLogoStrip('main', true)}
+            </div>
+
+            {/* Right clone - positioned to fill gap when main list is shifted left */}
+            <motion.div
+              className={styles.marqueeInner}
+              style={cloneStyles.rightClone}
+            >
+              {renderLogoStrip('right', false)}
+            </motion.div>
+          </motion.div>
         </div>
-
-        {/* Right clone - positioned to fill gap when main list is shifted left */}
-        <motion.div
-          className={styles.marqueeInner}
-          style={cloneStyles.rightClone}
-        >
-          {renderLogoStrip('right', false)}
-        </motion.div>
-      </motion.div>
+      </div>
     </div>
   );
 };

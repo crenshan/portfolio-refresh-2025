@@ -1,6 +1,7 @@
 import { about } from '@/content';
 import { nathan } from '@/assets';
 import { Marquee } from '@/components';
+import { MarqueeLogos } from '@/config/marquee';
 
 import styles from './Hero.module.css';
 
@@ -27,6 +28,6 @@ export const Hero = () => (
       </div>
     </div>
 
-    <Marquee />
+    <Marquee logos={MarqueeLogos} />
   </div>
 );

@@ -20,3 +20,16 @@
   white-space: nowrap;
   width: 1px;
 }
+
+.touchTarget {
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 50% 0 0 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    min-width: var(--touch-target);
+    height: 100%;
+    min-height: var(--touch-target);
+  }
+}

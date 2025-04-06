@@ -7,7 +7,7 @@
   composes: outerContainer from '../../styles/mixins.css';
   color: var(--white);
   background: var(--gray_850);
-  background-image: linear-gradient(0deg, var(--gray_900), var(--blue_1300));
+  background-image: linear-gradient(0deg, var(--gray_850), var(--blue_1200));
 }
 
 .heroInner {

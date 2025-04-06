@@ -12,6 +12,9 @@
 
   /* PAGE LAYOUT */
   --page-width: 1568px;
-  --page-padding: 80px;
-  --page-padding-mob: 16px;
+  --page-padding: 8rem;
+  --page-padding-mob: 1.6rem;
+
+  /* TOUCH TARGET SIZE */
+  --touch-target: 46px;
 }
