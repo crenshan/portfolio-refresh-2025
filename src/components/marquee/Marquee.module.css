@@ -1,9 +1,12 @@
 .marqueeWrap {
+  --logo: #535371;
+  --logoHover: #8c8ca1;
+
   position: relative;
   overflow: hidden;
-  height: 70px;
+  height: 10rem;
   width: 100%;
-  padding-block: 10px;
+  padding-block: 2rem;
 }
 
 .marqueeTrack {
@@ -17,16 +20,37 @@
   display: flex;
   flex-wrap: nowrap;
   white-space: nowrap;
-
-  svg {
-    height: 50px;
-  }
 }
 
 .logoWrapper {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 60px;
+
+  svg path {
+    fill: var(--logo);
+  }
+
+  a {
+    border-radius: 0.4rem;
+  }
+
+  a:hover,
+  a:focus-visible {
+    svg path {
+      fill: var(--logoHover);
+    }
+  }
+
+  a:focus-visible {
+    outline: 0.2rem dotted var(--logoHover);
+    outline-offset: 0.4rem;
+
+    svg path {
+      fill: var(--gray_400);
+    }
+  }
 }
 
 .marqueePauseBtn {
@@ -47,14 +71,6 @@
   height: 100%;
 }
 
-a[aria-hidden='true'] {
+/* a[aria-hidden='true'] {
   pointer-events: none;
-}
-
-a:focus {
-  outline: 2px solid red;
-
-  svg rect {
-    fill: red;
-  }
-}
+} */

@@ -7,6 +7,20 @@ import { APP_ACTIONS, AppContext } from '@/store';
 
 import { IconPause } from '../svg/IconPause';
 import { IconPlay } from '../svg/IconPlay';
+import {
+  AmazonLogo,
+  CocaColaLogo,
+  JPMorganLogo,
+  BookingComLogo,
+  UpsLogo,
+  FordLogo,
+  HondaLogo,
+  ToyotaLogo,
+  NissanLogo,
+  VerizonLogo,
+  LexusLogo,
+  OllyLogo
+} from '../svg';
 
 import styles from './Marquee.module.css';
 
@@ -21,59 +35,30 @@ interface MarqueeProps {
   speed?: number;
   gap?: number;
   backgroundColor?: string;
-  color?: string;
   direction?: 'left' | 'right';
 }
 
-const SampleSVG: React.FC<React.SVGProps<SVGSVGElement>> = props => {
-  const { fill } = props;
-
-  return (
-    <svg
-      viewBox="0 0 100 50"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
-      <rect
-        width="100"
-        height="50"
-        rx="8"
-        fill={fill || '#FFD700'}
-      />
-      <text
-        x="50"
-        y="30"
-        textAnchor="middle"
-        fill="#000"
-        fontSize="14"
-        fontWeight="bold"
-      >
-        Logo
-      </text>
-    </svg>
-  );
-};
-
 const sampleLogos: LogoItem[] = [
-  { href: 'https://example.com/1', SVG: SampleSVG, width: 120 },
-  { href: 'https://example.com/2', SVG: SampleSVG, width: 150 },
-  { href: 'https://example.com/3', SVG: SampleSVG, width: 100 },
-  { href: 'https://example.com/4', SVG: SampleSVG, width: 180 },
-  { href: 'https://example.com/5', SVG: SampleSVG, width: 130 },
-  { href: 'https://example.com/6', SVG: SampleSVG, width: 140 },
-  { href: 'https://example.com/7', SVG: SampleSVG, width: 160 },
-  { href: 'https://example.com/8', SVG: SampleSVG, width: 110 },
-  { href: 'https://example.com/9', SVG: SampleSVG, width: 170 },
-  { href: 'https://example.com/10', SVG: SampleSVG, width: 125 }
+  { href: 'https://example.com/1', SVG: CocaColaLogo, width: 120 },
+  { href: 'https://example.com/1', SVG: AmazonLogo, width: 100 },
+  { href: 'https://example.com/1', SVG: JPMorganLogo, width: 140 },
+  { href: 'https://example.com/1', SVG: BookingComLogo, width: 140 },
+  { href: 'https://example.com/1', SVG: UpsLogo, width: 40 },
+  { href: 'https://example.com/1', SVG: FordLogo, width: 90 },
+  { href: 'https://example.com/1', SVG: HondaLogo, width: 160 },
+  { href: 'https://example.com/1', SVG: ToyotaLogo, width: 160 },
+  { href: 'https://example.com/1', SVG: LexusLogo, width: 160 },
+  { href: 'https://example.com/1', SVG: NissanLogo, width: 160 },
+  { href: 'https://example.com/1', SVG: VerizonLogo, width: 120 },
+  { href: 'https://example.com/1', SVG: OllyLogo, width: 80 }
 ];
 
 export const Marquee: React.FC<MarqueeProps> = ({
   logos = sampleLogos,
-  speed = 30,
-  gap = 40,
+  speed = 20,
+  gap = 80,
   backgroundColor = 'transparent',
-  color = '#FFD700',
-  direction = 'right' // Default to right-to-left, reversed from original
+  direction = 'left' // Default to right-to-left, reversed from original
 }) => {
   const trackRef = useRef<HTMLDivElement>(null);
   const wrapRef = useRef<HTMLDivElement>(null);
@@ -231,13 +216,12 @@ export const Marquee: React.FC<MarqueeProps> = ({
           style={{ display: 'inline-block', width: logo.width }}
           onFocus={() => isInteractive && handleLogoFocus(index)}
           onBlur={() => isInteractive && handleLogoBlur()}
-          onMouseEnter={() => isInteractive && handleMouseEnter()}
-          onMouseLeave={() => isInteractive && handleMouseLeave()}
+          onMouseEnter={() => handleMouseEnter()}
+          onMouseLeave={() => handleMouseLeave()}
           aria-hidden={!isInteractive}
           tabIndex={isInteractive ? undefined : -1}
         >
           <logo.SVG
-            fill={color}
             width="100%"
             height="100%"
           />
@@ -309,8 +293,8 @@ export const Marquee: React.FC<MarqueeProps> = ({
           aria-label={animMarquee ? 'Pause' : 'Play'}
         >
           {animMarquee ?
-            <IconPause color={color} />
-          : <IconPlay color={color} />}
+            <IconPause />
+          : <IconPlay />}
         </button>
       )}
 
