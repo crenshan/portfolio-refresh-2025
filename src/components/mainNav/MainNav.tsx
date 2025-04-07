@@ -57,17 +57,9 @@ export const MainNav: React.FC = () => {
 
   return (
     <nav
-      ref={menuRef}
       className={styles.nav}
       aria-label="Main navigation"
     >
-      <div className={styles.mobileNav}>
-        <MenuToggle
-          isOpen={isOpen}
-          setIsOpen={setIsOpen}
-        />
-      </div>
-
       <ul className={styles.menuList}>
         {items.map(({ label, href }) => (
           <li key={href}>
@@ -83,30 +75,40 @@ export const MainNav: React.FC = () => {
         ))}
       </ul>
 
-      <div
-        id="mobile-menu"
-        className={`${styles.mobileMenu} ${isOpen ? styles.open : ''}`}
-        role="dialog"
-        aria-modal="true"
-        aria-label="Mobile navigation menu"
-      >
-        {isOpen && (
-          <ul className={styles.mobileList}>
-            {items.map(({ label, href }) => (
-              <li key={href}>
-                <NavLink
-                  to={href}
-                  className={({ isActive }) =>
-                    `${styles.menuLink} ${isActive ? styles.active : ''}`
-                  }
-                  onClick={() => setIsOpen(false)}
-                >
-                  {label}
-                </NavLink>
-              </li>
-            ))}
-          </ul>
-        )}
+      <div ref={menuRef}>
+        <div className={styles.mobileNav}>
+          <MenuToggle
+            isOpen={isOpen}
+            setIsOpen={setIsOpen}
+            buttonRef={toggleButtonRef}
+          />
+        </div>
+
+        <div
+          id="mobile-menu"
+          className={`${styles.mobileMenu} ${isOpen ? styles.open : ''}`}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Mobile navigation menu"
+        >
+          {isOpen && (
+            <ul className={styles.mobileList}>
+              {items.map(({ label, href }) => (
+                <li key={href}>
+                  <NavLink
+                    to={href}
+                    className={({ isActive }) =>
+                      `${styles.menuLink} ${isActive ? styles.active : ''}`
+                    }
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {label}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
       </div>
     </nav>
   );

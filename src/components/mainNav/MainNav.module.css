@@ -50,22 +50,23 @@
 }
 
 .mobileMenu {
+  display: flex;
+  flex-direction: column;
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
+  padding: 8rem 2rem 2rem;
+  pointer-events: none;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  visibility: hidden;
   transform: translateY(-100%);
   transition: transform 0.3s ease-in-out;
   z-index: 1000;
-  padding: 8rem 2rem 2rem;
-  display: flex;
-  flex-direction: column;
-  background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(10px);
 }
 
 .mobileMenu.open {
+  visibility: visible;
+  pointer-events: auto;
   transform: translateY(0%);
 }
 
