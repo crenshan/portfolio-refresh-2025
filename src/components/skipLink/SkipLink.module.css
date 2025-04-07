@@ -1,0 +1,3 @@
+.skipLink {
+  composes: visuallyHidden from '../../styles/mixins.css';
+}

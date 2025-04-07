@@ -7,6 +7,7 @@ import { APP_ACTIONS, AppContext } from '@/store';
 import { LogoItem } from '@/models';
 
 import { IconPause, IconPlay } from '../svg';
+import { SkipLink } from '../skipLink';
 
 import styles from './Marquee.module.css';
 
@@ -171,6 +172,7 @@ export const Marquee: React.FC<MarqueeProps> = ({
       <div
         key={`${keyPrefix}-${index}`}
         className={styles.logoWrapper}
+        role="listitem"
         style={{ marginRight: `${gap}px` }}
       >
         <a
@@ -186,8 +188,13 @@ export const Marquee: React.FC<MarqueeProps> = ({
           onBlur={() => isInteractive && handleLogoBlur()}
           onMouseEnter={() => isInteractive && handleMouseEnter()}
           onMouseLeave={() => isInteractive && handleMouseLeave()}
-          aria-hidden={!isInteractive}
           tabIndex={isInteractive ? undefined : -1}
+          aria-label={
+            isInteractive ?
+              `Click to view projects for ${logo.label}`
+            : undefined
+          }
+          aria-hidden={!isInteractive}
         >
           <logo.SVG
             width="100%"
@@ -247,65 +254,83 @@ export const Marquee: React.FC<MarqueeProps> = ({
   const cloneStyles = getCloneStyles();
 
   return (
-    <div
-      className={styles.marqueeWrap}
-      ref={wrapRef}
-    >
-      <div className={styles.marqueeWrapInner}>
-        {!REDUCE_MOTION && (
-          <button
-            type="button"
-            className={styles.marqueePauseBtn}
-            onClick={() => dispatch({ type: APP_ACTIONS.MARQUEE_TOGGLE })}
-            name={animMarquee ? 'pause' : 'resume'}
-            aria-label={
-              animMarquee ?
-                'Pause marquee animation'
-              : 'Resume marquee animation'
-            }
+    <>
+      <SkipLink>Skip brand marquee</SkipLink>
+
+      <div
+        className={styles.marqueeWrap}
+        ref={wrapRef}
+      >
+        <div className={styles.marqueeWrapInner}>
+          {/* Screen reader announcements */}
+          <span
+            className={styles.marqueeAnnouncement}
+            aria-live="polite"
+            aria-atomic="true"
           >
             {animMarquee ?
-              <IconPause />
-            : <IconPlay />}
-          </button>
-        )}
+              'Marquee animation running'
+            : 'Marquee animation paused'}
+          </span>
 
-        <div className={styles.marquee}>
-          <motion.div
-            className={styles.marqueeTrack}
-            style={{ x }}
-            ref={trackRef}
-            initial={false}
-            animate={{ x }}
-            transition={
-              focusedIndex !== null ?
-                { duration: 0.3, ease: 'easeOut' }
-              : { duration: 0 }
-            }
+          {!REDUCE_MOTION && (
+            <button
+              type="button"
+              className={styles.marqueePauseBtn}
+              onClick={() => dispatch({ type: APP_ACTIONS.MARQUEE_TOGGLE })}
+              name={animMarquee ? 'pause' : 'resume'}
+              aria-label={
+                animMarquee ?
+                  'Pause marquee animation'
+                : 'Resume marquee animation'
+              }
+            >
+              {animMarquee ?
+                <IconPause />
+              : <IconPlay />}
+            </button>
+          )}
+
+          <div
+            className={styles.marquee}
+            role="list"
           >
-            {/* Left clone - positioned to fill gap when main list is shifted right */}
             <motion.div
-              className={styles.marqueeInner}
-              style={cloneStyles.leftClone}
+              className={styles.marqueeTrack}
+              style={{ x }}
+              ref={trackRef}
+              initial={false}
+              animate={{ x }}
+              transition={
+                focusedIndex !== null ?
+                  { duration: 0.3, ease: 'easeOut' }
+                : { duration: 0 }
+              }
             >
-              {renderLogoStrip('left', false)}
-            </motion.div>
+              {/* Left clone - positioned to fill gap when main list is shifted right */}
+              <motion.div
+                className={styles.marqueeInner}
+                style={cloneStyles.leftClone}
+              >
+                {renderLogoStrip('left', false)}
+              </motion.div>
 
-            {/* Main list - the only one with interactive elements */}
-            <div className={styles.marqueeInner}>
-              {renderLogoStrip('main', true)}
-            </div>
+              {/* Main list - the only one with interactive elements */}
+              <div className={styles.marqueeInner}>
+                {renderLogoStrip('main', true)}
+              </div>
 
-            {/* Right clone - positioned to fill gap when main list is shifted left */}
-            <motion.div
-              className={styles.marqueeInner}
-              style={cloneStyles.rightClone}
-            >
-              {renderLogoStrip('right', false)}
+              {/* Right clone - positioned to fill gap when main list is shifted left */}
+              <motion.div
+                className={styles.marqueeInner}
+                style={cloneStyles.rightClone}
+              >
+                {renderLogoStrip('right', false)}
+              </motion.div>
             </motion.div>
-          </motion.div>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };

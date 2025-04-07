@@ -1,0 +1,85 @@
+.menuToggle {
+  --icon-size: 2.4rem;
+  --line-width: 0.2rem;
+  --iconColor: #8c8ca1;
+  --iconHover: var(--white);
+
+  composes: touchTarget from '../../styles/mixins.css';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 0;
+  min-height: 4.4rem;
+  min-width: 4.4rem;
+  background: none;
+  border: none;
+  border-radius: 0.5rem;
+
+  &:focus-visible {
+    outline: 0.3rem dotted var(--white);
+    outline-offset: 0;
+  }
+
+  &:hover .menuToggleIcon,
+  &:focus-visible .menuToggleIcon,
+  &:hover .menuToggleIcon:before,
+  &:focus-visible .menuToggleIcon:before,
+  &:hover .menuToggleIcon:after,
+  &:focus-visible .menuToggleIcon:after {
+    background: var(--iconHover);
+  }
+}
+
+.menuToggleIcon {
+  position: relative;
+  width: var(--icon-size);
+  height: var(--line-width);
+  border-radius: 99vw;
+  background: var(--iconColor);
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    background: var(--iconColor);
+    width: 100%;
+    height: var(--line-width);
+    border-radius: 99vw;
+    transform-origin: center right;
+    transition:
+      width 0.2s ease-in-out,
+      margin 0.2s ease-in-out,
+      inset 0.2s ease-in-out,
+      transform 0.2s ease-in-out;
+  }
+
+  &::before {
+    inset: calc(var(--icon-size) * -0.35) 0 auto auto;
+    transform: none;
+  }
+
+  &::after {
+    inset: calc(var(--icon-size) * 0.35) 0 auto auto;
+    transform: none;
+  }
+}
+
+.menuToggleIcon.open {
+  height: 0;
+
+  &::before,
+  &::after {
+    width: 130%;
+  }
+
+  &::before {
+    inset-block: calc(var(--icon-size) * -0.45);
+    transform: rotate(-45deg);
+  }
+
+  &::after {
+    inset-block: calc(var(--icon-size) * 0.45);
+    transform: rotate(45deg);
+  }
+}

@@ -1,4 +1,106 @@
-.mainNav {
-  background: var(--gray_900);
-  height: 6rem;
+.nav {
+  --nav-height: 6rem;
+
+  composes: outerContainer from '../../styles/mixins.css';
+  position: relative;
+  height: var(--nav-height);
+  background: var(--black);
+}
+
+.menuToggle,
+.mobileNav {
+  display: none;
+}
+
+.menuList {
+  composes: innerContainer from '../../styles/mixins.css';
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 4rem;
+  height: var(--nav-height);
+  padding: 0;
+  list-style: none;
+}
+
+.menuLink {
+  composes: touchTarget from '../../styles/mixins.css';
+  position: relative;
+  text-decoration: none;
+  font-weight: var(--font-extralight);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  color: #8c8ca1;
+  border-radius: 0.5rem;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--white);
+  }
+
+  &:focus-visible {
+    outline: 0.2rem dotted var(--white);
+    outline-offset: 0.5rem;
+  }
+}
+
+.menuLink.active {
+  color: var(--white);
+}
+
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+  padding: 8rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+}
+
+.mobileMenu.open {
+  transform: translateY(0%);
+}
+
+.mobileList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin: 2rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.link {
+  &:focus-visible {
+    background: red;
+  }
+}
+
+.closeButton {
+  align-self: flex-end;
+}
+
+@media (max-width: 800px) {
+  .mobileNav {
+    composes: innerContainer from '../../styles/mixins.css';
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    height: var(--nav-height);
+    z-index: 1001;
+  }
+
+  .menuList {
+    display: none;
+  }
 }

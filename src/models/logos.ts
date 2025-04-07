@@ -3,4 +3,5 @@ export type LogoItem = {
   SVG: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   width: number;
   height: number;
+  label: string;
 };
