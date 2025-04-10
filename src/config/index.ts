@@ -7,6 +7,8 @@ export const DEBUG = import.meta.env.VITE_DEBUG;
 export const isDev = import.meta.env.DEV;
 export const isProd = import.meta.env.PROD;
 
+export const BREAKPOINT_DESKTOP = 800;
+
 // check if browser has accessibility option for 'reduced motion' active
 export const REDUCE_MOTION = window.matchMedia(
   '(prefers-reduced-motion: reduce)'

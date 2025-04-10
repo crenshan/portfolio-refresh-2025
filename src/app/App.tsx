@@ -2,8 +2,9 @@ import React from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 
-import { FontLoader, MainNav } from '@/components';
+import { FontLoader, MainNav, ResponsiveImage } from '@/components';
 import { Hero } from '@/sections';
+import { cocaColaContactless } from '@/assets/work/cocaCola';
 
 const AnimatedRoutes = () => {
   const location = useLocation();
@@ -36,6 +37,8 @@ const AnimatedRoutes = () => {
           element={
             <motion.main {...animProps}>
               <h1>HOME</h1>
+
+              <ResponsiveImage img={cocaColaContactless} />
             </motion.main>
           }
         />

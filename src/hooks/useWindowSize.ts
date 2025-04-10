@@ -1,5 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 
+import { BREAKPOINT_DESKTOP } from '@/config';
+
 const getWindowDimensions = () => {
   const { innerWidth: width, innerHeight: height } = window;
 
@@ -24,7 +26,7 @@ export const useWindowSize = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, [handleResize]);
 
-  const isMobile = windowDimensions.width < 800;
+  const isMobile = windowDimensions.width < BREAKPOINT_DESKTOP;
   const isDesktop = !isMobile;
 
   const viewport = (() => {
