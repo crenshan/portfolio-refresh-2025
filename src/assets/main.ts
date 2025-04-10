@@ -5,3 +5,5 @@ export const nathan: SiteImg = {
   src: '/images/nathan-crenshaw.jpg',
   alt: 'Headshot of Nathan Crenshaw'
 };
+
+export const resumePdf = '/docs/NathanCrenshaw_resume_0425.pdf';

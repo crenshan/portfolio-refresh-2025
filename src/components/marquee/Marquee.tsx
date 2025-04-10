@@ -16,16 +16,20 @@ interface MarqueeProps {
   speed?: number;
   gap?: number;
   direction?: 'left' | 'right';
+  skipTo?: string;
 }
 
 export const Marquee: React.FC<MarqueeProps> = ({
   logos,
   speed = 20,
   gap = 80,
-  direction = 'left'
+  direction = 'left',
+  skipTo
 }) => {
   const trackRef = useRef<HTMLDivElement>(null);
   const wrapRef = useRef<HTMLDivElement>(null);
+  const logoRefs = useRef<(HTMLAnchorElement | null)[]>([]);
+
   const [scrollWidth, setScrollWidth] = useState(0);
   const [totalWidth, setTotalWidth] = useState(0);
   const [x, setX] = useState(0);
@@ -39,7 +43,6 @@ export const Marquee: React.FC<MarqueeProps> = ({
     state: { animMarquee }
   } = useContext(AppContext);
 
-  // Calculate logo positions and set up resize observer
   useEffect(() => {
     const track = trackRef.current;
     if (!track) return undefined;
@@ -47,7 +50,6 @@ export const Marquee: React.FC<MarqueeProps> = ({
     const calculatePositions = () => {
       if (!track) return;
 
-      // Calculate the total width of all logos
       let width = 0;
       logos.forEach(logo => {
         width += logo.width + gap;
@@ -55,7 +57,6 @@ export const Marquee: React.FC<MarqueeProps> = ({
       setTotalWidth(width);
       setScrollWidth(width);
 
-      // Calculate the absolute position of each logo
       const positions: number[] = [];
       let currentPosition = 0;
 
@@ -69,7 +70,6 @@ export const Marquee: React.FC<MarqueeProps> = ({
 
     calculatePositions();
 
-    // Set up resize observer to recalculate when window size changes
     const resizeObserver = new ResizeObserver(() => {
       calculatePositions();
     });
@@ -84,60 +84,44 @@ export const Marquee: React.FC<MarqueeProps> = ({
     };
   }, [logos, gap]);
 
-  // Smooth transition to centered position when focus changes
   useEffect(() => {
     if (
       focusedIndex !== null &&
       wrapRef.current &&
-      logoPositions.length > focusedIndex
+      logoRefs.current[focusedIndex]
     ) {
-      const wrapWidth = wrapRef.current.clientWidth;
-      const logoPosition = logoPositions[focusedIndex];
-      const logoWidth = logos[focusedIndex].width;
+      const wrap = wrapRef.current;
+      const logoEl = logoRefs.current[focusedIndex];
+      const wrapRect = wrap.getBoundingClientRect();
+      const logoRect = logoEl.getBoundingClientRect();
 
-      // Calculate the position that would center the logo
-      const centeredPosition = -(logoPosition - wrapWidth / 2 + logoWidth / 2);
+      const logoCenter = logoRect.left + logoRect.width / 2;
+      const wrapCenter = wrapRect.left + wrapRect.width / 2;
 
-      // Pause animation when an item is focused
+      const offset = logoCenter - wrapCenter;
       setIsAnimating(false);
-
-      // Apply the centered position with smooth transition
-      setX(centeredPosition);
-
-      // No timeout to resume animation - remain paused while focused
+      setX(prevX => prevX - offset);
     } else if (focusedIndex === null && !isHovered) {
-      // Only resume animation when both focus is lost AND not hovered
       setIsAnimating(animMarquee);
     }
 
     return undefined;
   }, [focusedIndex, logoPositions, logos, animMarquee, isHovered]);
 
-  // Handle the actual animation
   useAnimationFrame((_, delta) => {
     if (REDUCE_MOTION) return;
 
-    // Only animate when:
-    // 1. Animation is enabled (isAnimating)
-    // 2. Marquee is set to animate (animMarquee)
-    // 3. No item is focused (focusedIndex === null)
-    // 4. Mouse is not hovering over an item (isHovered === false)
     if (isAnimating && animMarquee && focusedIndex === null && !isHovered) {
-      // Normal scrolling animation when not focused/hovered
       setX(prev => {
-        // For left-to-right movement (reversed)
         if (direction === 'right') {
           const next = prev + (speed * delta) / 1000;
-          // Reset position when we've scrolled through the entire width
           if (next >= scrollWidth) {
             return 0;
           }
           return next;
         }
 
-        // For right-to-left movement
         const next = prev - (speed * delta) / 1000;
-        // Reset position when we've scrolled through the entire width
         if (next <= -scrollWidth) {
           return 0;
         }
@@ -161,7 +145,6 @@ export const Marquee: React.FC<MarqueeProps> = ({
 
   const handleMouseLeave = () => {
     setIsHovered(false);
-    // Only resume animation if no item is focused
     if (focusedIndex === null) {
       setIsAnimating(animMarquee);
     }
@@ -176,6 +159,9 @@ export const Marquee: React.FC<MarqueeProps> = ({
         style={{ marginRight: `${gap}px` }}
       >
         <a
+          ref={el => {
+            if (isInteractive) logoRefs.current[index] = el;
+          }}
           href={logo.href}
           target="_blank"
           rel="noopener noreferrer"
@@ -204,35 +190,22 @@ export const Marquee: React.FC<MarqueeProps> = ({
       </div>
     ));
 
-  // Calculate which clones should be visible based on current scroll position
   const getCloneStyles = () => {
-    // Get the wrapper width if available
     const wrapWidth = wrapRef.current?.clientWidth || 0;
 
-    // Default positions for clones
     let leftCloneX = -totalWidth;
     let rightCloneX = totalWidth;
 
     if (direction === 'right') {
-      // right-to-left scroll
       if (x > totalWidth - wrapWidth) {
-        // Main list is shifted far right showing gap at left
-        // Left clone should be visible
         leftCloneX = -totalWidth;
       } else if (x < 0) {
-        // Main list is shifted to the left showing gap at right
-        // Need to position right clone to fill this gap
         rightCloneX = totalWidth;
       }
     } else {
-      // left-to-right scroll
       if (x > 0) {
-        // Main list is shifted to the right showing gap at left
-        // Need to position left clone to fill this gap
         leftCloneX = -totalWidth;
       } else if (x < -(totalWidth - wrapWidth)) {
-        // Main list is shifted far left showing gap at right
-        // Right clone should be visible
         rightCloneX = totalWidth;
       }
     }
@@ -255,7 +228,7 @@ export const Marquee: React.FC<MarqueeProps> = ({
 
   return (
     <>
-      <SkipLink>Skip brand marquee</SkipLink>
+      <SkipLink to={skipTo}>Skip brand marquee</SkipLink>
 
       <div
         className={styles.marqueeWrap}

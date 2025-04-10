@@ -1,3 +1,21 @@
 .skipLink {
   composes: visuallyHidden from '../../styles/mixins.css';
+
+  &:focus-visible {
+    clip: unset;
+    clip-path: unset;
+    height: unset;
+    overflow: unset;
+    white-space: unset;
+    width: unset;
+    position: absolute;
+    margin: 2rem;
+    padding-inline: 1rem;
+    border-radius: 0.4rem;
+    background: var(--orange_600);
+    color: var(--black);
+    outline: 0.2rem dotted var(--orange_600);
+    outline-offset: 0.5rem;
+    z-index: 999;
+  }
 }

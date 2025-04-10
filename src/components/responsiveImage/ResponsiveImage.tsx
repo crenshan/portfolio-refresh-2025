@@ -5,25 +5,22 @@ import { getFileExtension } from '@/utils';
 import styles from './ResponsiveImage.module.css';
 
 export const ResponsiveImage = ({ img }: { img: SiteImg }) => {
+  const getImgType = (filename: string) => {
+    const ext = getFileExtension(filename);
+    return ext === 'jpg' ? 'jpeg' : ext;
+  };
+
   const getSources = (src: SiteImgSource) => {
     if (typeof src === 'string') {
-      //* FIXME: Remove console message
-      console.log('NC>>', 'SOURCE IS STRING', src);
-      const ext = getFileExtension(src);
-      const type = ext === 'jpg' ? 'jpeg' : ext;
-
       return (
         <source
           srcSet={src}
-          type={`image/${type}`}
+          type={`image/${getImgType(src)}`}
         />
       );
     }
 
-    console.log('NC>>', 'SOURCE IS OBJECT', { src });
-
-    const ext = getFileExtension(src.sm);
-    const type = ext === 'jpg' ? 'jpeg' : ext;
+    const type = getImgType(src.sm);
 
     return (
       <>

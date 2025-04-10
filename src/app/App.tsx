@@ -1,67 +1,46 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
-import { AnimatePresence, motion } from 'framer-motion';
 
-import { FontLoader, MainNav, ResponsiveImage } from '@/components';
-import { Hero } from '@/sections';
-import { cocaColaContactless } from '@/assets/work/cocaCola';
+import { FontLoader, Footer, Hero, MainNav, SkipLink } from '@/components';
+import * as configs from '@/config';
 
-const AnimatedRoutes = () => {
+const AppRoutes = () => {
   const location = useLocation();
 
-  // check if browser has accessibility option for 'reduced motion' active
-  const reduceMotion = window.matchMedia(
-    '(prefers-reduced-motion: reduce)'
-  ).matches;
-
-  // animation options for page transitions
-  let animProps: { [key: string]: { [key: string]: string | number } } = {
-    initial: { opacity: 0 },
-    animate: { opacity: 1 },
-    exit: { opacity: 0 },
-    transition: { ease: 'easeOut', duration: 0.5 }
-  };
-
-  // if 'reduce motion' is enabled, remove the animation options
-  if (reduceMotion) animProps = {};
-
   return (
-    <AnimatePresence>
+    <div id="content">
       <Routes
         location={location}
         key={`routes_${location.pathname}`}
       >
-        <Route
-          path="/"
-          id="hone"
-          element={
-            <motion.main {...animProps}>
-              <h1>HOME</h1>
-
-              <ResponsiveImage img={cocaColaContactless} />
-            </motion.main>
-          }
-        />
+        {configs.routes.map((route, idx) => (
+          <Route
+            key={`route_${route.key}_${idx}`}
+            path={route.path}
+            id={route.key}
+            element={<route.element />}
+          />
+        ))}
       </Routes>
-    </AnimatePresence>
+    </div>
   );
 };
 
 const App = (): React.ReactElement => (
   <>
+    <SkipLink>Skip to content</SkipLink>
+
     <FontLoader />
 
-    <div>
-      <BrowserRouter>
-        <>
-          <MainNav />
+    <BrowserRouter>
+      <MainNav />
 
-          <Hero />
+      <Hero />
 
-          <AnimatedRoutes />
-        </>
-      </BrowserRouter>
-    </div>
+      <AppRoutes />
+
+      <Footer />
+    </BrowserRouter>
   </>
 );
 

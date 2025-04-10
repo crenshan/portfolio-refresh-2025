@@ -1,3 +1,8 @@
+export * from './marquee';
+export * from './portfolio';
+export * from './portfolioLogos';
+export * from './routes';
+
 export const version = '1.0';
 
 export const UNIQUE_CAMPAIGN_ID = import.meta.env.VITE_UNIQUE_CAMPAIGN_ID;
@@ -21,8 +26,10 @@ export const REDUCE_TRANSPARENCY = window.matchMedia(
 
 // FONTS
 export const FONTS = {
-  publicSans:
-    'https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap'
+  nunito:
+    'https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap'
+  // publicSans:
+  //   'https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap'
   // noto: 'https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap'
 };
 

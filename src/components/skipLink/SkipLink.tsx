@@ -6,7 +6,7 @@ interface SkipLinkProps {
 }
 
 export const SkipLink: React.FC<SkipLinkProps> = ({
-  to = 'main:first-of-type',
+  to = '#content',
   children
 }) => {
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {

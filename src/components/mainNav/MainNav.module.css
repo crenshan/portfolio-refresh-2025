@@ -2,13 +2,54 @@
   --nav-height: 6rem;
 
   composes: outerContainer from '../../styles/mixins.css';
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   position: relative;
   height: var(--nav-height);
   background: var(--black);
 }
 
+.siteTitle {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  text-decoration: none;
+  border-radius: 0.4rem;
+  color: var(--gray_400);
+
+  &:hover,
+  &:focus-visible {
+    color: var(--white);
+  }
+
+  &:focus-visible {
+    outline: 0.2rem dotted var(--white);
+    outline-offset: 0.5rem;
+  }
+}
+
+.siteTitleImg {
+  display: block;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 100%;
+  overflow: hidden;
+  border: 1px solid var(--gray_600);
+}
+
+.siteTitleText {
+  composes: touchTarget from '../../styles/mixins.css';
+  position: relative;
+  font-weight: var(--font-extralight);
+  text-transform: uppercase;
+  font-size: 2.8rem;
+  letter-spacing: 0.1em;
+  border-radius: 0.5rem;
+}
+
 .menuToggle,
-.mobileNav {
+.mobileNavWrap {
   display: none;
 }
 
@@ -18,7 +59,9 @@
   justify-content: flex-end;
   align-items: center;
   gap: 4rem;
+  flex: 1;
   height: var(--nav-height);
+  margin-block: 0;
   padding: 0;
   list-style: none;
 }
@@ -91,6 +134,10 @@
 }
 
 @media (max-width: 800px) {
+  .mobileNavWrap {
+    display: block;
+  }
+
   .mobileNav {
     composes: innerContainer from '../../styles/mixins.css';
     display: flex;

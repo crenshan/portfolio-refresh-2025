@@ -1,28 +1,24 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useLocation, NavLink } from 'react-router-dom';
 
-import { useFocusTrap } from '@/hooks/useFocusTrap';
+import { useFocusTrap } from '@/hooks';
+import {
+  // HOME_ROUTE,
+  routes
+} from '@/config';
+// import { about } from '@/content';
+// import { nathan } from '@/assets';
 
 import { MenuToggle } from '../menuToggle';
+// import { ResponsiveImage } from '../responsiveImage';
 
 import styles from './MainNav.module.css';
-
-interface NavItem {
-  label: string;
-  href: string;
-}
 
 export const MainNav: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const toggleButtonRef = useRef<HTMLButtonElement>(null);
   const location = useLocation();
-
-  const items: NavItem[] = [
-    { label: 'Home', href: '/' },
-    { label: 'About', href: '/about' },
-    { label: 'Contact', href: '/contact' }
-  ];
 
   // Trap focus when menu is open
   useFocusTrap(menuRef, isOpen);
@@ -60,22 +56,47 @@ export const MainNav: React.FC = () => {
       className={styles.nav}
       aria-label="Main navigation"
     >
-      <ul className={styles.menuList}>
-        {items.map(({ label, href }) => (
-          <li key={href}>
-            <NavLink
-              to={href}
-              className={({ isActive }) =>
-                `${styles.menuLink} ${isActive ? styles.active : ''}`
-              }
+      {/* <div>
+        {location.pathname !== HOME_ROUTE && (
+          <NavLink
+            to={HOME_ROUTE}
+            className={styles.siteTitle}
+            aria-label="Homepage"
+          >
+            <span
+              className={styles.siteTitleImg}
+              aria-hidden
             >
-              {label}
-            </NavLink>
-          </li>
-        ))}
+              <ResponsiveImage img={nathan} />
+            </span>
+            <span className={styles.siteTitleText}>{about.title}</span>
+          </NavLink>
+        )}
+      </div> */}
+
+      <ul className={styles.menuList}>
+        {routes.map(({ key, path, menuLabel, excludeFromNav }) => {
+          if (excludeFromNav) return null;
+
+          return (
+            <li key={`menuItem_${key}`}>
+              <NavLink
+                to={path}
+                className={({ isActive }) =>
+                  `${styles.menuLink} ${isActive ? styles.active : ''}`
+                }
+              >
+                {menuLabel}
+              </NavLink>
+            </li>
+          );
+        })}
       </ul>
 
-      <div ref={menuRef}>
+      <div
+        ref={menuRef}
+        className={styles.mobileNavWrap}
+      >
         <div className={styles.mobileNav}>
           <MenuToggle
             isOpen={isOpen}
@@ -93,19 +114,23 @@ export const MainNav: React.FC = () => {
         >
           {isOpen && (
             <ul className={styles.mobileList}>
-              {items.map(({ label, href }) => (
-                <li key={href}>
-                  <NavLink
-                    to={href}
-                    className={({ isActive }) =>
-                      `${styles.menuLink} ${isActive ? styles.active : ''}`
-                    }
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {label}
-                  </NavLink>
-                </li>
-              ))}
+              {routes.map(({ key, path, menuLabel, excludeFromNav }) => {
+                if (excludeFromNav) return null;
+
+                return (
+                  <li key={`menuItem_mob_${key}`}>
+                    <NavLink
+                      to={path}
+                      className={({ isActive }) =>
+                        `${styles.menuLink} ${isActive ? styles.active : ''}`
+                      }
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {menuLabel}
+                    </NavLink>
+                  </li>
+                );
+              })}
             </ul>
           )}
         </div>

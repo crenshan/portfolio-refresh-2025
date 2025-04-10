@@ -11,7 +11,7 @@ import {
   VerizonLogo,
   LexusLogo,
   OllyLogo
-} from '@/components';
+} from '@/components/svg/logos';
 import { LogoItem } from '@/models';
 
 export const MarqueeLogos: LogoItem[] = [

@@ -46,7 +46,8 @@ export const cocaColaContactlessVideo: SiteVideo = {
   src: {
     webm: '/images/work/cocaCola/cocaCola-freestyle-contactless.webm',
     mp4: '/images/work/cocaCola/cocaCola-freestyle-contactless.mp4'
-  }
+  },
+  captions: '/images/work/cocaCola/cocaCola-freestyle-contactless.vtt'
 };
 
 export const cocaColaFreestyleDispensers: SiteImg = {
