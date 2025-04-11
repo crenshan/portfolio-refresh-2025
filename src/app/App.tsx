@@ -4,11 +4,16 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { FontLoader, Footer, Hero, MainNav, SkipLink } from '@/components';
 import * as configs from '@/config';
 
+import styles from './App.module.css';
+
 const AppRoutes = () => {
   const location = useLocation();
 
   return (
-    <div id="content">
+    <div
+      id="content"
+      className={styles.content}
+    >
       <Routes
         location={location}
         key={`routes_${location.pathname}`}

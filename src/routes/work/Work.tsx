@@ -1,10 +1,11 @@
 import { useContext, useEffect, useMemo } from 'react';
-import { useSearchParams, useNavigate } from 'react-router-dom';
+import { useSearchParams, useNavigate, NavLink } from 'react-router-dom';
 
 import { APP_ACTIONS, AppContext } from '@/store';
-import { WORK_ROUTE, workLogos } from '@/config';
-import type { WorkTag } from '@/models';
+import { WORK_ROUTE, workLogos, portfolio } from '@/config';
+import type { PortfolioItem, WorkTag } from '@/models';
 import { shuffleArray } from '@/utils';
+import { ResponsiveImage, SkipLink } from '@/components';
 
 import mixins from '../../styles/mixins.module.css';
 
@@ -15,11 +16,51 @@ export const Work = () => {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
 
-  const allTags = useMemo(
-    () => shuffleArray(Object.keys(workLogos)) as string[],
-    []
-  );
+  const pKeys = Object.keys(portfolio);
+
+  const portfolioTags = useMemo(() => {
+    const allTags: WorkTag[] = [];
+
+    for (let i = 0; i < pKeys.length; i++) {
+      const pTags = portfolio[i].tags;
+
+      for (let j = 0; j < pTags.length; j++) {
+        if (!allTags.includes(pTags[j])) {
+          allTags.push(pTags[j]);
+        }
+      }
+    }
+
+    return allTags;
+  }, [pKeys.length]);
+
   const activeTags = state.workTags;
+
+  const workKeys = useMemo(
+    () =>
+      activeTags.length ? activeTags : (
+        (shuffleArray(portfolioTags) as string[])
+      ),
+    [activeTags, portfolioTags]
+  );
+
+  const workItems = useMemo(() => {
+    const items: PortfolioItem[] = [];
+    for (let i = 0; i < pKeys.length; i++) {
+      const pTags = portfolio[i].tags;
+      let hasTag = false;
+
+      for (let j = 0; j < pTags.length; j++) {
+        if (workKeys.includes(pTags[j])) {
+          hasTag = true;
+        }
+      }
+
+      if (hasTag) items.push(portfolio[i]);
+    }
+
+    return items.sort((a, b) => b.year - a.year);
+  }, [pKeys.length, workKeys]);
 
   const toggleActive = (id: WorkTag) => {
     let newTags = [] as WorkTag[];
@@ -27,7 +68,8 @@ export const Work = () => {
     if (activeTags.includes(id)) {
       newTags = state.workTags.filter(tag => tag !== id);
     } else {
-      newTags = [...state.workTags, id];
+      // newTags = [...state.workTags, id];
+      newTags = [id];
     }
     dispatch({
       type: APP_ACTIONS.UPDATE_WORK_TAGS,
@@ -64,6 +106,8 @@ export const Work = () => {
 
       <div className={mixins.outerContainer}>
         <div className={mixins.innerContainer}>
+          <SkipLink to="#work_portfolio">Skip Filters</SkipLink>
+
           <section
             className={styles.workFilters}
             aria-labelledby="work-filter-heading"
@@ -84,7 +128,7 @@ export const Work = () => {
               displayed
             </p>
             <div className={styles.workTags}>
-              {allTags.map(key => {
+              {portfolioTags.map(key => {
                 const isActive = activeTags.includes(key as WorkTag);
                 const LogoSVG = workLogos[key].SVG;
                 return (
@@ -93,8 +137,8 @@ export const Work = () => {
                     className={`${styles.workTagButton} ${mixins.touchTarget} ${isActive ? styles.active : ''}`}
                     type="button"
                     style={{
-                      width: workLogos[key].width,
-                      height: workLogos[key].height
+                      width: workLogos[key].size.width,
+                      height: workLogos[key].size.height
                     }}
                     onClick={() => toggleActive(key as WorkTag)}
                     aria-label={
@@ -110,6 +154,71 @@ export const Work = () => {
               })}
             </div>
           </section>
+
+          <main
+            id="work_portfolio"
+            className={styles.workList}
+          >
+            <h2 className={mixins.visuallyHidden}>Portfolio</h2>
+
+            <div className={styles.workListItems}>
+              {workItems.map(item => (
+                <NavLink
+                  key={`work_item_${item.id}`}
+                  className={styles.workListItem}
+                  aria-labelledby={`work_item_${item.id}_label`}
+                  aria-describedby={`work_item_${item.id}_desc`}
+                  to={`${WORK_ROUTE}/${item.id}`}
+                >
+                  <ResponsiveImage
+                    img={item.preview}
+                    aria-hidden
+                  />
+
+                  <div
+                    className={styles.workListItemContent}
+                    aria-hidden
+                  >
+                    <h3
+                      id={`work_item_${item.id}_label`}
+                      className={styles.workListLabel}
+                    >
+                      <span className={mixins.visuallyHidden}>
+                        Click to view details for{' '}
+                      </span>
+                      {item.title}
+                    </h3>
+
+                    <p
+                      id={`work_item_${item.id}_desc`}
+                      className={styles.workListDescription}
+                    >
+                      {item.description}
+                    </p>
+
+                    <div className={styles.workListLogos}>
+                      {item.tags.map(tag => {
+                        const LogoSVG = workLogos[tag].SVG;
+                        return (
+                          <div
+                            key={`work_item_${item.id}_logo_${tag}`}
+                            style={{
+                              width: workLogos[tag].size.width,
+                              height: workLogos[tag].size.height
+                            }}
+                          >
+                            <LogoSVG title={workLogos[tag].label} />
+                          </div>
+                        );
+                      })}
+                    </div>
+
+                    <p className={styles.workListPrompt}>Click for Details</p>
+                  </div>
+                </NavLink>
+              ))}
+            </div>
+          </main>
         </div>
       </div>
     </>

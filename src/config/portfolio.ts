@@ -11,25 +11,24 @@ import {
   PortfolioUps
 } from '@/portfolio';
 
-import { PortfolioLogos } from './portfolioLogos';
-
 export const portfolio: PortfolioItem[] = [
   {
     id: 'artPapers',
-    title: 'ArtPapers',
+    title: 'Art Papers',
     element: PortfolioArtPapers,
     description:
-      'As Manager of Interactive Technology for SapientNitro, I lead the frontend development of the redesign of UPS.com. In addition to serving as the lead developer, I designed the frontend architecture and oversaw the site tools update to AngularJS.',
+      'Lorem ipsum dolor sit amet, vel volutpat incorrupte comprehensam in, recteque reprimique an eum.',
     preview: work.artPapersPreview,
     imageList: [work.artPapersHome, work.artPapersPost],
-    logos: [PortfolioLogos.artPapers, PortfolioLogos.goodsAndServices]
+    tags: ['artPapers', 'goodsAndServices'],
+    year: 2017
   },
   {
     id: 'cocaCola',
-    title: 'CocaCola',
+    title: 'Coca-Cola Freestyle',
     element: PortfolioCocaCola,
     description:
-      'As Manager of Interactive Technology for SapientNitro, I lead the frontend development of the redesign of UPS.com. In addition to serving as the lead developer, I designed the frontend architecture and oversaw the site tools update to AngularJS.',
+      'Lorem ipsum dolor sit amet, vel volutpat incorrupte comprehensam in, recteque reprimique an eum.',
     preview: work.cocaColaPreview,
     images: {
       cui: work.cocaColaFreestyleCui,
@@ -49,14 +48,15 @@ export const portfolio: PortfolioItem[] = [
       shakenVodka: work.cocaColaShakenVodka,
       shakenWhiskey: work.cocaColaShakenWhiskey
     },
-    logos: [PortfolioLogos.cocaCola]
+    tags: ['cocaCola'],
+    year: 2021
   },
   {
     id: 'fios',
     title: 'Verizon FiOS',
     element: PortfolioFiOS,
     description:
-      'As Manager of Interactive Technology for SapientNitro, I lead the frontend development of the redesign of UPS.com. In addition to serving as the lead developer, I designed the frontend architecture and oversaw the site tools update to AngularJS.',
+      'Lorem ipsum dolor sit amet, vel volutpat incorrupte comprehensam in, recteque reprimique an eum.',
     preview: work.fiosPreview,
     imageList: [
       work.fiosHouse,
@@ -65,64 +65,70 @@ export const portfolio: PortfolioItem[] = [
       work.fiosLivingRoom,
       work.fiosSelection
     ],
-    logos: [PortfolioLogos.verizon, PortfolioLogos.sapientNitro]
+    tags: ['verizon', 'sapientNitro'],
+    year: 2012
   },
   {
     id: 'jpMorgan',
     title: 'JP Morgan "SmartSpending"',
     element: PortfolioJPMorgan,
     description:
-      'As Manager of Interactive Technology for SapientNitro, I lead the frontend development of the redesign of UPS.com. In addition to serving as the lead developer, I designed the frontend architecture and oversaw the site tools update to AngularJS.',
+      'Lorem ipsum dolor sit amet, vel volutpat incorrupte comprehensam in, recteque reprimique an eum.',
     preview: work.jpMorganPreview,
     imageList: [
       work.jpMorganFunding,
       work.jpMorganReview,
       work.jpMorganWhatDoYouWant
     ],
-    logos: [PortfolioLogos.jpMorgan, PortfolioLogos.goodsAndServices]
+    tags: ['jpMorgan', 'goodsAndServices'],
+    year: 2017
   },
   {
     id: 'kellogg',
     title: 'Kellogg School of Management',
     element: PortfolioKellogg,
     description:
-      'As Manager of Interactive Technology for SapientNitro, I lead the frontend development of the redesign of UPS.com. In addition to serving as the lead developer, I designed the frontend architecture and oversaw the site tools update to AngularJS.',
+      'Lorem ipsum dolor sit amet, vel volutpat incorrupte comprehensam in, recteque reprimique an eum.',
     preview: work.kelloggPreview,
     imageList: [work.kelloggHome, work.kelloggMba],
-    logos: [PortfolioLogos.northwestern, PortfolioLogos.sapientNitro]
+    tags: ['northwestern', 'sapientNitro'],
+    year: 2013
   },
   {
     id: 'mfn',
     title: "My Friend's Nephew",
     element: PortfolioMFN,
     description:
-      'As Manager of Interactive Technology for SapientNitro, I lead the frontend development of the redesign of UPS.com. In addition to serving as the lead developer, I designed the frontend architecture and oversaw the site tools update to AngularJS.',
+      'Lorem ipsum dolor sit amet, vel volutpat incorrupte comprehensam in, recteque reprimique an eum.',
     preview: work.mfnPreview,
     imageList: [work.mfnHome, work.mfnWork, work.mfnDetail],
-    logos: []
+    tags: [],
+    year: 2015
   },
   {
     id: 'oliverAndRain',
     title: 'Oliver & Rain',
     element: PortfolioOliverAndRain,
     description:
-      'As Manager of Interactive Technology for SapientNitro, I lead the frontend development of the redesign of UPS.com. In addition to serving as the lead developer, I designed the frontend architecture and oversaw the site tools update to AngularJS.',
+      'Lorem ipsum dolor sit amet, vel volutpat incorrupte comprehensam in, recteque reprimique an eum.',
     preview: work.oliverAndRainPreview,
     imageList: [
       work.oliverAndRainStory,
       work.oliverAndRainCategories,
       work.oliverAndRainEssentials
     ],
-    logos: [PortfolioLogos.ups, PortfolioLogos.sapientNitro]
+    tags: ['goodsAndServices'],
+    year: 2017
   },
   {
     id: 'ups',
     title: 'UPS Redesign',
     element: PortfolioUps,
     description:
-      'As Manager of Interactive Technology for SapientNitro, I lead the frontend development of the redesign of UPS.com. In addition to serving as the lead developer, I designed the frontend architecture and oversaw the site tools update to AngularJS.',
+      'Lorem ipsum dolor sit amet, vel volutpat incorrupte comprehensam in, recteque reprimique an eum.',
     preview: work.upsPreview,
     imageList: [work.upsHome, work.upsShipping],
-    logos: [PortfolioLogos.ups, PortfolioLogos.sapientNitro]
+    tags: ['ups', 'sapientNitro'],
+    year: 2015
   }
 ];

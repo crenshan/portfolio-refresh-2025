@@ -16,6 +16,7 @@
 
 .resumeDownload {
   background: var(--blue_200);
+  min-height: 4.4rem;
 }
 
 .resumeDownloadInner {

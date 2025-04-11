@@ -22,7 +22,7 @@
 
   &:hover,
   &:focus-visible {
-    color: var(--white);
+    color: var(--orange_500);
   }
 
   &:focus-visible {
@@ -78,11 +78,11 @@
 
   &:hover,
   &:focus-visible {
-    color: var(--white);
+    color: var(--orange_500);
   }
 
   &:focus-visible {
-    outline: 0.2rem dotted var(--white);
+    outline: 0.2rem dotted var(--orange_500);
     outline-offset: 0.5rem;
   }
 }
@@ -120,12 +120,6 @@
   margin: 2rem 0 0;
   padding: 0;
   list-style: none;
-}
-
-.link {
-  &:focus-visible {
-    background: red;
-  }
 }
 
 .closeButton {

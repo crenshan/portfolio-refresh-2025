@@ -5,11 +5,8 @@
 @import './styles/animations.css';
 
 :root {
-  --animation-duration: 0.3s;
-  --animation-delay: 0s;
-
   color: var(--gray_850);
-  background-color: var(--blue_50);
+  background-color: var(--black);
 }
 
 *,
@@ -29,4 +26,5 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  background: var(--black);
 }

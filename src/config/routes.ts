@@ -1,4 +1,4 @@
-import { Resume, Work } from '@/routes';
+import { Detail, Resume, Work } from '@/routes';
 
 /**
  * @interface RouteData
@@ -22,7 +22,6 @@ export interface RouteData {
 //------------------------------------------------------
 export const HOME_ROUTE = '/';
 export const WORK_ROUTE = '/work';
-export const WORK_DETAIL_ROUTE = '/work/:id';
 export const RESUME_ROUTE = '/resume';
 
 export const routes: RouteData[] = [
@@ -41,9 +40,9 @@ export const routes: RouteData[] = [
   },
 
   {
-    path: WORK_DETAIL_ROUTE,
+    path: `${WORK_ROUTE}/:id`,
     key: 'work-detail',
-    element: () => false,
+    element: Detail,
     excludeFromNav: true
   },
 

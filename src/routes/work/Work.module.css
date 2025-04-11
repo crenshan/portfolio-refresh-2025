@@ -1,5 +1,6 @@
 .workHead {
   background: var(--blue_200);
+  min-height: 4.4rem;
 }
 
 .workHeadInner {
@@ -65,22 +66,145 @@
       fill: var(--gray_300);
     }
   }
-
-  &:hover,
-  &:focus-visible {
-    svg path {
-      fill: var(--gray_700);
-    }
-  }
-
-  &:focus-visible {
-    outline: 0.3rem dotted var(--orange_600);
-    outline-offset: 0.5rem;
-  }
 }
 
 .workTagButton.active {
   svg path {
-    fill: var(--blue_1200);
+    fill: var(--gray_700);
+  }
+}
+
+.workTagButton,
+.workTagButton.active {
+  &:hover,
+  &:focus-visible {
+    svg path {
+      fill: var(--orange_500);
+    }
+  }
+
+  &:focus-visible {
+    outline: 0.3rem dotted var(--orange_500);
+    outline-offset: 0.5rem;
+  }
+}
+
+.workList {
+  min-height: 50vh;
+  padding-bottom: 5rem;
+}
+
+.workListItems {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4rem;
+  position: relative;
+  width: 100%;
+}
+
+.workListItem {
+  position: relative;
+  width: calc(50% - 2rem);
+  border-radius: 1rem;
+  padding: 0;
+  background: var(--black);
+  border: 1px solid var(--blue_100);
+  overflow: hidden;
+
+  img {
+    display: block;
+    margin: 0;
+  }
+
+  &:hover,
+  &:focus-visible {
+    .workListItemContent {
+      opacity: 1;
+    }
+  }
+
+  &:focus-visible {
+    outline: 0.3rem dotted var(--orange_500);
+    outline-offset: 0.5rem;
+  }
+}
+
+.workListItemContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: absolute;
+  inset: 0;
+  color: var(--white);
+  padding: 2rem 4rem 4.5rem;
+  background: var(--black);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(10, 19, 145, 0.6) 100%
+  );
+  backdrop-filter: blur(1rem);
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.workListLabel {
+  font-size: 4rem;
+  font-weight: var(--font-normal);
+  letter-spacing: 0.05em;
+  margin: 0 auto 0.25em;
+}
+
+.workListDescription {
+  font-size: 1.8rem;
+  text-wrap: balance;
+  margin: 0 auto 0.5em;
+}
+
+.workListLogos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem 5rem;
+  margin: 2rem auto 0;
+
+  svg path {
+    fill: var(--white);
+  }
+}
+
+.workListPrompt {
+  position: absolute;
+  inset: auto auto 1.5rem 50%;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--blue_300);
+  transform: translateX(-50%);
+
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 1rem;
+    position: absolute;
+    inset-block-start: 50%;
+    margin-inline: 0.5rem;
+    background: var(--blue_100);
+  }
+
+  &::before {
+    inset-inline-end: 100%;
+  }
+
+  &::after {
+    inset-inline-start: 100%;
   }
 }

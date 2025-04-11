@@ -1,6 +1,7 @@
 import { JSX } from 'react';
 
 import { SiteImg } from './images';
+import { WorkTag } from './tags';
 
 export interface PortfolioLink {
   href: string;
@@ -19,8 +20,9 @@ export type PortfolioItem = {
   element: () => JSX.Element;
   description: string;
   preview: SiteImg;
-  logos: PortfolioLogo[];
   images?: { [key: string]: SiteImg };
   imageList?: SiteImg[];
   links?: PortfolioLink[];
+  tags: WorkTag[];
+  year: number;
 };

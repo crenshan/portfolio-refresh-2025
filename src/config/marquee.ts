@@ -6,13 +6,13 @@ export const MarqueeLogos: LogoItem[] = [
   workLogos.cocaCola,
   workLogos.amazon,
   workLogos.jpMorgan,
-  workLogos.booking,
+  // workLogos.booking,
   workLogos.ups,
-  workLogos.ford,
-  workLogos.honda,
-  workLogos.toyota,
-  workLogos.lexus,
-  workLogos.nissan,
-  workLogos.verizon,
-  workLogos.olly
+  // workLogos.ford,
+  // workLogos.honda,
+  // workLogos.toyota,
+  // workLogos.lexus,
+  // workLogos.nissan,
+  workLogos.verizon
+  // workLogos.olly
 ];

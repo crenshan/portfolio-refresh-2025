@@ -17,4 +17,9 @@
 
   /* TOUCH TARGET SIZE */
   --touch-target: 46px;
+
+  /* ANIMATION */
+
+  --animation-duration: 0.3s;
+  --animation-delay: 0s;
 }

@@ -1,0 +1,77 @@
+.detailHead {
+  background: var(--blue_200);
+  min-height: 4.4rem;
+}
+
+.detailHeadInner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 1rem;
+
+  h1 {
+    font-size: 2.4rem;
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: 0.1em;
+    color: var(--blue_1200);
+    margin: 0;
+    text-transform: uppercase;
+  }
+}
+
+.workDetail {
+  min-height: 50vh;
+  padding-bottom: 5rem;
+}
+
+.noData {
+  margin: 15rem;
+
+  p {
+    font-size: 2.8rem;
+    font-weight: var(--font-semibold);
+    text-align: center;
+  }
+}
+
+.allWorkWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block-start: 5rem;
+  margin-block-start: 5rem;
+  border-block-start: 1px solid var(--gray_200);
+}
+
+.allWork {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  position: relative;
+  font-size: 1.5rem;
+  font-weight: var(--font-semibold);
+  color: var(--gray_500);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.4em 1.2em;
+  background: var(--blue_50);
+  border: 0.1rem solid var(--gray_300);
+  border-radius: 99vw;
+  transition: 0.3s;
+  outline-offset: -0.3rem;
+  margin-block-start: 0.5em;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--white);
+    background-color: var(--blue_1200);
+  }
+
+  &:focus-visible {
+    outline: 0.3rem dotted var(--orange_600);
+    outline-offset: 0.5rem;
+  }
+}

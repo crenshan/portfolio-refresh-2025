@@ -54,7 +54,7 @@ export const Marquee: React.FC<MarqueeProps> = ({
 
       let width = 0;
       logos.forEach(logo => {
-        width += logo.width + gap;
+        width += logo.size.width + gap;
       });
       setTotalWidth(width);
       setScrollWidth(width);
@@ -64,7 +64,7 @@ export const Marquee: React.FC<MarqueeProps> = ({
 
       logos.forEach(logo => {
         positions.push(currentPosition);
-        currentPosition += logo.width + gap;
+        currentPosition += logo.size.width + gap;
       });
 
       setLogoPositions(positions);
@@ -165,12 +165,10 @@ export const Marquee: React.FC<MarqueeProps> = ({
             if (isInteractive) logoRefs.current[index] = el;
           }}
           to={`${WORK_ROUTE}?tag=${logo.id}`}
-          target="_blank"
-          rel="noopener noreferrer"
           style={{
             display: 'inline-block',
-            width: logo.width,
-            height: logo.height
+            width: logo.size.width,
+            height: logo.size.height
           }}
           onFocus={() => isInteractive && handleLogoFocus(index)}
           onBlur={() => isInteractive && handleLogoBlur()}
