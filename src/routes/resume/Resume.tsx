@@ -5,21 +5,25 @@ import { IconLinkedin, IconMail, IconPDF, IconPhone } from '@/components';
 import { about } from '@/content';
 import { WORK_ROUTE } from '@/config';
 
+import mixins from '../../styles/mixins.module.css';
+
 import styles from './Resume.module.css';
 
 export const Resume = () => (
   <>
     <header>
-      <div className={styles.resumeDownload}>
-        <div className={styles.resumeDownloadInner}>
+      <div className={`${styles.resumeDownload} ${mixins.outerContainer}`}>
+        <div
+          className={`${styles.resumeDownloadInner} ${mixins.innerContainer}`}
+        >
           <h1>Resume</h1>
 
           <a
-            className={styles.downloadLink}
+            className={`${styles.resumeDownloadLink} ${mixins.touchTarget}`}
             href={resumePdf}
             download
           >
-            Download <span className={styles.visuallyHidden}>Resume (PDF)</span>
+            Download <span className={mixins.visuallyHidden}>Resume (PDF)</span>
             <span className={styles.downloadLinkIcon}>
               <IconPDF />
             </span>
@@ -27,19 +31,19 @@ export const Resume = () => (
         </div>
       </div>
 
-      <div className={styles.resumeHead}>
-        <div className={styles.resumeHeadInner}>
+      <div className={`${mixins.outerContainer}`}>
+        <div className={`${styles.resumeHead} ${mixins.innerContainer}`}>
           <h2 className={styles.resumeTitle}>{about.title}</h2>
           <p className={styles.resumeSubtitle}>
             {about.subtitle}
-            <i className={styles.resumeSubtitleSeparator}> / </i>
+            <i className={mixins.visuallyHidden}> / </i>
             <span>{about.a11y}</span>
           </p>
 
           <address>
             <a
               href="tel:14043531122"
-              className={styles.contactLink}
+              className={`${styles.contactLink} ${mixins.touchTarget}`}
             >
               <span className={styles.contactLinkIcon}>
                 <IconPhone />
@@ -73,12 +77,12 @@ export const Resume = () => (
       </div>
     </header>
 
-    <div className={styles.resume}>
-      <div className={styles.resumeInner}>
+    <div className={`${styles.resume} ${mixins.outerContainer}`}>
+      <div className={`${styles.resumeInner} ${mixins.innerContainer}`}>
         <main>
           <section className={styles.resumeSection}>
             <h2
-              className={`${styles.resumeSectionHead} ${styles.visuallyHidden}`}
+              className={`${styles.resumeSectionHead} ${mixins.visuallyHidden}`}
             >
               About
             </h2>
@@ -120,8 +124,8 @@ export const Resume = () => (
               <div className={styles.resumeWorkPortfolioWrap}>
                 <h3>Amazon</h3>
                 <NavLink
-                  to={`${WORK_ROUTE}/amazon`}
-                  className={styles.resumeWorkPortfolio}
+                  to={`${WORK_ROUTE}?tag=amazon`}
+                  className={`${styles.resumeWorkPortfolio} ${mixins.touchTarget}`}
                 >
                   View Work
                 </NavLink>
@@ -218,7 +222,7 @@ export const Resume = () => (
               <div className={styles.resumeWorkPortfolioWrap}>
                 <h3>The Coca-Cola Company</h3>
                 <NavLink
-                  to={`${WORK_ROUTE}/cocaCola`}
+                  to={`${WORK_ROUTE}?tag=cocaCola`}
                   className={styles.resumeWorkPortfolio}
                 >
                   View Work
@@ -273,7 +277,7 @@ export const Resume = () => (
                 <h3>Goods & Services, LLC</h3>
 
                 <NavLink
-                  to={`${WORK_ROUTE}/goodsAndServices`}
+                  to={`${WORK_ROUTE}?tag=goodsAndServices`}
                   className={styles.resumeWorkPortfolio}
                 >
                   View Work
@@ -353,7 +357,7 @@ export const Resume = () => (
               <div className={styles.resumeWorkPortfolioWrap}>
                 <h3>SapientNitro</h3>
                 <NavLink
-                  to={`${WORK_ROUTE}/sapientNitro`}
+                  to={`${WORK_ROUTE}?tag=sapientNitro`}
                   className={styles.resumeWorkPortfolio}
                 >
                   View Work

@@ -1,13 +1,15 @@
 /* eslint-disable no-lonely-if */
 import { useContext, useRef, useEffect, useState } from 'react';
 import { motion, useAnimationFrame } from 'framer-motion';
+import { NavLink } from 'react-router-dom';
 
-import { REDUCE_MOTION } from '@/config';
+import { REDUCE_MOTION, WORK_ROUTE } from '@/config';
 import { APP_ACTIONS, AppContext } from '@/store';
 import { LogoItem } from '@/models';
 
 import { IconPause, IconPlay } from '../svg';
 import { SkipLink } from '../skipLink';
+import mixins from '../../styles/mixins.module.css';
 
 import styles from './Marquee.module.css';
 
@@ -158,11 +160,11 @@ export const Marquee: React.FC<MarqueeProps> = ({
         role="listitem"
         style={{ marginRight: `${gap}px` }}
       >
-        <a
+        <NavLink
           ref={el => {
             if (isInteractive) logoRefs.current[index] = el;
           }}
-          href={logo.href}
+          to={`${WORK_ROUTE}?tag=${logo.id}`}
           target="_blank"
           rel="noopener noreferrer"
           style={{
@@ -186,7 +188,7 @@ export const Marquee: React.FC<MarqueeProps> = ({
             width="100%"
             height="100%"
           />
-        </a>
+        </NavLink>
       </div>
     ));
 
@@ -231,13 +233,13 @@ export const Marquee: React.FC<MarqueeProps> = ({
       <SkipLink to={skipTo}>Skip brand marquee</SkipLink>
 
       <div
-        className={styles.marqueeWrap}
+        className={`${styles.marqueeWrap} ${mixins.outerContainer}`}
         ref={wrapRef}
       >
-        <div className={styles.marqueeWrapInner}>
+        <div className={`${styles.marqueeWrapInner} ${mixins.innerContainer}`}>
           {/* Screen reader announcements */}
           <span
-            className={styles.marqueeAnnouncement}
+            className={mixins.visuallyHidden}
             aria-live="polite"
             aria-atomic="true"
           >
@@ -249,7 +251,7 @@ export const Marquee: React.FC<MarqueeProps> = ({
           {!REDUCE_MOTION && (
             <button
               type="button"
-              className={styles.marqueePauseBtn}
+              className={`${styles.marqueePauseBtn} ${mixins.touchTarget}`}
               onClick={() => dispatch({ type: APP_ACTIONS.MARQUEE_TOGGLE })}
               name={animMarquee ? 'pause' : 'resume'}
               aria-label={

@@ -2,6 +2,7 @@ export * from './marquee';
 export * from './portfolio';
 export * from './portfolioLogos';
 export * from './routes';
+export * from './workLogos';
 
 export const version = '1.0';
 

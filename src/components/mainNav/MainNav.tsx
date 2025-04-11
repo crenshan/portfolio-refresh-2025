@@ -8,9 +8,10 @@ import {
 } from '@/config';
 // import { about } from '@/content';
 // import { nathan } from '@/assets';
+// import { ResponsiveImage } from '../responsiveImage';
 
 import { MenuToggle } from '../menuToggle';
-// import { ResponsiveImage } from '../responsiveImage';
+import mixins from '../../styles/mixins.module.css';
 
 import styles from './MainNav.module.css';
 
@@ -52,15 +53,16 @@ export const MainNav: React.FC = () => {
   }, [isOpen]);
 
   return (
-    <nav
-      className={styles.nav}
-      aria-label="Main navigation"
-    >
-      {/* <div>
+    <div className={`${styles.navContainer} ${mixins.outerContainer}`}>
+      <nav
+        className={`${styles.nav} ${mixins.innerContainer}`}
+        aria-label="Main navigation"
+      >
+        {/* <div>
         {location.pathname !== HOME_ROUTE && (
           <NavLink
             to={HOME_ROUTE}
-            className={styles.siteTitle}
+            className={`${styles.siteTitle} ${mixins.touchTarget}`}
             aria-label="Homepage"
           >
             <span
@@ -74,67 +76,68 @@ export const MainNav: React.FC = () => {
         )}
       </div> */}
 
-      <ul className={styles.menuList}>
-        {routes.map(({ key, path, menuLabel, excludeFromNav }) => {
-          if (excludeFromNav) return null;
+        <ul className={styles.menuList}>
+          {routes.map(({ key, path, menuLabel, excludeFromNav }) => {
+            if (excludeFromNav) return null;
 
-          return (
-            <li key={`menuItem_${key}`}>
-              <NavLink
-                to={path}
-                className={({ isActive }) =>
-                  `${styles.menuLink} ${isActive ? styles.active : ''}`
-                }
-              >
-                {menuLabel}
-              </NavLink>
-            </li>
-          );
-        })}
-      </ul>
-
-      <div
-        ref={menuRef}
-        className={styles.mobileNavWrap}
-      >
-        <div className={styles.mobileNav}>
-          <MenuToggle
-            isOpen={isOpen}
-            setIsOpen={setIsOpen}
-            buttonRef={toggleButtonRef}
-          />
-        </div>
+            return (
+              <li key={`menuItem_${key}`}>
+                <NavLink
+                  to={path}
+                  className={({ isActive }) =>
+                    `${styles.menuLink} ${isActive ? styles.active : ''}`
+                  }
+                >
+                  {menuLabel}
+                </NavLink>
+              </li>
+            );
+          })}
+        </ul>
 
         <div
-          id="mobile-menu"
-          className={`${styles.mobileMenu} ${isOpen ? styles.open : ''}`}
-          role="dialog"
-          aria-modal="true"
-          aria-label="Mobile navigation menu"
+          ref={menuRef}
+          className={styles.mobileNavWrap}
         >
-          {isOpen && (
-            <ul className={styles.mobileList}>
-              {routes.map(({ key, path, menuLabel, excludeFromNav }) => {
-                if (excludeFromNav) return null;
+          <div className={`${styles.mobileNav} ${mixins.innerContainer}`}>
+            <MenuToggle
+              isOpen={isOpen}
+              setIsOpen={setIsOpen}
+              buttonRef={toggleButtonRef}
+            />
+          </div>
 
-                return (
-                  <li key={`menuItem_mob_${key}`}>
-                    <NavLink
-                      to={path}
-                      className={({ isActive }) =>
-                        `${styles.menuLink} ${isActive ? styles.active : ''}`
-                      }
-                      onClick={() => setIsOpen(false)}
-                    >
-                      {menuLabel}
-                    </NavLink>
-                  </li>
-                );
-              })}
-            </ul>
-          )}
+          <div
+            id="mobile-menu"
+            className={`${styles.mobileMenu} ${isOpen ? styles.open : ''}`}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Mobile navigation menu"
+          >
+            {isOpen && (
+              <ul className={styles.mobileList}>
+                {routes.map(({ key, path, menuLabel, excludeFromNav }) => {
+                  if (excludeFromNav) return null;
+
+                  return (
+                    <li key={`menuItem_mob_${key}`}>
+                      <NavLink
+                        to={path}
+                        className={({ isActive }) =>
+                          `${styles.menuLink} ${mixins.touchTarget} ${isActive ? styles.active : ''}`
+                        }
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {menuLabel}
+                      </NavLink>
+                    </li>
+                  );
+                })}
+              </ul>
+            )}
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </div>
   );
 };

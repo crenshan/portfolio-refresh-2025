@@ -4,7 +4,6 @@
   --iconColor: #8c8ca1;
   --iconHover: var(--white);
 
-  composes: touchTarget from '../../styles/mixins.css';
   display: flex;
   justify-content: center;
   align-items: center;

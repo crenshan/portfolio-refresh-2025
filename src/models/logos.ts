@@ -1,5 +1,5 @@
 export type LogoItem = {
-  href: string;
+  id: string;
   SVG: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   width: number;
   height: number;

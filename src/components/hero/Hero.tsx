@@ -5,6 +5,8 @@ import { nathan } from '@/assets';
 import { Marquee, ResponsiveImage } from '@/components';
 import { HOME_ROUTE, MarqueeLogos } from '@/config';
 
+import mixins from '../../styles/mixins.module.css';
+
 import styles from './Hero.module.css';
 
 export const Hero = () => {
@@ -14,8 +16,8 @@ export const Hero = () => {
 
   return (
     <div className={styles.heroContainer}>
-      <div className={styles.hero}>
-        <div className={styles.heroInner}>
+      <div className={`${styles.hero} ${mixins.outerContainer}`}>
+        <div className={`${styles.heroInner} ${mixins.innerContainer}`}>
           <div className={styles.heroContent}>
             <div className={styles.heroHeadshot}>
               <ResponsiveImage img={nathan} />
@@ -24,7 +26,7 @@ export const Hero = () => {
             <h1 className={styles.heroTitle}>{about.title}</h1>
             <h2 className={styles.heroSubtitle}>
               {about.subtitle}
-              <i className={styles.heroSubtitleSeparator}> / </i>
+              <i className={mixins.visuallyHidden}> / </i>
               <span>{about.a11y}</span>
             </h2>
             <p className={styles.heroIntro}>{about.intro}</p>

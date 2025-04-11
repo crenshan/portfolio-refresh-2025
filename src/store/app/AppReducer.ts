@@ -19,6 +19,12 @@ export const appReducer = (state: AppState, action: AppActionInterface) => {
         animMarquee: !state.animMarquee
       };
 
+    case APP_ACTIONS.UPDATE_WORK_TAGS:
+      return {
+        ...state,
+        workTags: payload?.workTags ?? []
+      };
+
     default:
       return state;
   }

@@ -4,14 +4,12 @@
 }
 
 .hero {
-  composes: outerContainer from '../../styles/mixins.css';
   color: var(--white);
   background: var(--gray_850);
   background-image: linear-gradient(0deg, var(--gray_850), var(--blue_1200));
 }
 
 .heroInner {
-  composes: innerContainer from '../../styles/mixins.css';
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -66,10 +64,6 @@
     color: var(--gray_200);
     margin-block-start: 0.3em;
   }
-}
-
-.heroSubtitleSeparator {
-  composes: visuallyHidden from '../../styles/mixins.css';
 }
 
 .heroIntro {

@@ -1,6 +1,4 @@
 .resume {
-  composes: outerContainer from '../../styles/mixins.css';
-
   li {
     margin: 0 0 1em;
   }
@@ -13,18 +11,14 @@
 }
 
 .resumeInner {
-  composes: innerContainer from '../../styles/mixins.css';
   padding-block: 5rem;
 }
 
 .resumeDownload {
-  composes: resume;
   background: var(--blue_200);
 }
 
 .resumeDownloadInner {
-  composes: innerContainer from '../../styles/mixins.css';
-
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -41,9 +35,7 @@
   }
 }
 
-.downloadLink {
-  composes: touchTarget from '../../styles/mixins.css';
-
+.resumeDownloadLink {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -85,15 +77,11 @@
 }
 
 .resumeHead {
-  composes: resume;
-}
-
-.resumeHeadInner {
-  composes: resumeInner;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  padding-block: 5rem;
   border-block-end: 0.1rem solid var(--gray_200);
 
   address {
@@ -132,13 +120,7 @@
   }
 }
 
-.resumeSubtitleSeparator {
-  composes: visuallyHidden from '../../styles/mixins.css';
-}
-
 .contactLink {
-  composes: touchTarget from '../../styles/mixins.css';
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -216,10 +198,6 @@
       flex: 1;
     }
   }
-}
-
-.visuallyHidden {
-  composes: visuallyHidden from '../../styles/mixins.css';
 }
 
 .resumeWork {
@@ -312,8 +290,6 @@
 }
 
 .resumeWorkPortfolio {
-  composes: touchTarget from '../../styles/mixins.css';
-
   display: flex;
   justify-content: center;
   align-items: center;

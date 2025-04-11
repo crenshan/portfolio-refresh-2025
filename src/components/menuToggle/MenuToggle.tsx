@@ -1,3 +1,5 @@
+import mixins from '../../styles/mixins.module.css';
+
 import styles from './MenuToggle.module.css';
 
 export const MenuToggle = ({
@@ -17,7 +19,7 @@ export const MenuToggle = ({
     <button
       ref={buttonRef}
       type="button"
-      className={`${styles.menuToggle} ${isOpen ? styles.open : ''}`}
+      className={`${styles.menuToggle} ${mixins.touchTarget} ${isOpen ? styles.open : ''}`}
       onClick={handleToggle}
       aria-label={isOpen ? 'Click to close menu' : 'Click to open menu'}
       aria-controls="mobile-menu"

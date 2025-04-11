@@ -1,3 +1,5 @@
+import mixins from '../../styles/mixins.module.css';
+
 import styles from './SkipLink.module.css';
 
 interface SkipLinkProps {
@@ -28,7 +30,7 @@ export const SkipLink: React.FC<SkipLinkProps> = ({
     <a
       href={to}
       onClick={handleClick}
-      className={styles.skipLink}
+      className={`${styles.skipLink} ${mixins.visuallyHidden}`}
     >
       {children}
     </a>

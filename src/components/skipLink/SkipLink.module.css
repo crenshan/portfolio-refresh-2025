@@ -1,6 +1,4 @@
 .skipLink {
-  composes: visuallyHidden from '../../styles/mixins.css';
-
   &:focus-visible {
     clip: unset;
     clip-path: unset;
