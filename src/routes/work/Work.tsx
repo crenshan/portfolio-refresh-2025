@@ -193,7 +193,7 @@ export const Work = () => {
                       id={`work_item_${item.id}_desc`}
                       className={styles.workListDescription}
                     >
-                      {item.description}
+                      {item.short}
                     </p>
 
                     <div className={styles.workListLogos}>

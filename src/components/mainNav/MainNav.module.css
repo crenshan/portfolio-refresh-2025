@@ -126,7 +126,7 @@
   align-self: flex-end;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 768px) {
   .mobileNavWrap {
     display: block;
   }

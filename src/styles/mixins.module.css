@@ -1,7 +1,7 @@
 .outerContainer {
   padding-inline: var(--page-padding-mob);
 
-  @media (min-width: 800px) {
+  @media (min-width: 768px) {
     padding-inline: var(--page-padding);
   }
 }

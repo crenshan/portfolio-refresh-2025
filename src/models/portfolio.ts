@@ -2,6 +2,7 @@ import { JSX } from 'react';
 
 import { SiteImg } from './images';
 import { WorkTag } from './tags';
+import { LogoItem } from './logos';
 
 export interface PortfolioLink {
   href: string;
@@ -17,11 +18,27 @@ export type PortfolioLogo = {
 export type PortfolioItem = {
   id: string;
   title: string;
-  element: () => JSX.Element;
+  element: ({ data }) => JSX.Element;
+  short: string;
   description: string;
+  pullQuote?: string;
   preview: SiteImg;
+  featLogo?: {
+    logo: React.ComponentType<
+      React.SVGProps<SVGSVGElement> & {
+        title?: string;
+        color?: string;
+        secondary?: string;
+      }
+    >;
+    color?: string;
+    secondary?: string;
+    title?: string;
+  };
+  empLogo?: LogoItem;
   images?: { [key: string]: SiteImg };
   imageList?: SiteImg[];
+  imagesUniform?: boolean;
   links?: PortfolioLink[];
   tags: WorkTag[];
   year: number;

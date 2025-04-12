@@ -39,8 +39,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  max-width: 100rem;
   padding-block-start: 5rem;
   margin-block-start: 5rem;
+  margin-inline: auto;
   border-block-start: 1px solid var(--gray_200);
 }
 
@@ -73,5 +75,23 @@
   &:focus-visible {
     outline: 0.3rem dotted var(--orange_600);
     outline-offset: 0.5rem;
+  }
+}
+
+.detailLogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 60rem;
+  max-width: 80%;
+  max-height: 20rem;
+  margin: 5rem auto;
+
+  svg {
+    display: block;
+    max-height: 20rem;
+    max-width: 60rem;
+    margin: 0;
   }
 }

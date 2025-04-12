@@ -8,6 +8,10 @@ export type LogoItem = {
   label: string;
   size: LogoSize;
   SVG: React.ComponentType<
-    React.SVGProps<SVGSVGElement> & { color?: string; title?: string }
+    React.SVGProps<SVGSVGElement> & {
+      color?: string;
+      secondary?: string;
+      title?: string;
+    }
   >;
 };
