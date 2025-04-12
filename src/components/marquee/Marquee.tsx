@@ -39,6 +39,7 @@ export const Marquee: React.FC<MarqueeProps> = ({
   const [isHovered, setIsHovered] = useState(false);
   const [logoPositions, setLogoPositions] = useState<number[]>([]);
   const [isAnimating, setIsAnimating] = useState(true);
+  const [isClicking, setIsClicking] = useState(false); // New state to track clicking state
 
   const {
     dispatch,
@@ -90,7 +91,8 @@ export const Marquee: React.FC<MarqueeProps> = ({
     if (
       focusedIndex !== null &&
       wrapRef.current &&
-      logoRefs.current[focusedIndex]
+      logoRefs.current[focusedIndex] &&
+      !isClicking // Don't center if user is clicking
     ) {
       const wrap = wrapRef.current;
       const logoEl = logoRefs.current[focusedIndex];
@@ -108,7 +110,7 @@ export const Marquee: React.FC<MarqueeProps> = ({
     }
 
     return undefined;
-  }, [focusedIndex, logoPositions, logos, animMarquee, isHovered]);
+  }, [focusedIndex, logoPositions, logos, animMarquee, isHovered, isClicking]);
 
   useAnimationFrame((_, delta) => {
     if (REDUCE_MOTION) return;
@@ -133,7 +135,9 @@ export const Marquee: React.FC<MarqueeProps> = ({
   });
 
   const handleLogoFocus = (index: number) => {
-    setFocusedIndex(index);
+    if (!isClicking) {
+      setFocusedIndex(index);
+    }
   };
 
   const handleLogoBlur = () => {
@@ -141,8 +145,10 @@ export const Marquee: React.FC<MarqueeProps> = ({
   };
 
   const handleMouseEnter = () => {
-    setIsHovered(true);
-    setIsAnimating(false);
+    if (!isClicking) {
+      setIsHovered(true);
+      setIsAnimating(false);
+    }
   };
 
   const handleMouseLeave = () => {
@@ -150,6 +156,17 @@ export const Marquee: React.FC<MarqueeProps> = ({
     if (focusedIndex === null) {
       setIsAnimating(animMarquee);
     }
+  };
+
+  const handleMouseDown = () => {
+    setIsClicking(true);
+  };
+
+  const handleMouseUp = () => {
+    // Use setTimeout to ensure the click event completes before we reset
+    setTimeout(() => {
+      setIsClicking(false);
+    }, 100);
   };
 
   const renderLogoStrip = (keyPrefix: string, isInteractive: boolean = true) =>
@@ -174,6 +191,8 @@ export const Marquee: React.FC<MarqueeProps> = ({
           onBlur={() => isInteractive && handleLogoBlur()}
           onMouseEnter={() => isInteractive && handleMouseEnter()}
           onMouseLeave={() => isInteractive && handleMouseLeave()}
+          onMouseDown={() => isInteractive && handleMouseDown()}
+          onMouseUp={() => isInteractive && handleMouseUp()}
           tabIndex={isInteractive ? undefined : -1}
           aria-label={
             isInteractive ?
