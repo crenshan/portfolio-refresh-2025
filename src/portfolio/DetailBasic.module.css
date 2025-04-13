@@ -1,3 +1,21 @@
+.detailLogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 60rem;
+  max-width: 80%;
+  max-height: 20rem;
+  margin: 5rem auto;
+
+  svg {
+    display: block;
+    max-height: 20rem;
+    max-width: 60rem;
+    margin: 0;
+  }
+}
+
 .detailIntro {
   max-width: 100rem;
   padding-block-end: 5rem;

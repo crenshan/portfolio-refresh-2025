@@ -15,6 +15,7 @@ import {
   GoodsAndServicesLogo,
   NorthwesternLogo,
   SapientNitroLogo
+  // MfnLogo
 } from '@/components/svg/logos';
 import { LogoItem } from '@/models';
 
@@ -100,6 +101,15 @@ export const workLogos: { [key: string]: LogoItem } = {
       height: 28
     }
   },
+  // mfn: {
+  //   id: 'mfn',
+  //   SVG: MfnLogo,
+  //   label: "My Friend's Nephew",
+  //   size: {
+  //     width: 30,
+  //     height: 42
+  //   }
+  // },
   nissan: {
     id: 'nissan',
     SVG: NissanLogo,

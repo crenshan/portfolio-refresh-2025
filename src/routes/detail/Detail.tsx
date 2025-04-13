@@ -43,20 +43,6 @@ export const Detail = () => {
               </div>
             )}
 
-            {pageData?.featLogo &&
-              (() => {
-                const FeatLogo = pageData.featLogo.logo;
-                return (
-                  <div className={styles.detailLogo}>
-                    <FeatLogo
-                      title={`${pageData.featLogo.title} Logo`}
-                      color={pageData.featLogo.color}
-                      secondary={pageData.featLogo.secondary}
-                    />
-                  </div>
-                );
-              })()}
-
             {pageData && <pageData.element data={pageData} />}
 
             <div className={styles.allWorkWrap}>

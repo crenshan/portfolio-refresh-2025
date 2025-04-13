@@ -18,7 +18,7 @@ export type PortfolioLogo = {
 export type PortfolioItem = {
   id: string;
   title: string;
-  element: ({ data }) => JSX.Element;
+  element: (() => JSX.Element | null) | (({ data }) => JSX.Element | null);
   short: string;
   description: string;
   pullQuote?: string;

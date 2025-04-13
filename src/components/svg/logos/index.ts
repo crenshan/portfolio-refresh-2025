@@ -8,6 +8,7 @@ export * from './GoodsAndServicesLogo';
 export * from './HondaLogo';
 export * from './JPMorganLogo';
 export * from './LexusLogo';
+export * from './MfnLogo';
 export * from './NissanLogo';
 export * from './NorthwesternKelloggLogo';
 export * from './NorthwesternLogo';

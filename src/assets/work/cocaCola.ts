@@ -199,3 +199,27 @@ export const cocaColaShakenWhiskey: SiteImg = {
   },
   alt: 'Screenshot from the "Shaken" Freestyle prototype displaying whiskey and the available mixers and cocktails.'
 };
+
+export const cocaColaWave: SiteImg = {
+  src: {
+    sm: '/images/work/cocaCola/cocaCola-freestyle-wave.png',
+    lg: '/images/work/cocaCola/cocaCola-freestyle-wave@2x.png'
+  },
+  avif: {
+    sm: '/images/work/cocaCola/cocaCola-freestyle-wave.avif',
+    lg: '/images/work/cocaCola/cocaCola-freestyle-wave@2x.avif'
+  },
+  alt: 'The iconic Coca-Cola wave made up of dots and Coca-Cola brand logos.'
+};
+
+export const cocaColaWaveGlasses: SiteImg = {
+  src: {
+    sm: '/images/work/cocaCola/cocaCola-freestyle-wave-glasses.png',
+    lg: '/images/work/cocaCola/cocaCola-freestyle-wave-glasses@2x.png'
+  },
+  avif: {
+    sm: '/images/work/cocaCola/cocaCola-freestyle-wave-glasses.avif',
+    lg: '/images/work/cocaCola/cocaCola-freestyle-wave-glasses@2x.avif'
+  },
+  alt: 'Three iconic Coca-Cola glasses filled with different colored beverages, with the Coca-Cola wave made up of dots and Coca-Cola brand logos in the background.'
+};

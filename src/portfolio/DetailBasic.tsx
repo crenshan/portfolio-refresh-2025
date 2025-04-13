@@ -10,6 +10,19 @@ import styles from './DetailBasic.module.css';
 
 export const DetailBasic = ({ data }: { data: PortfolioItem }) => (
   <>
+    {data.featLogo &&
+      (() => {
+        const FeatLogo = data.featLogo.logo;
+        return (
+          <div className={styles.detailLogo}>
+            <FeatLogo
+              title={`${data.featLogo.title} Logo`}
+              color={data.featLogo.color}
+              secondary={data.featLogo.secondary}
+            />
+          </div>
+        );
+      })()}
     <div className={styles.detailIntro}>
       <p>{data.description}</p>
 

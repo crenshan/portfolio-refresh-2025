@@ -46,6 +46,9 @@ export const Work = () => {
 
   const workItems = useMemo(() => {
     const items: PortfolioItem[] = [];
+
+    if (workKeys.length === portfolioTags.length) return portfolio;
+
     for (let i = 0; i < pKeys.length; i++) {
       const pTags = portfolio[i].tags;
       let hasTag = false;
@@ -60,7 +63,7 @@ export const Work = () => {
     }
 
     return items.sort((a, b) => b.year - a.year);
-  }, [pKeys.length, workKeys]);
+  }, [pKeys.length, portfolioTags.length, workKeys]);
 
   const toggleActive = (id: WorkTag) => {
     let newTags = [] as WorkTag[];

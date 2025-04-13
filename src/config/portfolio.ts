@@ -3,6 +3,7 @@ import {
   ArtPapersLogo,
   CocaColaFreestyleLogo,
   JPMorganLogo,
+  MfnLogo,
   NorthwesternKelloggLogo,
   OliverAndRainLogo,
   UpsFulLogo,
@@ -35,13 +36,16 @@ export const portfolio: PortfolioItem[] = [
     id: 'cocaCola',
     title: 'Coca-Cola Freestyle',
     element: PortfolioCocaCola,
-    short: '',
-    description: '',
+    short:
+      'Front-end architecture and interface development for Coca-Cola Freestyle dispensers, delivering an interactive experience across 100+ beverage choices.',
+    description:
+      'As part of the Coca-Cola Freestyle team, I was responsible for architecting and leading the front-end development of both consumer- and non-consumer-facing interfaces across the Freestyle line of beverage dispensers. These touchscreen systems offer users access to 100+ drink combinations in an engaging, intuitive format. My work focused on creating a scalable, modular codebase that supported responsive interaction, smooth performance, and consistent branding across multiple hardware versions and deployment environments.',
     preview: work.cocaColaPreview,
     featLogo: {
       logo: CocaColaFreestyleLogo,
       color: '#fe001a'
     },
+    empLogo: workLogos.cocaCola,
     images: {
       cui: work.cocaColaFreestyleCui,
       cuiPour: work.cocaColaFreestyleCuiPour,
@@ -58,7 +62,9 @@ export const portfolio: PortfolioItem[] = [
       ncuiSubsystem: work.cocaColaNcuiSubsystem,
       shakenTequila: work.cocaColaShakenTequila,
       shakenVodka: work.cocaColaShakenVodka,
-      shakenWhiskey: work.cocaColaShakenWhiskey
+      shakenWhiskey: work.cocaColaShakenWhiskey,
+      wave: work.cocaColaWave,
+      waveGlasses: work.cocaColaWaveGlasses
     },
     tags: ['cocaCola'],
     year: 2021
@@ -67,8 +73,10 @@ export const portfolio: PortfolioItem[] = [
     id: 'fios',
     title: 'Verizon FiOS',
     element: DetailBasic,
-    short: '',
-    description: '',
+    short:
+      'An interactive, scenario-based product recommendation app for Verizon FiOS Quantum TV, helping users identify the best service tier based on real-life viewing habits.',
+    description:
+      'I led the front-end development of the Verizon FiOS Quantum TV product recommendation application, an interactive web-based experience designed to help customers select the right service tier based on their lifestyle and media usage. The application guided users through a series of visually engaging, scenario-based prompts—such as streaming content across multiple rooms, watching live TV on tablets in public spaces, and seamlessly pausing and resuming shows in different rooms of the house. Each step of the journey was crafted to reflect real-world use cases, making technical features feel relatable and intuitive. The final screen presented tailored recommendations between Enhanced and Premium service tiers, based on the user’s input. The experience combined playful visual storytelling with clear, actionable outcomes.',
     preview: work.fiosPreview,
     featLogo: {
       logo: VerizonFiosLogo,
@@ -132,8 +140,9 @@ export const portfolio: PortfolioItem[] = [
     description:
       'I developed the website for the boutique creative agency My Friend’s Nephew, using AngularJS to build a dynamic, responsive front-end experience. The goal was to reflect the agency’s playful yet polished aesthetic while ensuring smooth performance and maintainability. My role included implementing custom animations, modular components, and a structure that supported easy content updates.',
     pullQuote:
-      'My Friend’s Nephew is an Atlanta-based advertising agency that specializes in helping regional growth-oriented brands and nonprofits unlock their true potential. Because even if you’re not McDonald’s, every brand has a secret sauce. We’ll partner with you to fine-tune its ingredients and turn them into something that tastes delicious and connects with consumers on an emotional level. And while we have backgrounds and experience working onbig, national brands, we get our kicks helping brands grow, no matter what size.',
+      'My Friend’s Nephew is an Atlanta-based advertising agency that specializes in helping regional growth-oriented brands and nonprofits unlock their true potential. Because even if you’re not McDonald’s, every brand has a secret sauce. We’ll partner with you to fine-tune its ingredients and turn them into something that tastes delicious and connects with consumers on an emotional level. And while we have backgrounds and experience working on big, national brands, we get our kicks helping brands grow, no matter what size.',
     preview: work.mfnPreview,
+    featLogo: { logo: MfnLogo, color: '#000' },
     imageList: [work.mfnHome, work.mfnWork, work.mfnDetail],
     tags: [],
     year: 2015

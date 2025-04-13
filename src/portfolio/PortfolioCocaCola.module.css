@@ -1,0 +1,260 @@
+.detailHeader {
+  margin-block: 5rem;
+  /* padding-block-end: 5rem; */
+  /* border-block-end: 1px solid var(--gray_200); */
+}
+
+.detailHeaderLockup {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 4rem;
+
+  & > div {
+    flex: 1;
+  }
+}
+
+.detailLogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 80%;
+  margin-inline: auto;
+
+  svg {
+    display: block;
+    width: 100%;
+    margin: 0;
+  }
+}
+
+.detailEmployer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-block-start: 3rem;
+
+  a {
+    display: block;
+    margin: 0;
+
+    svg {
+      display: block;
+      margin: 0;
+
+      path {
+        fill: var(--gray_500);
+      }
+    }
+  }
+
+  a:hover,
+  a:focus-visible {
+    svg path {
+      fill: var(--orange_600);
+    }
+  }
+
+  a:focus-visible {
+    outline: 0.3rem dotted var(--orange_600);
+    outline-offset: 0.5rem;
+  }
+}
+
+.detailEmployerLabel {
+  font-size: 1.6rem;
+  text-align: end;
+  line-height: 1;
+  color: var(--gray_500);
+}
+
+.dividerImg {
+  display: block;
+  width: 100%;
+  margin-block: 8rem;
+}
+
+.dividerImgTopOnly {
+  margin-block-end: 0;
+}
+
+.videoSectionInner {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 4rem;
+  margin-bottom: 1rem;
+
+  & > div {
+    flex: 1;
+  }
+}
+
+.videoWrap {
+  position: relative;
+}
+
+.videoWrapInner {
+  position: relative;
+  padding-top: 56.25%;
+  border-radius: 1rem;
+  overflow: hidden;
+
+  video {
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    z-index: 1;
+  }
+}
+
+.videoPoster {
+  img {
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    margin: 0;
+  }
+}
+
+.videoCopy,
+.imageSection {
+  h2 {
+    font-size: 3.2rem;
+    font-weight: var(--font-medium);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0 0 0.5em;
+    padding-block-end: 0.25em;
+    border-block-end: 1px solid var(--gray_300);
+  }
+}
+
+.videoTranscript {
+  margin-block-end: 5rem;
+
+  summary {
+    display: inline-flex;
+    align-items: center;
+    /* position: relative;
+    inset-inline-start: -1em; */
+    font-size: 1.6rem;
+    color: var(--gray_600);
+    cursor: pointer;
+    padding: 0.5em 1em;
+    border: 1px solid transparent;
+    border-radius: 99vw;
+    margin-block-end: 1rem;
+
+    &:hover,
+    &:focus-visible {
+      border-color: var(--blue_800);
+    }
+
+    &:focus-visible {
+      outline: 0.3rem dotted var(--orange_600);
+      outline-offset: 0.5rem;
+    }
+  }
+
+  summary::after {
+    content: '';
+    width: 14px;
+    height: 14px;
+    background: url('/icons/caratDown.svg');
+    background-size: cover;
+    margin-left: 0.75em;
+    transition: 0.2s;
+    opacity: 0.5;
+  }
+
+  details[open] > summary::after {
+    transform: rotate(180deg);
+  }
+}
+
+.videoTranscriptContent {
+  padding: 2rem 2rem 1rem;
+  color: var(--white);
+  background-color: var(--gray_700);
+  border-radius: 1rem;
+
+  p {
+    display: flex;
+    gap: 2rem;
+    max-width: 80rem;
+    margin: 0 auto 2rem;
+  }
+}
+
+.imageSection {
+  margin-block: 8rem;
+}
+
+.imageRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4rem;
+  margin-block: 4rem;
+
+  img {
+    display: block;
+    min-width: 100%;
+    margin: 0;
+  }
+
+  & > div {
+    flex: 1;
+  }
+}
+
+.imageRow3to1 {
+  & > div:first-child {
+    flex: 3;
+  }
+}
+
+.imageRow1to2 {
+  & > div:last-child {
+    flex: 2;
+  }
+}
+
+.imageRow2to3 {
+  & > div:first-child {
+    flex: 2;
+  }
+
+  & > div:last-child {
+    flex: 3;
+  }
+}
+
+.imageWrap {
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid var(--gray_300);
+}
+
+.imageNoBorder {
+  border: none;
+}
+
+/* Responsive: single column on smaller screens */
+@media (max-width: 768px) {
+  .detailImages {
+    column-count: 1;
+  }
+}
