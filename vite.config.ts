@@ -13,14 +13,14 @@ export default defineConfig({
   build: {
     // generate manifest.json in outDir
     chunkSizeWarningLimit: 16000,
-    manifest: false,
-    rollupOptions: {
-      // overwrite default .html entry
-      input: '/src/main.tsx',
-      output: {
-        entryFileNames: 'assets/[name].js'
-      }
-    }
+    manifest: false
+    // rollupOptions: {
+    //   // overwrite default .html entry
+    //   input: '/src/main.tsx',
+    //   output: {
+    //     entryFileNames: 'assets/[name].js'
+    //   }
+    // }
   },
   plugins: [
     react() as PluginOption,
