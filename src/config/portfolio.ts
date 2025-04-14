@@ -18,9 +18,10 @@ export const portfolio: PortfolioItem[] = [
   {
     id: 'artPapers',
     title: 'Art Papers',
+    featTitle: 'Art Papers Magazine',
     element: DetailBasic,
     short:
-      'A visually rich digital translation of a print publication, built with full-stack precision and a focus on design integrity.',
+      'A visually rich digital version of a print publication, built with full-stack precision and design focus.',
     description:
       'I led the full-stack development for an online art magazine, translating the publication’s visually rich and editorially curated print aesthetic into a responsive, performant digital experience. My goal was to maintain the same level of design integrity across platforms while ensuring a seamless and intuitive user experience.',
     pullQuote:
@@ -37,7 +38,7 @@ export const portfolio: PortfolioItem[] = [
     title: 'Coca-Cola Freestyle',
     element: PortfolioCocaCola,
     short:
-      'Front-end architecture and interface development for Coca-Cola Freestyle dispensers, delivering an interactive experience across 100+ beverage choices.',
+      'Front-end architecture for Coca-Cola Freestyle dispensers with interactive access to 100+ drink options.',
     description:
       'As part of the Coca-Cola Freestyle team, I was responsible for architecting and leading the front-end development of both consumer- and non-consumer-facing interfaces across the Freestyle line of beverage dispensers. These touchscreen systems offer users access to 100+ drink combinations in an engaging, intuitive format. My work focused on creating a scalable, modular codebase that supported responsive interaction, smooth performance, and consistent branding across multiple hardware versions and deployment environments.',
     preview: work.cocaColaPreview,
@@ -72,9 +73,10 @@ export const portfolio: PortfolioItem[] = [
   {
     id: 'fios',
     title: 'Verizon FiOS',
+    featTitle: 'Verizon FiOS Quantum TV',
     element: DetailBasic,
     short:
-      'An interactive, scenario-based product recommendation app for Verizon FiOS Quantum TV, helping users identify the best service tier based on real-life viewing habits.',
+      'An interactive product recommender for Verizon FiOS Quantum TV, helping users find the best setup.',
     description:
       'I led the front-end development of the Verizon FiOS Quantum TV product recommendation application, an interactive web-based experience designed to help customers select the right service tier based on their lifestyle and media usage. The application guided users through a series of visually engaging, scenario-based prompts—such as streaming content across multiple rooms, watching live TV on tablets in public spaces, and seamlessly pausing and resuming shows in different rooms of the house. Each step of the journey was crafted to reflect real-world use cases, making technical features feel relatable and intuitive. The final screen presented tailored recommendations between Enhanced and Premium service tiers, based on the user’s input. The experience combined playful visual storytelling with clear, actionable outcomes.',
     preview: work.fiosPreview,
@@ -98,9 +100,10 @@ export const portfolio: PortfolioItem[] = [
   {
     id: 'jpMorgan',
     title: 'JP Morgan',
+    featTitle: 'JP Morgan Smart Spending',
     element: DetailBasic,
     short:
-      'An interactive prototype for financial planning, featuring custom data visualizations with React and D3.js.',
+      'A financial planning prototype with custom data visualizations, built using React and D3.js.',
     description:
       'I developed a prototype of the JP Morgan SmartSpending app using React and D3.js, with a focus on custom data visualization and interactive vector graphics. The tool was designed to help financial agents guide clients through various retirement planning scenarios in a clear, engaging, and highly interactive way. My role involved building out the core front-end architecture and implementing dynamic charts that adapted in real time to client inputs and financial variables.',
     preview: work.jpMorganPreview,
@@ -119,7 +122,7 @@ export const portfolio: PortfolioItem[] = [
     title: 'Kellogg School of Management',
     element: DetailBasic,
     short:
-      'A complete front-end rebuild supporting a content-rich academic site with a focus on scalability and maintainability.',
+      'A full front-end rebuild for a content-rich academic site, focused on scalability and maintainability.',
     description:
       'I served as lead front-end developer for the redesign of Northwestern University’s Kellogg School of Management website. In addition to building the front-end architecture from the ground up, I was responsible for establishing scalable, modular code standards and ensuring seamless integration with the back-end CMS. The project emphasized performance, accessibility, and long-term maintainability to support the needs of a large, content-rich academic institution.',
     pullQuote:
@@ -136,7 +139,7 @@ export const portfolio: PortfolioItem[] = [
     title: "My Friend's Nephew",
     element: DetailBasic,
     short:
-      'A custom-built, AngularJS-powered site designed to reflect the agency’s playful and polished brand identity.',
+      'An AngularJS-powered site designed to reflect the agency’s playful yet polished brand identity.',
     description:
       'I developed the website for the boutique creative agency My Friend’s Nephew, using AngularJS to build a dynamic, responsive front-end experience. The goal was to reflect the agency’s playful yet polished aesthetic while ensuring smooth performance and maintainability. My role included implementing custom animations, modular components, and a structure that supported easy content updates.',
     pullQuote:
@@ -152,7 +155,7 @@ export const portfolio: PortfolioItem[] = [
     title: 'Oliver & Rain',
     element: DetailBasic,
     short:
-      'A bespoke e-commerce experience for a sustainable baby clothing brand, balancing aesthetics and performance.',
+      'A bespoke e-commerce site for a sustainable baby clothing brand, balancing aesthetics and performance.',
     description:
       'Oliver & Rain is a sustainability-focused baby clothing brand, and I was responsible for the full-stack development of their highly customized e-commerce platform. My work included building a flexible front-end that reflected the brand’s clean, nature-inspired aesthetic, as well as integrating a bespoke back-end solution to support product management, content updates, and seamless checkout. The goal was to deliver a shopping experience that felt as intentional and thoughtful as the brand itself.',
     pullQuote:
@@ -174,9 +177,10 @@ export const portfolio: PortfolioItem[] = [
   {
     id: 'ups',
     title: 'UPS',
+    featTitle: 'UPS Redesign',
     element: DetailBasic,
     short:
-      'A large-scale redesign focused on scalable front-end architecture, accessibility, and global readiness.',
+      'A large-scale redesign with scalable front-end architecture, accessibility, and global readiness.',
     description:
       'While serving as Manager of Interactive Technology at SapientNitro, I led the front-end development efforts for the full redesign of UPS.com. My responsibilities included architecting the front-end framework, guiding key technical decisions, and leading the migration of critical site tools to AngularJS. A major focus of the project was ensuring accessibility compliance across all user interfaces, as well as building a scalable infrastructure to support internationalization and localization for global markets. I worked closely with design, UX, and back-end teams to deliver a modern, performant, and inclusive user experience.',
     preview: work.upsPreview,

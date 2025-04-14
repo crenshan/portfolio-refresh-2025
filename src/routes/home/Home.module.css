@@ -95,28 +95,22 @@
 }
 
 .workListItems {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4rem;
   position: relative;
   width: 100%;
-
-  @media (min-width: 768px) {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 2rem 4rem;
-    position: relative;
-    width: 100%;
-  }
 }
 
 .workListItem {
-  display: block;
   position: relative;
+  width: calc(50% - 2rem);
   border-radius: 1rem;
   padding: 0;
   background: var(--black);
   border: 1px solid var(--blue_100);
   overflow: hidden;
-  margin-block-end: 2rem;
 
   img {
     display: block;
@@ -133,10 +127,6 @@
   &:focus-visible {
     outline: 0.3rem dotted var(--orange_500);
     outline-offset: 0.5rem;
-  }
-
-  @media (min-width: 768px) {
-    width: calc(50% - 2rem);
   }
 }
 
@@ -161,39 +151,23 @@
   opacity: 0;
   transition: 0.3s;
   cursor: pointer;
-
-  @media (min-width: 768px) {
-    padding-block-end: 2rem;
-  }
-
-  @media (min-width: 820px) {
-    padding-block-end: 4.5rem;
-  }
 }
 
 .workListLabel {
-  font-size: clamp(2rem, 4.464vw + 0.571rem, 4rem);
-  font-weight: var(--font-bold);
+  font-size: 4rem;
+  font-weight: var(--font-normal);
   letter-spacing: 0.05em;
   margin: 0 auto 0.25em;
-
-  @media (min-width: 768px) {
-    font-size: clamp(2rem, 3.571vw - 0.857rem, 4rem);
-  }
 }
 
 .workListDescription {
-  font-size: clamp(1.4rem, 0.893vw + 1.114rem, 1.8rem);
+  font-size: 1.8rem;
   text-wrap: balance;
   margin: 0 auto 0.5em;
-
-  @media (min-width: 768px) {
-    font-size: clamp(1.4rem, 0.714vw + 0.829rem, 1.8rem);
-  }
 }
 
 .workListLogos {
-  display: none;
+  display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
@@ -203,22 +177,9 @@
   svg path {
     fill: var(--white);
   }
-
-  @media (min-width: 440px) {
-    display: flex;
-  }
-
-  @media (min-width: 768px) {
-    display: none;
-  }
-
-  @media (min-width: 1100px) {
-    display: flex;
-  }
 }
 
 .workListPrompt {
-  display: none;
   position: absolute;
   inset: auto auto 1.5rem 50%;
   font-size: 1.4rem;
@@ -245,17 +206,5 @@
 
   &::after {
     inset-inline-start: 100%;
-  }
-
-  @media (min-width: 350px) {
-    display: block;
-  }
-
-  @media (min-width: 768px) {
-    display: none;
-  }
-
-  @media (min-width: 820px) {
-    display: block;
   }
 }

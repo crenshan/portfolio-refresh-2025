@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { about } from '@/content';
 import { nathan } from '@/assets';
 import { Marquee, ResponsiveImage } from '@/components';
-import { HOME_ROUTE, MarqueeLogos } from '@/config';
+import { HOME_ROUTE, marqueeLogos } from '@/config';
 
 import mixins from '../../styles/mixins.module.css';
 
@@ -34,7 +34,7 @@ export const Hero = () => {
         </div>
       </div>
 
-      <Marquee logos={MarqueeLogos} />
+      <Marquee logos={marqueeLogos} />
     </div>
   );
 };

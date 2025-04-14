@@ -1,4 +1,4 @@
-import { MarqueeLogos } from '@/config';
+import { marqueeLogos } from '@/config';
 
 import { Marquee } from '../marquee';
 
@@ -9,7 +9,7 @@ export const Footer = () => {
   return (
     <footer className={styles.footer}>
       <Marquee
-        logos={MarqueeLogos}
+        logos={marqueeLogos}
         skipTo={`#${fContentId}`}
       />
       <div id={fContentId} />

@@ -18,6 +18,7 @@ export type PortfolioLogo = {
 export type PortfolioItem = {
   id: string;
   title: string;
+  featTitle?: string;
   element: (() => JSX.Element | null) | (({ data }) => JSX.Element | null);
   short: string;
   description: string;

@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useContext } from 'react';
 import { useLocation, NavLink } from 'react-router-dom';
 
 import { useFocusTrap } from '@/hooks';
@@ -6,6 +6,8 @@ import {
   // HOME_ROUTE,
   routes
 } from '@/config';
+import { APP_ACTIONS, AppContext } from '@/store';
+
 // import { about } from '@/content';
 // import { nathan } from '@/assets';
 // import { ResponsiveImage } from '../responsiveImage';
@@ -20,6 +22,17 @@ export const MainNav: React.FC = () => {
   const menuRef = useRef<HTMLDivElement>(null);
   const toggleButtonRef = useRef<HTMLButtonElement>(null);
   const location = useLocation();
+
+  const { dispatch } = useContext(AppContext);
+
+  const resetWorkFilters = () => {
+    dispatch({
+      type: APP_ACTIONS.UPDATE_WORK_TAGS,
+      payload: {
+        workTags: []
+      }
+    });
+  };
 
   // Trap focus when menu is open
   useFocusTrap(menuRef, isOpen);
@@ -87,6 +100,7 @@ export const MainNav: React.FC = () => {
                   className={({ isActive }) =>
                     `${styles.menuLink} ${isActive ? styles.active : ''}`
                   }
+                  onClick={resetWorkFilters}
                 >
                   {menuLabel}
                 </NavLink>
@@ -126,7 +140,10 @@ export const MainNav: React.FC = () => {
                         className={({ isActive }) =>
                           `${styles.menuLink} ${mixins.touchTarget} ${isActive ? styles.active : ''}`
                         }
-                        onClick={() => setIsOpen(false)}
+                        onClick={() => {
+                          setIsOpen(false);
+                          resetWorkFilters();
+                        }}
                       >
                         {menuLabel}
                       </NavLink>

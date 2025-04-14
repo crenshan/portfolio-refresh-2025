@@ -2,7 +2,7 @@ import { LogoItem } from '@/models';
 
 import { workLogos } from './workLogos';
 
-export const MarqueeLogos: LogoItem[] = [
+export const marqueeLogos: LogoItem[] = [
   workLogos.cocaCola,
   workLogos.amazon,
   workLogos.jpMorgan,

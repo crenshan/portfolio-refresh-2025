@@ -28,3 +28,8 @@ body {
   min-height: 100vh;
   background: var(--black);
 }
+
+::selection {
+  background: var(--orange_300);
+  color: var(--black);
+}

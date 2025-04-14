@@ -227,10 +227,11 @@ export const PortfolioCocaCola = () => {
           </div>
         </div>
 
-        <div className={`${styles.imageRow} ${styles.imageRow1to2}`}>
-          <div className={styles.imageWrap}>
+        <div className={`${styles.imageRow} ${styles.imageRowAuto70}`}>
+          {/* <div className={`${styles.imageRow} ${styles.imageRow1to2}`}> */}
+          {/* <div className={styles.imageWrap}>
             <ResponsiveImage img={imgs.cuiPour} />
-          </div>
+          </div> */}
           <div className={`${styles.imageWrap} ${styles.imageNoBorder}`}>
             <ResponsiveImage img={imgs.freestyle8100} />
           </div>

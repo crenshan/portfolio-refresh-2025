@@ -99,6 +99,8 @@ export const Work = () => {
 
   return (
     <>
+      {/* <ScrollToTop /> */}
+
       <header>
         <div className={`${styles.workHead} ${mixins.outerContainer}`}>
           <div className={`${styles.workHeadInner} ${mixins.innerContainer}`}>

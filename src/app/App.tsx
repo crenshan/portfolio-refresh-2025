@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { useLayoutEffect } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 
 import { FontLoader, Footer, Hero, MainNav, SkipLink } from '@/components';
 import * as configs from '@/config';
 
 import styles from './App.module.css';
+
+const FocusWrap = ({ children }) => {
+  const location = useLocation();
+  useLayoutEffect(() => {
+    setTimeout(() => {
+      document.documentElement.scrollTo(0, 0);
+    }, 0);
+  }, [location.pathname]);
+  return children;
+};
 
 const AppRoutes = () => {
   const location = useLocation();
@@ -38,13 +48,15 @@ const App = (): React.ReactElement => (
     <FontLoader />
 
     <BrowserRouter>
-      <MainNav />
+      <FocusWrap>
+        <MainNav />
 
-      <Hero />
+        <Hero />
 
-      <AppRoutes />
+        <AppRoutes />
 
-      <Footer />
+        <Footer />
+      </FocusWrap>
     </BrowserRouter>
   </>
 );

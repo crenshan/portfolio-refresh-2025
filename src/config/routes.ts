@@ -1,4 +1,4 @@
-import { Detail, Resume, Work } from '@/routes';
+import { Detail, Home, Resume, Work } from '@/routes';
 
 /**
  * @interface RouteData
@@ -28,7 +28,7 @@ export const routes: RouteData[] = [
   {
     path: HOME_ROUTE,
     key: 'home',
-    element: () => false,
+    element: Home,
     menuLabel: 'Home'
   },
 

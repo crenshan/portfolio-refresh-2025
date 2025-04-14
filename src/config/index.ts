@@ -1,3 +1,4 @@
+export * from './featured';
 export * from './marquee';
 export * from './portfolio';
 export * from './portfolioLogos';

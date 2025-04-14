@@ -1,3 +1,4 @@
+export * from './featured';
 export * from './fontLoader';
 export * from './footer';
 export * from './hero';
@@ -6,6 +7,6 @@ export * from './mainNav';
 export * from './marquee';
 export * from './menuToggle';
 export * from './portfolioItem';
-export * from './responsiveImage';
+export * from './svg/responsiveImage';
 export * from './skipLink';
 export * from './svg';

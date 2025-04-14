@@ -13,10 +13,11 @@ export const DetailBasic = ({ data }: { data: PortfolioItem }) => (
     {data.featLogo &&
       (() => {
         const FeatLogo = data.featLogo.logo;
+
         return (
           <div className={styles.detailLogo}>
             <FeatLogo
-              title={`${data.featLogo.title} Logo`}
+              title={`${data.featLogo.title || data.title} Logo`}
               color={data.featLogo.color}
               secondary={data.featLogo.secondary}
             />

@@ -18,7 +18,7 @@ import {
 } from '@/components';
 import { PortfolioLogo } from '@/models';
 
-export const PortfolioLogos: { [key: string]: PortfolioLogo } = {
+export const portfolioLogos: { [key: string]: PortfolioLogo } = {
   amazon: {
     href: 'https://example.com/1',
     SVG: AmazonLogo,
