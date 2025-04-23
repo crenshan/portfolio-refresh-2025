@@ -355,7 +355,7 @@ export const Resume = () => (
 
             <article className={styles.resumeWork}>
               <div className={styles.resumeWorkPortfolioWrap}>
-                <h3>SapientNitro</h3>
+                <h3>Sapient Nitro</h3>
                 <NavLink
                   to={`${WORK_ROUTE}?tag=sapientNitro`}
                   className={styles.resumeWorkPortfolio}

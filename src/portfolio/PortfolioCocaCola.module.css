@@ -110,9 +110,14 @@
 
 .videoWrapInner {
   position: relative;
-  padding-top: 56.25%;
+  padding-top: 54.545%;
   border-radius: 1rem;
   overflow: hidden;
+  border: 1px solid var(--gray_300);
+
+  figure {
+    margin: 0;
+  }
 
   video {
     display: block;

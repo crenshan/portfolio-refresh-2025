@@ -8,7 +8,7 @@ export const marqueeLogos: LogoItem[] = [
   workLogos.jpMorgan,
   // workLogos.booking,
   workLogos.ups,
-  // workLogos.ford,
+  workLogos.ford,
   // workLogos.honda,
   // workLogos.toyota,
   // workLogos.lexus,

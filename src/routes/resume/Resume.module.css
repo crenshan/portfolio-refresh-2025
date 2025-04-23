@@ -47,11 +47,13 @@
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  text-align: center;
   padding: 0.4em 1.2em;
   background: var(--blue_100);
   border-radius: 99vw;
   transition: 0.2s;
   outline-offset: -0.3rem;
+  white-space: nowrap;
 
   &:hover,
   &:focus-visible {
@@ -132,6 +134,7 @@
   color: var(--gray_500);
   text-decoration: none;
   text-transform: uppercase;
+  text-align: center;
   letter-spacing: 0.05em;
   padding: 0.4em 1.2em;
   background: var(--blue_50);
@@ -139,6 +142,7 @@
   border-radius: 99vw;
   transition: 0.3s;
   outline-offset: -0.3rem;
+  white-space: nowrap;
 
   &:hover,
   &:focus-visible {
@@ -208,20 +212,28 @@
   border-radius: 1.5rem;
 
   h3 {
-    font-size: 4rem;
+    font-size: 3rem;
     letter-spacing: 0.05em;
     font-weight: normal;
     text-transform: uppercase;
     margin: 0 0 0.5em;
+
+    @media (min-width: 768px) {
+      font-size: 4rem;
+    }
   }
 
   h4 {
-    font-size: 2.8rem;
+    font-size: 2rem;
     letter-spacing: 0.05em;
     font-weight: normal;
     text-transform: uppercase;
     color: var(--gray_600);
     margin: 0;
+
+    @media (min-width: 768px) {
+      font-size: 2.8rem;
+    }
   }
 
   summary {
@@ -230,11 +242,13 @@
     position: relative;
     inset-inline-start: -1em;
     font-size: 1.6rem;
+    text-align: center;
     color: var(--gray_600);
     cursor: pointer;
     padding: 0.5em 1em;
     border: 1px solid transparent;
     border-radius: 99vw;
+    white-space: nowrap;
 
     &:hover,
     &:focus-visible {
@@ -270,24 +284,32 @@
 }
 
 .resumeWorkRole {
-  display: flex;
-  justify-content: space-between;
   font-style: italic;
+
+  @media (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .resumeWorkTime {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   font-size: 0.8em;
   font-style: normal;
   color: var(--gray_600);
+
+  @media (min-width: 768px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .resumeWorkPortfolioWrap {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  @media (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
 }
 
 .resumeWorkPortfolio {
@@ -298,6 +320,7 @@
   position: relative;
   font-size: 1.5rem;
   font-weight: var(--font-semibold);
+  text-align: center;
   color: var(--gray_500);
   text-decoration: none;
   text-transform: uppercase;
@@ -308,7 +331,9 @@
   border-radius: 99vw;
   transition: 0.3s;
   outline-offset: -0.3rem;
-  margin-block-start: 0.5em;
+  max-width: 15rem;
+  margin: -0.5rem 0 2rem;
+  white-space: no-wrap;
 
   &:hover,
   &:focus-visible {
@@ -319,5 +344,10 @@
   &:focus-visible {
     outline: 0.3rem dotted var(--orange_600);
     outline-offset: 0.5rem;
+  }
+
+  @media (min-width: 768px) {
+    margin: 0.5em 0 0;
+    max-width: unset;
   }
 }

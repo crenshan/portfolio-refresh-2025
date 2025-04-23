@@ -62,7 +62,7 @@ export const Work = () => {
       if (hasTag) items.push(portfolio[i]);
     }
 
-    return items.sort((a, b) => b.year - a.year);
+    return items;
   }, [pKeys.length, portfolioTags.length, workKeys]);
 
   const toggleActive = (id: WorkTag) => {
@@ -167,61 +167,63 @@ export const Work = () => {
             <h2 className={mixins.visuallyHidden}>Portfolio</h2>
 
             <div className={styles.workListItems}>
-              {workItems.map(item => (
-                <NavLink
-                  key={`work_item_${item.id}`}
-                  className={styles.workListItem}
-                  aria-labelledby={`work_item_${item.id}_label`}
-                  aria-describedby={`work_item_${item.id}_desc`}
-                  to={`${WORK_ROUTE}/${item.id}`}
-                >
-                  <ResponsiveImage
-                    img={item.preview}
-                    aria-hidden
-                  />
-
-                  <div
-                    className={styles.workListItemContent}
-                    aria-hidden
+              {workItems
+                .sort((a, b) => b.year - a.year)
+                .map(item => (
+                  <NavLink
+                    key={`work_item_${item.id}`}
+                    className={styles.workListItem}
+                    aria-labelledby={`work_item_${item.id}_label`}
+                    aria-describedby={`work_item_${item.id}_desc`}
+                    to={`${WORK_ROUTE}/${item.id}`}
                   >
-                    <h3
-                      id={`work_item_${item.id}_label`}
-                      className={styles.workListLabel}
-                    >
-                      <span className={mixins.visuallyHidden}>
-                        Click to view details for{' '}
-                      </span>
-                      {item.title}
-                    </h3>
+                    <ResponsiveImage
+                      img={item.preview}
+                      aria-hidden
+                    />
 
-                    <p
-                      id={`work_item_${item.id}_desc`}
-                      className={styles.workListDescription}
+                    <div
+                      className={styles.workListItemContent}
+                      aria-hidden
                     >
-                      {item.short}
-                    </p>
+                      <h3
+                        id={`work_item_${item.id}_label`}
+                        className={styles.workListLabel}
+                      >
+                        <span className={mixins.visuallyHidden}>
+                          Click to view details for{' '}
+                        </span>
+                        {item.title}
+                      </h3>
 
-                    <div className={styles.workListLogos}>
-                      {item.tags.map(tag => {
-                        const LogoSVG = workLogos[tag].SVG;
-                        return (
-                          <div
-                            key={`work_item_${item.id}_logo_${tag}`}
-                            style={{
-                              width: workLogos[tag].size.width,
-                              height: workLogos[tag].size.height
-                            }}
-                          >
-                            <LogoSVG title={workLogos[tag].label} />
-                          </div>
-                        );
-                      })}
+                      <p
+                        id={`work_item_${item.id}_desc`}
+                        className={styles.workListDescription}
+                      >
+                        {item.short}
+                      </p>
+
+                      <div className={styles.workListLogos}>
+                        {item.tags.map(tag => {
+                          const LogoSVG = workLogos[tag].SVG;
+                          return (
+                            <div
+                              key={`work_item_${item.id}_logo_${tag}`}
+                              style={{
+                                width: workLogos[tag].size.width,
+                                height: workLogos[tag].size.height
+                              }}
+                            >
+                              <LogoSVG title={workLogos[tag].label} />
+                            </div>
+                          );
+                        })}
+                      </div>
+
+                      <p className={styles.workListPrompt}>Click for Details</p>
                     </div>
-
-                    <p className={styles.workListPrompt}>Click for Details</p>
-                  </div>
-                </NavLink>
-              ))}
+                  </NavLink>
+                ))}
             </div>
           </main>
         </div>

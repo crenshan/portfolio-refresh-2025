@@ -1,20 +1,48 @@
 import { work } from '@/assets';
 import {
+  A11yAILogo,
   ArtPapersLogo,
+  BroncoSportLogo,
   CocaColaFreestyleLogo,
   JPMorganLogo,
   MfnLogo,
   NorthwesternKelloggLogo,
   OliverAndRainLogo,
+  PressPlayForLALogo,
   UpsFulLogo,
   VerizonFiosLogo
 } from '@/components';
 import { PortfolioItem } from '@/models';
-import { DetailBasic, PortfolioCocaCola } from '@/portfolio';
+import { DetailBasic, PortfolioA11yAi, PortfolioCocaCola } from '@/portfolio';
+import {
+  pressPlayForLADemo,
+  pressPlayForLAPoster
+} from '@/assets/work/pressPlayForLA';
 
 import { workLogos } from './workLogos';
 
 export const portfolio: PortfolioItem[] = [
+  {
+    id: 'a11yAi',
+    title: 'A11y AI',
+    featTitle: 'A11y AI Accessibility Tools',
+    element: PortfolioA11yAi,
+    short:
+      'AI-powered accessibility tools streamlining alt text generation for images, making digital content more inclusive for all users.',
+    description:
+      "I created and developed the core components of the A11y AI accessibility suite, specifically the web application and Figma plugin for alt text generation. These innovative tools leverage Amazon Bedrock and Anthropic's Claude models to automatically create optimized alternative text descriptions for images, ensuring digital content is accessible to users who rely on screen readers. The Figma plugin integration enables designers to incorporate accessibility directly into their workflow, embedding inclusive practices from the beginning of the design process. My contribution helps teams save significant time while ensuring compliance with accessibility standards, transforming a complex requirement into a streamlined, efficient workflow that promotes more inclusive digital experiences across Amazon Brand Innovation Lab's products and campaigns.",
+    preview: work.a11yAiPreview,
+    featLogo: { logo: A11yAILogo, color: '#9d57f4', secondary: '#0265dc' },
+    empLogo: workLogos.amazon,
+    images: {
+      figmaAltText: work.a11yAiFigmaAltText,
+      figmaUpdate: work.a11yAiFigmaUpdate,
+      webAltText: work.a11yAiWebAltText,
+      webUpdate: work.a11yAiWebUpdate
+    },
+    tags: ['amazon'],
+    year: 2024.0912
+  },
   {
     id: 'artPapers',
     title: 'Art Papers',
@@ -32,6 +60,31 @@ export const portfolio: PortfolioItem[] = [
     imageList: [work.artPapersHome, work.artPapersPost],
     tags: ['artPapers', 'goodsAndServices'],
     year: 2017
+  },
+  {
+    id: 'broncoSport',
+    title: 'Bronco Sport',
+    featTitle: '2025 Ford Bronco Sport',
+    element: DetailBasic,
+    short:
+      'Interactive Fire TV experience bringing the 2025 Ford Bronco Sport’s dual personality to life through customization and immersive content.',
+    description:
+      "As the sole developer for the 2025 Ford Bronco Sport Custom Landing Page on Fire TV, I conceptualized and implemented all animations and interactions that brought Ford's \"get you back out there\" positioning to life. The experience features an interactive colorizer allowing real-time vehicle customization, an innovative G.O.A.T. Mode selector that integrates product screens directly with Fire TV, and a dynamic gallery showcasing the vehicle's versatility across different terrains. Working closely with the creative team, I developed a feature rotator with multiple lifestyle images that highlights the Bronco Sport's dual identity as both daily driver and adventure companion. This digital-first approach successfully connected Ford with younger, diverse audiences seeking outdoor experiences through an immersive, interactive platform.",
+    preview: work.broncoSportPreview,
+    featLogo: { logo: BroncoSportLogo },
+    empLogo: workLogos.amazon,
+    featureVideo: {
+      video: work.broncoSportDemo,
+      poster: work.broncoSportDemoPoster
+    },
+    imageList: [
+      work.broncoSportHome,
+      work.broncoSportFeatures,
+      work.broncoSportGoatModes
+    ],
+    imagesUniform: true,
+    tags: ['amazon', 'ford'],
+    year: 2025.0317
   },
   {
     id: 'cocaCola',
@@ -173,6 +226,27 @@ export const portfolio: PortfolioItem[] = [
     ],
     tags: ['goodsAndServices'],
     year: 2017
+  },
+  {
+    id: 'pressPlayForLA',
+    title: 'Press Play For L.A.',
+    element: DetailBasic,
+    short:
+      'Turning streams into support: helping L.A. wildfire victims through music and video content.',
+    description:
+      'As the front-end developer working closely with the design team, I helped create "Press Play for L.A.," a digital initiative that transforms passive streaming into active support for wildfire victims. The platform enables users to generate donations for the American Red Cross simply by streaming "Listen to L.A." playlists on Amazon Music or watching select Prime Video content. For each hour streamed, Amazon donates $1 (up to $100,000) to support relief efforts. The project features a custom landing page with accessibility considerations, cross-platform integration across Amazon FTV, Amazon Music, STV, DSP, and interactive audio ads, all developed as a volunteer effort to benefit the victims of the 2025 L.A. wildfires.',
+    preview: work.pressPlayForLAPreview,
+    featLogo: {
+      logo: PressPlayForLALogo
+    },
+    empLogo: workLogos.amazon,
+    featureVideo: {
+      video: pressPlayForLADemo,
+      poster: pressPlayForLAPoster
+    },
+    imageList: [work.pressPlayForLAFull],
+    tags: ['amazon'],
+    year: 2024.1224
   },
   {
     id: 'ups',

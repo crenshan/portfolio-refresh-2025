@@ -13,6 +13,10 @@ export const Footer = () => {
         skipTo={`#${fContentId}`}
       />
       <div id={fContentId} />
+
+      <div className={styles.copyright}>
+        © Nathan Crenshaw. All rights reserved.
+      </div>
     </footer>
   );
 };

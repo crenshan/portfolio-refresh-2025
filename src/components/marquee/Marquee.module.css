@@ -2,6 +2,8 @@
   --logo: #535371;
   --logoHover: #8c8ca1;
   --pauseSize: 4rem;
+  --pauseIconWidth: 2rem;
+  --pauseIconHeight: 3rem;
 }
 
 .marqueeWrapInner {
@@ -105,6 +107,6 @@
 }
 
 .marqueePauseBtn svg {
-  width: 100%;
-  height: 100%;
+  width: var(--pauseIconWidth);
+  height: var(--pauseIconHeight);
 }

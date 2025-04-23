@@ -1,6 +1,8 @@
+export * from './a11yAiLogo';
 export * from './AmazonLogo';
 export * from './ArtPapersLogo';
 export * from './BookingComLogo';
+export * from './BroncoSportLogo';
 export * from './CocaColaFreestyleLogo';
 export * from './CocaColaLogo';
 export * from './FordLogo';
@@ -14,6 +16,7 @@ export * from './NorthwesternKelloggLogo';
 export * from './NorthwesternLogo';
 export * from './OliverAndRainLogo';
 export * from './OllyLogo';
+export * from './PressPlayForLALogo';
 export * from './SapientNitroLogo';
 export * from './ToyotaLogo';
 export * from './UpsFullLogo';

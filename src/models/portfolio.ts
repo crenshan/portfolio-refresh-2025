@@ -3,6 +3,7 @@ import { JSX } from 'react';
 import { SiteImg } from './images';
 import { WorkTag } from './tags';
 import { LogoItem } from './logos';
+import { SiteVideo } from './videos';
 
 export interface PortfolioLink {
   href: string;
@@ -37,6 +38,10 @@ export type PortfolioItem = {
     title?: string;
   };
   empLogo?: LogoItem;
+  featureVideo?: {
+    video: SiteVideo;
+    poster?: SiteImg;
+  };
   images?: { [key: string]: SiteImg };
   imageList?: SiteImg[];
   imagesUniform?: boolean;
