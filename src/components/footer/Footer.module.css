@@ -1,6 +1,5 @@
 .footer {
   background: var(--black);
-  padding-bottom: 6rem;
 }
 
 .copyright {
@@ -8,5 +7,6 @@
   color: #535371;
   letter-spacing: 0.1em;
   text-align: center;
-  margin: 4rem auto;
+  padding: 6rem 0 4rem;
+  margin: 0 auto;
 }

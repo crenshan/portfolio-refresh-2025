@@ -9,10 +9,12 @@ export const marqueeLogos: LogoItem[] = [
   // workLogos.booking,
   workLogos.ups,
   workLogos.ford,
-  // workLogos.honda,
-  // workLogos.toyota,
-  // workLogos.lexus,
+  workLogos.honda,
+  workLogos.toyota,
+  workLogos.lexus,
   // workLogos.nissan,
+  workLogos.unilever,
+  workLogos.universal,
   workLogos.verizon
   // workLogos.olly
 ];

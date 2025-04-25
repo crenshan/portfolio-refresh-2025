@@ -1,7 +1,7 @@
 export type WorkTag =
   | 'amazon'
   | 'artPapers'
-  | 'bookingCom'
+  | 'booking'
   | 'cocaCola'
   | 'ford'
   | 'goodsAndServices'
@@ -13,5 +13,7 @@ export type WorkTag =
   | 'olly'
   | 'sapientNitro'
   | 'toyota'
+  | 'unilever'
+  | 'universal'
   | 'ups'
   | 'verizon';

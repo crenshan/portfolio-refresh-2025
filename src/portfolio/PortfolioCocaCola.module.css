@@ -110,7 +110,7 @@
 
 .videoWrapInner {
   position: relative;
-  padding-top: 54.545%;
+  padding-top: 56.25%;
   border-radius: 1rem;
   overflow: hidden;
   border: 1px solid var(--gray_300);
@@ -127,6 +127,8 @@
     height: 100%;
     margin: 0;
     z-index: 1;
+    object-fit: cover;
+    object-position: center;
   }
 }
 

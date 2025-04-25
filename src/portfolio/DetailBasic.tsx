@@ -47,6 +47,22 @@ export const DetailBasic = ({ data }: { data: PortfolioItem }) => {
           <p className={styles.detailQuote}>{data.pullQuote}</p>
         )}
 
+        {data.links && (
+          <ul className={styles.detailLinkList}>
+            {data.links.map(link => (
+              <li key={`${data.id}_detail_link_${link.href}}`}>
+                <a
+                  href={link.href}
+                  target="_blank"
+                  rel="nofollow noreferrer"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        )}
+
         {data.empLogo &&
           (() => {
             const EmployerLogo = data.empLogo.SVG;
@@ -141,7 +157,7 @@ export const DetailBasic = ({ data }: { data: PortfolioItem }) => {
         <div className={getImgClassnames()}>
           {data.imageList.map((image, idx) => (
             <ResponsiveImage
-              key={`${data.id}_detail_img_${idx}_${Math.random()}`}
+              key={`${data.id}_detail_img_${idx}}`}
               img={image}
             />
           ))}

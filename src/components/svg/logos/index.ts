@@ -19,6 +19,8 @@ export * from './OllyLogo';
 export * from './PressPlayForLALogo';
 export * from './SapientNitroLogo';
 export * from './ToyotaLogo';
+export * from './UnileverLogo';
+export * from './UniversalLogo';
 export * from './UpsFullLogo';
 export * from './UpsLogo';
 export * from './VerizonFiosLogo';

@@ -11,7 +11,6 @@ export interface PortfolioLink {
 }
 
 export type PortfolioLogo = {
-  href: string;
   SVG: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   label: string;
 };

@@ -76,9 +76,6 @@
 }
 
 .featuredListPreview {
-  border-radius: 1rem;
-  overflow: hidden;
-  border: 1px solid var(--gray_200);
   margin-block-end: 2rem;
 
   img {
@@ -92,6 +89,18 @@
 
   @media (min-width: 768px) {
     margin: 0;
+  }
+}
+
+.featuredListPreviewLink {
+  display: block;
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid var(--gray_200);
+
+  &:focus-visible {
+    outline: 0.3rem dotted var(--orange_500);
+    outline-offset: 0.5rem;
   }
 }
 

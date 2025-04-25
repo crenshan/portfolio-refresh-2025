@@ -33,7 +33,7 @@ export const Home = () => {
               className={styles.videoPoster}
               aria-hidden
             >
-              {figmaVideo.poster && <ResponsiveImage img={figmaPoster} />}
+              <ResponsiveImage img={figmaPoster} />
             </div>
 
             <figure>
@@ -46,11 +46,11 @@ export const Home = () => {
                 controlsList="nodownload noremoteplayback noplaybackrate"
                 disablePictureInPicture
                 onContextMenu={() => false}
-                preload="metaa11yAiData"
-                aria-label="Coca-Cola Freestyle: Contact-Free Dispensing Overview"
+                preload="metadata"
+                aria-label="A11y AI Figma plugin demonstration"
                 aria-describedby="contactless-video-desc"
-                title="Coca-Cola Freestyle Mobile Pour overview"
-                poster="a11yAiData:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                title="A11y AI Figma plugin demonstration"
+                poster="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
               >
                 <source
                   src={figmaVideo.src.webm}

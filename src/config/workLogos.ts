@@ -14,7 +14,9 @@ import {
   ArtPapersLogo,
   GoodsAndServicesLogo,
   NorthwesternLogo,
-  SapientNitroLogo
+  SapientNitroLogo,
+  UnileverLogo,
+  UniversalLogo
   // MfnLogo
 } from '@/components/svg/logos';
 import { LogoItem } from '@/models';
@@ -79,7 +81,7 @@ export const workLogos: { [key: string]: LogoItem } = {
     SVG: HondaLogo,
     label: 'Honda',
     size: {
-      width: 142,
+      width: 160,
       height: 20
     }
   },
@@ -97,8 +99,8 @@ export const workLogos: { [key: string]: LogoItem } = {
     SVG: LexusLogo,
     label: 'Lexus',
     size: {
-      width: 148,
-      height: 28
+      width: 166,
+      height: 30
     }
   },
   // mfn: {
@@ -151,8 +153,26 @@ export const workLogos: { [key: string]: LogoItem } = {
     SVG: ToyotaLogo,
     label: 'Toyota',
     size: {
-      width: 144,
-      height: 28
+      width: 158,
+      height: 26
+    }
+  },
+  unilever: {
+    id: 'unilever',
+    SVG: UnileverLogo,
+    label: 'Unilever',
+    size: {
+      width: 130,
+      height: 40
+    }
+  },
+  universal: {
+    id: 'universal',
+    SVG: UniversalLogo,
+    label: 'Universal Parks',
+    size: {
+      width: 98,
+      height: 50
     }
   },
   ups: {

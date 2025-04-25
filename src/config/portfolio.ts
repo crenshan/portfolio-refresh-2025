@@ -2,22 +2,24 @@ import { work } from '@/assets';
 import {
   A11yAILogo,
   ArtPapersLogo,
+  BookingComLogo,
   BroncoSportLogo,
   CocaColaFreestyleLogo,
+  HondaLogo,
   JPMorganLogo,
+  LexusLogo,
   MfnLogo,
   NorthwesternKelloggLogo,
   OliverAndRainLogo,
+  OllyLogo,
   PressPlayForLALogo,
+  ToyotaLogo,
+  UniversalLogo,
   UpsFulLogo,
   VerizonFiosLogo
 } from '@/components';
 import { PortfolioItem } from '@/models';
 import { DetailBasic, PortfolioA11yAi, PortfolioCocaCola } from '@/portfolio';
-import {
-  pressPlayForLADemo,
-  pressPlayForLAPoster
-} from '@/assets/work/pressPlayForLA';
 
 import { workLogos } from './workLogos';
 
@@ -25,7 +27,6 @@ export const portfolio: PortfolioItem[] = [
   {
     id: 'a11yAi',
     title: 'A11y AI',
-    featTitle: 'A11y AI Accessibility Tools',
     element: PortfolioA11yAi,
     short:
       'AI-powered accessibility tools streamlining alt text generation for images, making digital content more inclusive for all users.',
@@ -60,6 +61,32 @@ export const portfolio: PortfolioItem[] = [
     imageList: [work.artPapersHome, work.artPapersPost],
     tags: ['artPapers', 'goodsAndServices'],
     year: 2017
+  },
+  {
+    id: 'bookingCom',
+    title: 'Booking.com - Discover "The Idea of You"',
+    element: DetailBasic,
+    short:
+      'Interactive Fire TV experience bringing "The Idea of You" film locations to life through custom videos and animated travel collages.',
+    description:
+      "I developed the Fire TV component of Booking.com's 'Discover The Idea of You' interactive companion content experience, part of their innovative 'Travel the Screen' campaign. This first-of-its-kind project integrated Prime Video's original film content with travel inspiration, allowing viewers to follow Anne Hathaway's character on her transformative journey across five global destinations. My development work included implementing the technical framework for three custom IMDb behind-the-scenes videos, five exclusive film clips, and custom animated location collages that showcased Booking.com accommodations inspired by scenes from the movie. I built the Fire TV application with accessible navigation and seamless video playback while optimizing performance for the platform. The experience was primarily discovered through marquee Fire TV placements including Screen Saver and Feature Rotator, contributing to a campaign that reached 22.3M unique users and significantly improved brand perception metrics.",
+    preview: work.bookingPreview,
+    featLogo: { logo: BookingComLogo, color: '#003580' },
+    empLogo: workLogos.amazon,
+    featureVideo: {
+      video: work.bookingDemo,
+      poster: work.bookingDemoPoster
+    },
+    imageList: [
+      work.bookingHome,
+      work.bookingMap,
+      work.bookingDiscover,
+      work.bookingTrailer,
+      work.bookingCommercial
+    ],
+    imagesUniform: true,
+    tags: ['amazon', 'booking'],
+    year: 2024.05
   },
   {
     id: 'broncoSport',
@@ -122,6 +149,92 @@ export const portfolio: PortfolioItem[] = [
     },
     tags: ['cocaCola'],
     year: 2021
+  },
+  {
+    id: 'destinationPaak',
+    title: 'Lexus GX: Destination Paak',
+    element: DetailBasic,
+    short:
+      "Developed Fire TV execution for Lexus GX's music campaign featuring Anderson .Paak, driving exceptional engagement.",
+    description:
+      "As a developer for the Fire TV execution of 'Destination .Paak - The Lexus GX Remix,' I contributed to this culturally-impactful campaign celebrating the all-new 2024 Lexus GX. Working alongside Team One and Amazon Music, I helped implement the technical integration of 8x Grammy winner Anderson .Paak's exclusive remix of 'Celebrate' across Fire TV platforms. My development work supported the campaign's standout performance metrics, particularly the remarkable average dwell time of 200 seconds on Fire TV CLP—12x higher than Lexus's historical average. The Fire TV placements (Feature Rotator & Screensaver) achieved double-digit lifts across nearly all metrics in Kantar studies, while our Latitude survey showed Unaided Brand Awareness 58% higher than norms. This successful collaboration between automotive luxury and music culture later expanded to sponsorship of Anderson .Paak's Malibu Tour, generating an additional $1.3MM in revenue.",
+    preview: work.destinationPaakPreview,
+    featLogo: { logo: LexusLogo },
+    empLogo: workLogos.amazon,
+    featureVideo: {
+      video: work.destinationPaakDemo,
+      poster: work.destinationPaakDemoPoster
+    },
+    imageList: [
+      work.destinationPaakMusicVideos,
+      work.destinationPaakInterviews,
+      work.destinationPaakGarage,
+      work.destinationPaakBear
+    ],
+    imagesUniform: true,
+    tags: ['amazon', 'lexus'],
+    year: 2024.0621
+  },
+  {
+    id: 'dreamGenerator',
+    title: 'Honda Dream Generator',
+    element: DetailBasic,
+    short:
+      "AI-powered interactive storytelling experience creating personalized animated adventures featuring Honda's all-electric Prologue SUV.",
+    description:
+      "I built the Fire TV campaign and Amazon.com page for the Honda Dream Generator, an innovative AI-powered storytelling platform created for the launch of Honda's first all-electric SUV, the Prologue. My responsibilities included developing all animations and interactions across both platforms to create an intuitive and engaging user experience. Working closely with 1stAveMachine's AI team, I implemented the technical integration that delivered finished personalized videos based on user selections, ensuring seamless functionality across multiple devices. The system needed to handle complex data processing to match user inputs with the appropriate animation sequences from a library of 190 story variations. This collaborative project successfully generated thousands of unique animated adventures while maintaining consistent performance and visual quality, resulting in exceptional engagement metrics and significantly increased brand awareness for the Honda Prologue.",
+    preview: work.dreamGeneratorPreview,
+    featLogo: {
+      logo: HondaLogo,
+      color: '#ca0000'
+    },
+    empLogo: workLogos.amazon,
+    featureVideo: {
+      video: work.dreamGeneratorFtv,
+      poster: work.dreamGeneratorFtvPoster
+    },
+    imageList: [
+      work.dreamGeneratorKeyArt,
+      work.dreamGeneratorCharacters,
+      work.dreamGeneratorLocations
+    ],
+    imagesUniform: true,
+    links: [
+      {
+        label:
+          'Honda Press Release: Honda is Bringing an Imaginative Dream Adventure Experience to Families Across Amazon',
+        href: 'https://hondanews.com/en-US/honda-automobiles/releases/release-c47fff63a4bbfa260d98e7dcc2003d6d-honda-is-bringing-an-imaginative-dream-adventure-experience-to-families-across-amazon'
+      },
+      {
+        label: 'Shorty Awards: Finalist in Auto and Animation',
+        href: 'https://shortyawards.com/17th/amazon-honda-dream-generator'
+      },
+      {
+        label: 'Ad Age: Behind Honda’s AI-powered personalized EV campaign',
+        href: 'https://adage.com/article/marketing-news-strategy/honda-offers-ai-generated-create-your-own-adventure-videos-around-new-suv/2546561'
+      },
+      {
+        label: 'Media Post: Honda Partners With Amazon For Dream Generator',
+        href: 'https://www.mediapost.com/publications/article/394416/honda-partners-with-amazon-for-dream-generator.html'
+      },
+      {
+        label:
+          'Marketing Drive: Honda leverages AI for Dream Generator film experience with Amazon Ads',
+        href: 'https://www.marketingdive.com/news/honda-ai-dream-generator-amazon-ads-prologue-suv/710497/'
+      },
+      {
+        label:
+          'Automotive World: Honda is bringing an imaginative dream adventure experience to families across Amazon',
+        href: 'https://www.automotiveworld.com/news-releases/honda-is-bringing-an-imaginative-dream-adventure-experience-to-families-across-amazon/'
+      },
+      {
+        label:
+          'Design Rush: Honda and Amazon Ads Team Up to Create a Dream Generator',
+        href: 'https://spotlight.designrush.com/news/honda-and-amazon-ads-team-up-to-create-dream-generator'
+      }
+    ],
+    tags: ['honda', 'amazon'],
+    year: 2024.0315
   },
   {
     id: 'fios',
@@ -228,6 +341,28 @@ export const portfolio: PortfolioItem[] = [
     year: 2017
   },
   {
+    id: 'olly',
+    title: 'OLLY Vitamins & Supplements',
+    element: DetailBasic,
+    short:
+      'Multi-platform wellness campaign featuring interactive experiences and animations celebrating everyday wellness victories.',
+    description:
+      'As the design technologist for Unilever\'s OLLY "Happy New You" Campaign, I developed all animations and interactive elements across multiple Amazon platforms. My primary technical challenge was building the "Wheel of Wellness" feature with comprehensive accessibility considerations. The project required implementing interactive components across Amazon Live, Custom Brand Store, Interactive Audio Ads, and Alexa integrations. I focused on creating technically sound, engaging experiences that maintained functionality while ensuring all users, including those with disabilities, could fully interact with the content. This large-scale campaign ($4M) demanded careful attention to performance optimization and cross-platform compatibility while working collaboratively with a multidisciplinary team.',
+    preview: work.ollyPreview,
+    featLogo: {
+      logo: OllyLogo,
+      color: '#af1685'
+    },
+    empLogo: workLogos.amazon,
+    featureVideo: {
+      video: work.ollyDemo,
+      poster: work.ollyPoster
+    },
+    imageList: [work.ollyFull],
+    tags: ['amazon', 'unilever'],
+    year: 2024.1224
+  },
+  {
     id: 'pressPlayForLA',
     title: 'Press Play For L.A.',
     element: DetailBasic,
@@ -241,12 +376,67 @@ export const portfolio: PortfolioItem[] = [
     },
     empLogo: workLogos.amazon,
     featureVideo: {
-      video: pressPlayForLADemo,
-      poster: pressPlayForLAPoster
+      video: work.pressPlayForLADemo,
+      poster: work.pressPlayForLAPoster
     },
     imageList: [work.pressPlayForLAFull],
     tags: ['amazon'],
-    year: 2024.1224
+    year: 2025.0213
+  },
+  {
+    id: 'toyota4Runner',
+    title: '2025 Toyota 4Runner',
+    element: DetailBasic,
+    short:
+      "Interactive Fire TV experience showcasing the 2025 Toyota 4Runner's capabilities with real-time colorizer and Stagecoach music festival integration.",
+    description:
+      "I developed Toyota's first Fire TV Custom Landing Page for the 2025 4Runner, creating an interactive experience that strengthened the vehicle's position in the adventure segment. My development work included building a 360-degree interactive vehicle colorizer allowing real-time customization, implementing a responsive video gallery featuring brand content, and creating the technical framework for the Toyota Music Den integration which included deeplinks to the Stagecoach Amazon Music Live livestream—a first for Fire TV. The experience featured interactive elements highlighting the vehicle's adventure capabilities while seamlessly integrating with Toyota's Stagecoach festival sponsorship. This $1.5 million campaign required optimizing performance for Fire TV devices while ensuring smooth navigation and interaction with the vehicle showcase, lifestyle imagery galleries, and direct links to Toyota.com for deeper engagement.",
+    preview: work.toyota4runnerPreview,
+    featLogo: {
+      logo: ToyotaLogo,
+      color: '#eb0a1e'
+    },
+    empLogo: workLogos.amazon,
+    featureVideo: {
+      video: work.toyota4runnerDemo,
+      poster: work.toyota4runnerDemoPoster
+    },
+    imageList: [
+      work.toyota4runnerHome,
+      work.toyota4runnerGallery,
+      work.toyota4runnerColor,
+      work.toyota4runnerVideo,
+      work.toyota4runnerMusicDen,
+      work.toyota4runnerMore
+    ],
+    imagesUniform: true,
+    tags: ['toyota', 'amazon'],
+    year: 2025.0416
+  },
+  {
+    id: 'universalEpicUniverse',
+    title: 'Universal Parks: Epic Universe',
+    element: DetailBasic,
+    short:
+      "Interactive Fire TV experience showcasing Universal's Epic Universe park through captivating videos and an explorable digital map.",
+    description:
+      "I developed an immersive Fire TV experience announcing and celebrating the May 2025 opening of Universal's Epic Universe theme park. The interactive application featured introduction videos for all five distinctively themed areas: Celestial Park, The Wizarding World of Harry Potter - Ministry of Magic, SUPER NINTENDO WORLD, How to Train Your Dragon - Isle of Berk, and Dark Universe. Central to the experience was an interactive map I built allowing users to explore each section of the park, learn about attractions, and view key features. The project required implementing smooth video integration, intuitive navigation controls optimized for Fire TV remotes, and engaging transitions between different park areas. This digital experience served as a crucial component of Universal's marketing strategy to build anticipation for their newest theme park while providing potential visitors with an accessible preview of what to expect.",
+    preview: work.universalEpicUniversePreview,
+    featLogo: {
+      logo: UniversalLogo,
+      color: '#01366a'
+    },
+    empLogo: workLogos.amazon,
+    featureVideo: {
+      video: work.universalEpicUniverseDemo,
+      poster: work.universalEpicUniverseDemoPoster
+    },
+    imageList: [
+      work.universalEpicUniverseExplore,
+      work.universalEpicUniverseMap
+    ],
+    tags: ['universal', 'amazon'],
+    year: 2025.05
   },
   {
     id: 'ups',

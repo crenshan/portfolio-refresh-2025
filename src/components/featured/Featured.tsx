@@ -48,6 +48,7 @@ export const Featured = () => {
                 <div className={styles.featuredListPreview}>
                   <NavLink
                     to={`${WORK_ROUTE}/${work.id}`}
+                    className={styles.featuredListPreviewLink}
                     aria-label={`Click to view details for ${work.featTitle}`}
                   >
                     <ResponsiveImage img={work.preview} />
