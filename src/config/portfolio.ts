@@ -85,6 +85,13 @@ export const portfolio: PortfolioItem[] = [
       work.bookingCommercial
     ],
     imagesUniform: true,
+    links: [
+      {
+        label:
+          'Amazon Case Study: How Booking.com engaged travelers with custom The Rings of Power and The Idea of You Prime Video campaigns',
+        href: 'https://advertising.amazon.com/en-us/library/case-studies/booking-com-prime-video-campaigns/'
+      },
+    ],
     tags: ['amazon', 'booking'],
     year: 2024.05
   },
