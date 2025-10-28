@@ -16,4 +16,5 @@ export type WorkTag =
   | 'unilever'
   | 'universal'
   | 'ups'
-  | 'verizon';
+  | 'verizon'
+  | 'volvo';

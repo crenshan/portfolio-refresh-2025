@@ -24,6 +24,83 @@ import { DetailBasic, PortfolioA11yAi, PortfolioCocaCola } from '@/portfolio';
 import { workLogos } from './workLogos';
 
 export const portfolio: PortfolioItem[] = [
+  // {
+  //   id: 'volvoTheFamilyCar',
+  //   title: 'Volvo: The Family Car',
+  //   element: DetailBasic,
+  //   short: '',
+  //   description: '',
+  //   preview: work.dreamGeneratorPreview,
+  //   featLogo: {
+  //     logo: HondaLogo,
+  //     color: '#ca0000'
+  //   },
+  //   empLogo: workLogos.amazon,
+  //   featureVideo: {
+  //     video: work.dreamGeneratorFtv,
+  //     poster: work.dreamGeneratorFtvPoster
+  //   },
+  //   imageList: [],
+  //   imagesUniform: true,
+  //   links: [
+  //     {
+  //       label:
+  //         'People Magazine: Adam Scott Celebrated His First Big Acting Paycheck by Buying a New Volvo. Then He "Promptly Got Fired" (Exclusive)',
+  //       href: 'https://people.com/adam-scott-volvo-first-car-first-big-paycheck-docuseries-exclusive-11837322'
+  //     },
+  //     {
+  //       label:
+  //         'Volvo Press Release: Actor Adam Scott Teams Up with Volvo Cars for Cinematic Docuseries on Prime Video',
+  //       href: 'https://www.volvocars.com/us/media/press-releases/BF538F8CC08E4953/'
+  //     }
+  //   ],
+  //   tags: ['volvo', 'amazon'],
+  //   year: 2025.1027
+  // },
+  // {
+  //   id: 'nissanRogue',
+  //   title: '2025 Nissan Rogue',
+  //   element: DetailBasic,
+  //   short: '',
+  //   description: '',
+  //   preview: work.dreamGeneratorPreview,
+  //   featLogo: {
+  //     logo: HondaLogo,
+  //     color: '#ca0000'
+  //   },
+  //   empLogo: workLogos.amazon,
+  //   featureVideo: {
+  //     video: work.dreamGeneratorFtv,
+  //     poster: work.dreamGeneratorFtvPoster
+  //   },
+  //   imageList: [],
+  //   imagesUniform: true,
+  //   links: [],
+  //   tags: ['nissan', 'amazon'],
+  //   year: 2025.1002
+  // },
+  // {
+  //   id: 'nissanKicks',
+  //   title: '2025 Nissan Kicks',
+  //   element: DetailBasic,
+  //   short: '',
+  //   description: '',
+  //   preview: work.dreamGeneratorPreview,
+  //   featLogo: {
+  //     logo: HondaLogo,
+  //     color: '#ca0000'
+  //   },
+  //   empLogo: workLogos.amazon,
+  //   featureVideo: {
+  //     video: work.dreamGeneratorFtv,
+  //     poster: work.dreamGeneratorFtvPoster
+  //   },
+  //   imageList: [],
+  //   imagesUniform: true,
+  //   links: [],
+  //   tags: ['nissan', 'amazon'],
+  //   year: 2025.1002
+  // },
   {
     id: 'a11yAi',
     title: 'A11y AI',
@@ -90,7 +167,7 @@ export const portfolio: PortfolioItem[] = [
         label:
           'Amazon Case Study: How Booking.com engaged travelers with custom The Rings of Power and The Idea of You Prime Video campaigns',
         href: 'https://advertising.amazon.com/en-us/library/case-studies/booking-com-prime-video-campaigns/'
-      },
+      }
     ],
     tags: ['amazon', 'booking'],
     year: 2024.05
