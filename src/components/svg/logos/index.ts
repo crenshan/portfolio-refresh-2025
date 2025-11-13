@@ -25,3 +25,4 @@ export * from './UpsFullLogo';
 export * from './UpsLogo';
 export * from './VerizonFiosLogo';
 export * from './VerizonLogo';
+export * from './VolvoLogo';

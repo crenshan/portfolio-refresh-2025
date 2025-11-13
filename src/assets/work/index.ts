@@ -15,6 +15,7 @@ import * as pressPlayForLA from './pressPlayForLA';
 import * as toyota4Runner from './toyota4runner';
 import * as universalEpicUniverse from './universalEpicUniverse';
 import * as ups from './ups';
+import * as volvoStories from './volvoStories';
 
 export const work = {
   ...a11yAi,
@@ -33,5 +34,6 @@ export const work = {
   ...pressPlayForLA,
   ...toyota4Runner,
   ...universalEpicUniverse,
-  ...ups
+  ...ups,
+  ...volvoStories
 };

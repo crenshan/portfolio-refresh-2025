@@ -16,7 +16,9 @@ import {
   ToyotaLogo,
   UniversalLogo,
   UpsFulLogo,
-  VerizonFiosLogo
+  VerizonFiosLogo,
+  VolvoLogo,
+  NissanLogo
 } from '@/components';
 import { PortfolioItem } from '@/models';
 import { DetailBasic, PortfolioA11yAi, PortfolioCocaCola } from '@/portfolio';
@@ -24,39 +26,46 @@ import { DetailBasic, PortfolioA11yAi, PortfolioCocaCola } from '@/portfolio';
 import { workLogos } from './workLogos';
 
 export const portfolio: PortfolioItem[] = [
-  // {
-  //   id: 'volvoTheFamilyCar',
-  //   title: 'Volvo: The Family Car',
-  //   element: DetailBasic,
-  //   short: '',
-  //   description: '',
-  //   preview: work.dreamGeneratorPreview,
-  //   featLogo: {
-  //     logo: HondaLogo,
-  //     color: '#ca0000'
-  //   },
-  //   empLogo: workLogos.amazon,
-  //   featureVideo: {
-  //     video: work.dreamGeneratorFtv,
-  //     poster: work.dreamGeneratorFtvPoster
-  //   },
-  //   imageList: [],
-  //   imagesUniform: true,
-  //   links: [
-  //     {
-  //       label:
-  //         'People Magazine: Adam Scott Celebrated His First Big Acting Paycheck by Buying a New Volvo. Then He "Promptly Got Fired" (Exclusive)',
-  //       href: 'https://people.com/adam-scott-volvo-first-car-first-big-paycheck-docuseries-exclusive-11837322'
-  //     },
-  //     {
-  //       label:
-  //         'Volvo Press Release: Actor Adam Scott Teams Up with Volvo Cars for Cinematic Docuseries on Prime Video',
-  //       href: 'https://www.volvocars.com/us/media/press-releases/BF538F8CC08E4953/'
-  //     }
-  //   ],
-  //   tags: ['volvo', 'amazon'],
-  //   year: 2025.1027
-  // },
+  {
+    id: 'volvoTheFamilyCar',
+    title: 'Volvo: The Family Car',
+    element: DetailBasic,
+    short:
+      'Docuseries-led campaign launching Volvo Stories in the U.S., brought to life through Amazon.com and Fire TV experiences celebrating real American family car stories.',
+
+    description:
+      "I served as the design technologist for Volvo: The Family Car, a docuseries-led campaign that launched Volvo's new multi-year 'Volvo Stories' US marketing strategy. Framed through the film The Family Car: An American Love Story, the work reframes Volvo from a near-premium import to a modern luxury brand that has quietly been part of American life for 70 years. The series follows four very different Volvo drivers — a photographer, a chef, a musician, and an actor — whose lives and families are shaped by the cars that carried them forward.\n\nMy role was to translate that storytelling into interactive experiences across Amazon.com and Fire TV. I built the custom landing experiences that housed trailers, episodes, and longform content, with an emphasis on accessibility, performance, and cinematic presentation of Volvo’s film and photography library.",
+    preview: work.volvoStoriesPreview,
+    featLogo: {
+      logo: VolvoLogo,
+      color: '#202a44'
+    },
+    empLogo: workLogos.amazon,
+    featureVideo: {
+      video: work.volvoStoriesDemo,
+      poster: work.volvoStoriesPoster
+    },
+    imageList: [work.volvoStoriesFull],
+    imagesUniform: true,
+    links: [
+      {
+        label:
+          'People Magazine: Adam Scott Celebrated His First Big Acting Paycheck by Buying a New Volvo. Then He "Promptly Got Fired" (Exclusive)',
+        href: 'https://people.com/adam-scott-volvo-first-car-first-big-paycheck-docuseries-exclusive-11837322'
+      },
+      {
+        label: 'Volvo Collaborates With Amazon For Docuseries',
+        href: 'https://www.mediapost.com/publications/article/410504/'
+      },
+      {
+        label:
+          'Volvo Press Release: Actor Adam Scott Teams Up with Volvo Cars for Cinematic Docuseries on Prime Video',
+        href: 'https://www.volvocars.com/us/media/press-releases/BF538F8CC08E4953/'
+      }
+    ],
+    tags: ['volvo', 'amazon'],
+    year: 2025.1027
+  },
   // {
   //   id: 'nissanRogue',
   //   title: '2025 Nissan Rogue',

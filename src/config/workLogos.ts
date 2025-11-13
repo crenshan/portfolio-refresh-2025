@@ -16,7 +16,8 @@ import {
   NorthwesternLogo,
   SapientNitroLogo,
   UnileverLogo,
-  UniversalLogo
+  UniversalLogo,
+  VolvoLogo
   // MfnLogo
 } from '@/components/svg/logos';
 import { LogoItem } from '@/models';
@@ -191,6 +192,15 @@ export const workLogos: { [key: string]: LogoItem } = {
     size: {
       width: 112,
       height: 32
+    }
+  },
+  volvo: {
+    id: 'volvo',
+    SVG: VolvoLogo,
+    label: 'Volvo',
+    size: {
+      width: 148,
+      height: 22
     }
   }
 };
