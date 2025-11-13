@@ -1,7 +1,9 @@
 export const featuredWork: string[] = [
-  'dreamGenerator',
   'cocaCola',
-  'broncoSport',
-  'olly',
+  'volvoStories',
+  'nissanRogue',
+  // 'broncoSport',
+  // 'olly',
+  'dreamGenerator',
   'ups'
 ];

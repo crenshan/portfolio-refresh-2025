@@ -27,7 +27,7 @@ import { workLogos } from './workLogos';
 
 export const portfolio: PortfolioItem[] = [
   {
-    id: 'volvoTheFamilyCar',
+    id: 'volvoStories',
     title: 'Volvo: The Family Car',
     element: DetailBasic,
     short:
@@ -66,28 +66,36 @@ export const portfolio: PortfolioItem[] = [
     tags: ['volvo', 'amazon'],
     year: 2025.1027
   },
-  // {
-  //   id: 'nissanRogue',
-  //   title: '2025 Nissan Rogue',
-  //   element: DetailBasic,
-  //   short: '',
-  //   description: '',
-  //   preview: work.dreamGeneratorPreview,
-  //   featLogo: {
-  //     logo: HondaLogo,
-  //     color: '#ca0000'
-  //   },
-  //   empLogo: workLogos.amazon,
-  //   featureVideo: {
-  //     video: work.dreamGeneratorFtv,
-  //     poster: work.dreamGeneratorFtvPoster
-  //   },
-  //   imageList: [],
-  //   imagesUniform: true,
-  //   links: [],
-  //   tags: ['nissan', 'amazon'],
-  //   year: 2025.1002
-  // },
+  {
+    id: 'nissanRogue',
+    title: '2025 Nissan Rogue',
+    element: DetailBasic,
+    short:
+      'Immersive Fire TV vehicle showcase for the 2025 Nissan Rogue, combining Unreal-powered challenges, a dynamic colorizer, and shoppable “Send Me More” email flows.',
+    description:
+      'I led the development of a first-of-its-kind Fire TV Custom Landing Page for the 2025 Nissan Rogue, designed to go far beyond traditional 360 spins and static configurators. The experience invites viewers to put the Rogue through a series of Unreal Engine-powered “tests” across different terrains and weather conditions, then dive into an interactive customizer where they can explore hotspot details, switch colors, and trigger 360-degree rotations paired with test-themed animation loops. I built the technical framework that connects this large-screen exploration to real shopping behavior, including dynamic “Send Me More” emails that carry a viewer’s exact Rogue configuration into personalized follow-up messaging and deep links to the corresponding Rogue page on Nissan.com. The experience also integrated with Amazon’s Weblab platform to A/B test whether starting users in the Rogue Challenges or directly in the Customizer drove higher engagement, helping Nissan United and Critical Mass understand how Fire TV can influence consideration and downstream site behavior.',
+    preview: work.nissanRoguePreview,
+    featLogo: {
+      logo: NissanLogo,
+      color: '#c3002f'
+    },
+    empLogo: workLogos.amazon,
+    featureVideo: {
+      video: work.nissanRogueDemo,
+      poster: work.nissanRogueDemoPoster
+    },
+    imageList: [
+      work.nissanRogueChallenges,
+      work.nissanRogueFeatures01,
+      work.nissanRogueFeatures02,
+      work.nissanRogueFeatures03,
+      work.nissanRogueColor
+    ],
+    imagesUniform: true,
+    links: [],
+    tags: ['nissan', 'amazon'],
+    year: 2025.1002
+  },
   // {
   //   id: 'nissanKicks',
   //   title: '2025 Nissan Kicks',

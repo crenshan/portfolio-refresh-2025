@@ -9,6 +9,7 @@ import * as fios from './fios';
 import * as jpMorgan from './jpMorgan';
 import * as kellogg from './kellogg';
 import * as mfn from './mfn';
+import * as nissanRogue from './nissanRogue';
 import * as olly from './olly';
 import * as oliverAndRain from './oliverAndRain';
 import * as pressPlayForLA from './pressPlayForLA';
@@ -29,6 +30,7 @@ export const work = {
   ...jpMorgan,
   ...kellogg,
   ...mfn,
+  ...nissanRogue,
   ...olly,
   ...oliverAndRain,
   ...pressPlayForLA,
